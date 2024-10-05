@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="../logo.jpg" type="image/jpg"> <!-- إضافة الشعار كـ favicon -->
+    <meta charset="UTF-8"> <!-- تحديد مجموعة الأحرف المستخدمة -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- لجعل الصفحة متوافقة مع الأجهزة المحمولة -->
+    <link rel="stylesheet" href="../../style.css"> <!-- توجيه للعودة للخلف مرتين -->
+    <title>Select Module - Algeria University</title> <!-- عنوان الصفحة -->
+    <script>
+        // دالة للتعامل مع إعادة التوجيه بناءً على الوحدة المختارة
+        function handleModuleSelection(event) {
+            event.preventDefault(); // منع الإرسال الافتراضي للنموذج
+
+            // الحصول على الوحدة المختارة
+            var selectedModule = document.getElementById("module").value;
+
+            // إعادة التوجيه بناءً على الوحدة المختارة
+            if (selectedModule) {
+                window.location.href = `./${selectedModule}.html`; // التأكد من وجود ملف HTML المناسب
+            } else {
+                alert("يرجى اختيار وحدة."); // تنبيه المستخدم إذا لم يتم اختيار وحدة
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="site-title"><a href="../../index.html">Algeria University</a></h1> <!-- توجيه للعودة للخلف مرتين -->
+            <nav>
+                <ul>
+                    <li><a href="https://www.youtube.com/@AbdellahDerradj" target="_blank">YouTube</a></li>
+                    <li><a href="../../specialization Page/specialization.html">Specialization</a></li> <!-- توجيه للعودة للخلف مرتين -->
+                    <li><a href="../../about.html">About</a></li> <!-- توجيه للعودة للخلف مرتين -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="module-selection">
+            <h2>Select a Module</h2> <!-- عنوان القسم -->
+            <form onsubmit="handleModuleSelection(event)"> <!-- نموذج لاختيار الوحدة -->
+                <label for="module">Choose a module:</label>
+                <select id="module" name="module" required>
+                    <option value="">--Select Module--</option> <!-- خيار فارغ -->
+                    <option value="lecture1">Lecture 1: Introduction to Technology</option>
+                    <option value="lecture2">Lecture 2: Basics of Engineering</option>
+                    <option value="exercise1">Exercise 1: Problem Solving in Physics</option>
+                    <option value="exercise2">Exercise 2: Chemistry Basics</option>
+                    <option value="exam1">Past Exam 1: Physics</option>
+                    <option value="exam2">Past Exam 2: Chemistry</option>
+                </select>
+
+                <button type="submit">Proceed</button> <!-- زر المتابعة -->
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Algeria University™. All rights reserved.</p> <!-- تذييل -->
+    </footer>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!-- sciences_et_technologie.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="../logo.jpg" type="image/jpg"> <!-- إضافة الشعار كـ favicon -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Sciences et Technologie - Algeria University</title>
+    <script>
+        // وظيفة للتعامل مع إعادة التوجيه بناءً على السنة والفصل المحددين
+        function handleFormSubmit(event) {
+            event.preventDefault(); // منع إرسال النموذج الافتراضي
+
+            // الحصول على قيم الحقول
+            var year = document.getElementById("year").value;
+            var semester = document.getElementById("semester").value;
+
+            // التحقق من الاختيارات وتوجيه المستخدم
+            if (year === "1" && semester === "S1") {
+                window.location.href = "../select_module/sciences_et_technologie/first_year_semester1.html";
+            } else if (year === "1" && semester === "S2") {
+                window.location.href = "../select_module/sciences_et_technologie/first_year_semester2.html";
+            } else if (year === "2" && semester === "S1") {
+                window.location.href = "../select_module/sciences_et_technologie/second_year_semester1.html";
+            } else {
+                alert("هذه الصفحة غير متاحة بعد للسنة والفصل الدراسي المحددين."); // رسالة الخطأ
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="site-title"><a href="../index.html">Algeria University</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="../specialization Page/specialization.html">Specialization</a></li>
+                    <li><a href="../about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="specialization-details">
+            <h2>Specialization: Sciences et Technologie</h2>
+            <p>Here you can find all the information related to the Sciences et Technologie specialization.</p>
+
+            <h3>Select Your Year and Semester</h3>
+            <form onsubmit="handleFormSubmit(event)">
+                <label for="year">Year:</label>
+                <select id="year" name="year" required>
+                    <option value="1">First Year</option>
+                    <option value="2">Second Year</option>
+                </select>
+
+                <label for="semester">Semester:</label>
+                <select id="semester" name="semester" required>
+                    <option value="S1">Semester 1</option>
+                    <option value="S2">Semester 2</option>
+
+                </select>
+
+                <button type="submit">Continue</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Algeria University™. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../logo.jpg" type="image/jpg"> <!-- إضافة الشعار كـ favicon -->
+    <link rel="stylesheet" href="../style.css">
+    <title>Level Selection - Algeria University</title>
+</head>
+<body>
+    
+    <header>
+        <div class="container">
+            <h1 class="site-title"><a href="../index.html">Algeria University</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="https://www.youtube.com/@AbdellahDerradj" target="_blank">YouTube</a></li>
+                    <li><a href="../about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="specialization-container">
+            <h2>Select Your Specialization</h2>
+
+            <!-- Search bar for specialization -->
+            <div class="search-container">
+                <input type="text" id="search" placeholder="Search for a specialization...">
+            </div>
+
+            <ul class="specialization-list">
+                <li><a href="sciences_et_technologie.html">Sciences et Technologie (ST)</a></li>
+                <li><a href="sciences_de_la_nature_et_de_la_vie.html">Sciences de la Nature et de la Vie (SNV)</a></li>
+                <li><a href="genie_electrique_electrotechnique.html">Génie Électrique : Électrotechnique - Électronique - Automatique - Télécommunications</a></li> <!-- Added Génie Électrique - Électrotechnique -->
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Algeria University™. All rights reserved.</p>
+    </footer>
+    <script>
+        const searchInput = document.getElementById('search');
+        const specializationList = document.querySelectorAll('.specialization-list li');
+    
+        searchInput.addEventListener('keyup', function() {
+            const searchTerm = this.value.toLowerCase();
+            specializationList.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    item.style.display = ''; // إظهار العنصر
+                } else {
+                    item.style.display = 'none'; // إخفاء العنصر
+                }
+            });
+        });
+    </script>
+</body>
+</html>

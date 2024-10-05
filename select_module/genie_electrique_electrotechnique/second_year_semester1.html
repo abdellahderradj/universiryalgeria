@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="../../logo.jpg" type="image/jpg"> <!-- إضافة الشعار كـ favicon -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style.css"> <!-- توجيه للعودة للخلف مرتين -->
+    <title>Select Module - Algeria University</title>
+    <script>
+        // Function to handle redirection based on selected module
+        function handleModuleSelection(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get the selected module
+            var selectedModule = document.getElementById("module").value;
+
+            // Redirect based on the selected module
+            if (selectedModule === "mathematiques3") {
+                window.location.href = '../../lectures exercises exams/sciences_et_technologie/second_year_semester1/mathematiques3/mathematiques3.html'; // رياضيات
+            } else if (selectedModule === "informatique3") {
+                window.location.href = '../../lectures exercises exams/sciences_et_technologie/second_year_semester1/informatique3/informatique3.html'; // إعلام آلي
+            } else if (selectedModule === "ondes_et_vibrations") {
+                window.location.href = '../../lectures exercises exams/sciences_et_technologie/second_year_semester1/ondes_et_vibrations/ondes_et_vibrations.html'; // فيزياء
+            } else if (selectedModule === "probabilites_et_statistiques") {
+                window.location.href = '../../lectures exercises exams/sciences_et_technologie/second_year_semester1/probabilites_et_statistiques/probabilites_et_statistiques.html'; // كيمياء
+            } else if (selectedModule === "anglais_technique") {
+                window.location.href = '../../lectures exercises exams/sciences_et_technologie/second_year_semester1/anglais_technique/anglais_technique.html'; // انجليزية
+            } else if (selectedModule === "electrotechnique_fondamentale_1") {
+                window.location.href = '../../lectures exercises exams/genie_electrique_electrotechnique/second_year_semester1/electrotechnique_fondamentale_1/electrotechnique_fondamentale_1.html'; // الكترونيات
+            } else if (selectedModule === "electronique_fondamentale_1") {
+                window.location.href = '../../lectures exercises exams/genie_electrique_electrotechnique/second_year_semester1/electronique_fondamentale_1/electronique_fondamentale_1.html'; // الكترونيات
+            } else {
+                alert("Please select a module.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="site-title"><a href="../../index.html">Algeria University</a></h1> <!-- توجيه للعودة للخلف مرتين -->
+            <nav>
+                <ul>
+                    <li><a href="https://www.youtube.com/@AbdellahDerradj" target="_blank">YouTube</a></li>
+                    <li><a href="../../specialization Page/specialization.html">Specialization</a></li> <!-- توجيه للعودة للخلف مرتين -->
+                    <li><a href="../../about.html">About</a></li> <!-- توجيه للعودة للخلف مرتين -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="module-selection">
+            <h2>Select a Module</h2>
+            <form onsubmit="handleModuleSelection(event)">
+                <label for="module">Choose a module:</label>
+                <select id="module" name="module" required>
+                    <option value="">--Select Module--</option>
+                    <option value="mathematiques3">Mathematiques 3</option>
+                    <option value="informatique3">Informatique 3</option>
+                    <option value="ondes_et_vibrations">Ondes et Vibrations</option>
+                    <option value="probabilites_et_statistiques">Probabilités et Statistiques</option>
+                    <option value="electrotechnique_fondamentale_1">Electrotechnique Fondamentale 1</option> <!-- إضافة Electrotechnique Fondamentale 1 -->
+                    <option value="electronique_fondamentale_1">Electronique Fondamentale 1</option> <!-- إضافة Electronique Fondamentale 1 -->
+                </select>
+
+                <button type="submit">Proceed</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Algeria University™. All rights reserved.</p>
+    </footer>
+</body>
+</html>
