@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="../../logo.png" type="image/png"> <!-- إضافة الشعار كـ favicon -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style.css"> <!-- توجيه للعودة للخلف مرتين -->
+    <title>Select Module - Algeria University</title>
+    <script>
+        // Function to handle redirection based on selected module
+        function handleModuleSelection(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get the selected module
+            var selectedModule = document.getElementById("module").value;
+
+            // Redirect based on the selected module
+            if (selectedModule === "reseaux_electriques") {
+                window.location.href = '../../lectures exercises exams/electrotechnique/third_year_semester1/reseaux_electriques/reseaux_electriques.html'; // Réseaux Electriques
+            } else if (selectedModule === "electronique_de_puissance") {
+                window.location.href = '../../lectures exercises exams/electrotechnique/third_year_semester1/electronique_de_puissance/electronique_de_puissance.html'; // Electronique de Puissance
+            } else if (selectedModule === "systemes_asservis") {
+                window.location.href = '../../lectures exercises exams/electrotechnique/third_year_semester1/systemes_asservis/systemes_asservis.html'; // Systèmes Asservis
+            } else if (selectedModule === "theorie_du_champ") {
+                window.location.href = '../../lectures exercises exams/electrotechnique/third_year_semester1/theorie_du_champ/theorie_du_champ.html'; // Théorie du Champ
+            } else if (selectedModule === "schemas_et_appareillage") {
+                window.location.href = '../../lectures exercises exams/electrotechnique/third_year_semester1/schemas_et_appareillage/schemas_et_appareillage.html'; // Schémas et Appareillage
+            } else if (selectedModule === "capteurs_et_metrologie") {
+                window.location.href = '../../lectures exercises exams/electrotechnique/third_year_semester1/capteurs_et_metrologie/capteurs_et_metrologie.html'; // Capteurs et Métrologie
+            } else if (selectedModule === "conception_des_systemes_electriques") {
+                window.location.href = '../../lectures exercises exams/electrotechnique/third_year_semester1/conception_des_systemes_electriques/conception_des_systemes_electriques.html'; // Conception des systèmes électriques
+            } else if (selectedModule === "logiciels_de_simulation") {
+                window.location.href = '../../lectures exercises exams/electrotechnique/third_year_semester1/logiciels_de_simulation/logiciels_de_simulation.html'; // Logiciels de simulation
+            } else {
+                alert("Please select a module.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="site-title"><a href="../../index.html">Algeria University</a></h1> <!-- توجيه للعودة للخلف مرتين -->
+            <nav>
+                <ul>
+                    <li><a href="https://www.youtube.com/@AbdellahDerradj" target="_blank">YouTube</a></li>
+                    <li><a href="../../specialization Page/specialization.html">Specialization</a></li> <!-- توجيه للعودة للخلف مرتين -->
+                    <li><a href="../../about.html">About</a></li> <!-- توجيه للعودة للخلف مرتين -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="module-selection">
+            <h2>Select a Module</h2>
+            <form onsubmit="handleModuleSelection(event)">
+                <label for="module">Choose a module:</label>
+                <select id="module" name="module" required>
+                    <option value="">--Select Module--</option>
+                    <option value="reseaux_electriques">Réseaux Electriques</option>
+                    <option value="electronique_de_puissance">Electronique de Puissance</option>
+                    <option value="systemes_asservis">Systèmes Asservis</option>
+                    <option value="theorie_du_champ">Théorie du Champ</option>
+                    <option value="schemas_et_appareillage">Schémas et Appareillage</option>
+                    <option value="capteurs_et_metrologie">Capteurs et Métrologie</option>
+                    <option value="conception_des_systemes_electriques">Conception des systèmes électriques</option>
+                    <option value="logiciels_de_simulation">Logiciels de simulation</option>
+                </select>
+
+                <button type="submit">Proceed</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Algeria University™. All rights reserved.</p>
+    </footer>
+</body>
+</html>
