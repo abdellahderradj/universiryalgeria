@@ -1042,3 +1042,75 @@ footer {
 }
 
 /* باقي التنسيقات تبقى كما هي */
+/* باقي التنسيقات تبقى كما هي */
+/* تصميم عام للصفحة */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* تصميم للهواتف الذكية (الشاشات الصغيرة) */
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 90%; /* تقليل عرض الحاوية على الهواتف */
+        margin: auto;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column; /* تحويل قائمة الروابط إلى عمودية */
+        text-align: center;
+    }
+
+    .hero-section {
+        padding: 20px; /* تقليل الحشو لتناسب الشاشة الصغيرة */
+    }
+
+    .card-container {
+        display: flex;
+        flex-direction: column; /* عرض البطاقات بشكل عمودي على الهواتف */
+    }
+
+    .cta-btn {
+        width: 100%; /* جعل زر Call to Action بعرض كامل على الهواتف */
+    }
+}
+
+/* تصميم للشاشات الأصغر مثل الهواتف الصغيرة */
+@media only screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem; /* تصغير حجم العنوان */
+    }
+
+    .hero-section h2 {
+        font-size: 1.5rem; /* تصغير حجم النص داخل قسم البطل */
+    }
+
+    .card {
+        margin: 10px 0; /* إضافة مسافة بين البطاقات */
+    }
+}
+
+/* إعداد الخلفية ليتم عرضها بشكل جيد على جميع الأجهزة */
+.hero-section {
+    background-image: url('background.jpg'); /* استبدل هذا برابط صورتك */
+    background-size: cover; /* يجعل الخلفية تغطي كامل الشاشة */
+    background-position: center; /* يجعل الخلفية تتموضع في منتصف الصفحة */
+    background-repeat: no-repeat; /* يمنع تكرار الخلفية */
+    background-attachment: fixed; /* يجعل الخلفية ثابتة عند التمرير */
+    height: 100vh; /* تجعل القسم يأخذ ارتفاع الشاشة بالكامل */
+}
+
+/* تحسين الظهور على الشاشات الصغيرة */
+@media only screen and (max-width: 768px) {
+    .hero-section {
+        background-size: contain; /* تعديل حجم الخلفية لتناسب الشاشة الصغيرة */
+        background-position: top; /* وضع الخلفية في الأعلى للشاشات الصغيرة */
+    }
+}
+
+
