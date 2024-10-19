@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="../../logo.png" type="image/png"> <!-- إضافة الشعار كـ favicon -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style.css"> <!-- توجيه للعودة للخلف مرتين -->
+    <title>Select Module - Algeria University</title>
+    <script>
+        // Function to handle redirection based on selected module
+        function handleModuleSelection(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get the selected module
+            var selectedModule = document.getElementById("module").value;
+
+            // Redirect based on the selected module
+            if (selectedModule === "analyse1") {
+                window.location.href = '../../lectures exercises exams/math_informatique/first_year_semester1/analyse1/analyse1.html'; // تحليل 1
+            } else if (selectedModule === "algebre1") {
+                window.location.href = '../../lectures exercises exams/math_informatique/first_year_semester1/algebre1/algebre1.html'; // جبر 1
+            } else if (selectedModule === "algorithmes_et_structure_de_donnees1") {
+                window.location.href = '../../lectures exercises exams/math_informatique/first_year_semester1/algorithmes_et_structure_de_donnees1/algorithmes_et_structure_de_donnees1.html'; // خوارزميات وبنية بيانات 1
+            } else if (selectedModule === "structure_machine1") {
+                window.location.href = '../../lectures exercises exams/math_informatique/first_year_semester1/structure_machine1/structure_machine1.html'; // بنية الآلة 1
+            } else if (selectedModule === "terminologie_scientifique_et_expression_ecrite") {
+                window.location.href = '../../lectures exercises exams/math_informatique/first_year_semester1/terminologie_scientifique_et_expression_ecrite/terminologie_scientifique_et_expression_ecrite.html'; // المصطلحات العلمية والتعبير الكتابي
+            } else if (selectedModule === "langue_etrangere1") {
+                window.location.href = '../../lectures exercises exams/math_informatique/first_year_semester1/langue_etrangere1/langue_etrangere1.html'; // لغة أجنبية 1
+            } else if (selectedModule === "physique1") {
+                window.location.href = '../../lectures exercises exams/math_informatique/first_year_semester1/physique1/physique1.html'; // فيزياء 1 (ميكانيكا النقطة)
+            } else {
+                alert("Please select a module.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="site-title"><a href="../../index.html">Algeria University</a></h1> <!-- توجيه للعودة للخلف مرتين -->
+            <nav>
+                <ul>
+                    <li><a href="https://www.youtube.com/@AbdellahDerradj" target="_blank">YouTube</a></li>
+                    <li><a href="../../specialization Page/specialization.html">Specialization</a></li> <!-- توجيه للعودة للخلف مرتين -->
+                    <li><a href="../../about.html">About</a></li> <!-- توجيه للعودة للخلف مرتين -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="module-selection">
+            <h2>Select a Module</h2>
+            <form onsubmit="handleModuleSelection(event)">
+                <label for="module">Choose a module:</label>
+                <select id="module" name="module" required>
+                    <option value="">--Select Module--</option>
+                    <option value="analyse1">Analyse 1</option>
+                    <option value="algebre1">Algèbre 1</option>
+                    <option value="algorithmes_et_structure_de_donnees1">Algorithmes et Structure de Données 1</option>
+                    <option value="structure_machine1">Structure Machine 1</option>
+                    <option value="terminologie_scientifique_et_expression_ecrite">Terminologie Scientifique et Expression Écrite</option>
+                    <option value="langue_etrangere1">Langue Étrangère 1</option>
+                    <option value="physique1">Physique 1 (Mécanique du Point)</option>
+                </select>
+
+                <button type="submit">Proceed</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Algeria University™. All rights reserved.</p>
+    </footer>
+</body>
+</html>

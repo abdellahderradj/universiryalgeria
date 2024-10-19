@@ -1,0 +1,66 @@
+<!-- math_informatique.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="../logo.png" type="image/png"> <!-- إضافة الشعار كـ favicon -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Math Informatique - MI - Algeria University</title>
+    <script>
+        function redirectToPage() {
+            var year = document.getElementById('year').value;
+            var semester = document.getElementById('semester').value;
+
+            // التوجيه بناءً على السنة والفصل
+            if (year === "1" && semester === "S1") {
+                window.location.href = "../select_module/math_informatique/first_year_semester1.html";
+            } else if (year === "1" && semester === "S2") {
+                window.location.href = "../select_module/math_informatique/first_year_semester2.html";
+            } else {
+                alert("هذه الصفحة غير متاحة بعد للسنة والفصل الدراسي المحددين.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="site-title"><a href="../index.html">Algeria University</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="specialization.html">Specialization</a></li>
+                    <li><a href="../about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="specialization-details">
+            <h2>Specialization: Math Informatique (MI)</h2>
+            <p>Here you can find all the information related to the Math Informatique specialization.</p>
+
+            <h3>Select Your Year and Semester</h3>
+            <form onsubmit="event.preventDefault(); redirectToPage();">
+                <label for="year">Year:</label>
+                <select id="year" name="year" required>
+                    <option value="1">First Year</option>
+                </select>
+
+                <label for="semester">Semester:</label>
+                <select id="semester" name="semester" required>
+                    <option value="S1">Semester 1</option>
+
+                </select>
+
+                <button type="submit">Continue</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Algeria University™. All rights reserved.</p>
+    </footer>
+</body>
+</html>
