@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="icon" href="../../logo.png" type="image/png">
+    <title>حساب معدل - Algeria University</title>
+    <script>
+        // دالة لحساب المعدل مع أخذ المواد الاختيارية بعين الاعتبار
+        function calculateAverage() {
+            var arabicLanguage = parseFloat(document.getElementById("arabic_language").value) || 0;
+            var frenchLanguage = parseFloat(document.getElementById("french_language").value) || 0;
+            var englishLanguage = parseFloat(document.getElementById("english_language").value) || 0;
+            var thirdForeignLanguage = parseFloat(document.getElementById("third_foreign_language").value) || 0;
+            var islamicScience = parseFloat(document.getElementById("islamic_science").value) || 0;
+            var historyGeography = parseFloat(document.getElementById("history_geography").value) || 0;
+            var philosophy = parseFloat(document.getElementById("philosophy").value) || 0;
+            var mathematics = parseFloat(document.getElementById("mathematics").value) || 0;
+            var physicalEducation = document.getElementById("physical_education_checkbox").checked ? parseFloat(document.getElementById("physical_education").value) || 0 : 0;
+            var berberLanguage = document.getElementById("berber_language_checkbox").checked ? parseFloat(document.getElementById("berber_language").value) || 0 : 0;
+
+// تعريف المعاملات لكل مادة
+var totalScore = (arabicLanguage * 5) +
+                 (frenchLanguage * 5) +
+                 (englishLanguage * 5) +
+                 (thirdForeignLanguage * 4) +
+                 (islamicScience * 2) +
+                 (historyGeography * 2) +
+                 (philosophy * 2) +
+                 (mathematics * 2) +
+                 (physicalEducation * (document.getElementById("physical_education_checkbox").checked ? 1 : 0)) + // شرط للتربية البدنية
+                 (berberLanguage * (document.getElementById("berber_language_checkbox").checked ? 2 : 0)); // شرط للغة الأمازيغية
+
+// تعريف المعاملات الكلية
+var totalCoefficient = 5 + 5 + 5 + 4 + 2 + 2 + 2 + 2 + 
+                      (document.getElementById("physical_education_checkbox").checked ? 1 : 0) + 
+                      (document.getElementById("berber_language_checkbox").checked ? 2 : 0); // حساب المعاملات الكلية بشكل صحيح
+
+            var average = totalScore / totalCoefficient;
+            document.getElementById("result").textContent = "المعدل العام: " + average.toFixed(2);
+        }
+
+        // دالة لتفعيل حقلي اللغة الأمازيغية والتربية البدنية
+        function toggleInputField(checkboxId, inputId) {
+            var checkbox = document.getElementById(checkboxId);
+            var inputField = document.getElementById(inputId);
+            inputField.disabled = !checkbox.checked;
+            if (!checkbox.checked) {
+                inputField.value = "";
+            }
+        }
+    </script>
+    <style>
+        .rtl-direction {
+            direction: rtl;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="site-title"><a href="../../index.html">Algeria University</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="../bac.html">ثالثة ثانوي - بكالوريا 2025</a></li>
+                    <li><a href="https://www.youtube.com/@AbdellahDerradj" target="_blank">YouTube</a></li>
+                    <li><a href="../../about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2 class="centered-title">أدخل معدلات المواد</h2>
+            <div class="rtl-direction">
+                <form onsubmit="event.preventDefault(); calculateAverage();">
+                    <label for="arabic_language">لغة عربية :</label>
+                    <input type="number" id="arabic_language" min="0" max="20" step="0.5" required>
+
+                    <label for="french_language">لغة فرنسية :</label>
+                    <input type="number" id="french_language" min="0" max="20" step="0.5" required>
+
+                    <label for="english_language">لغة إنجليزية :</label>
+                    <input type="number" id="english_language" min="0" max="20" step="0.5" required>
+
+                    <label for="third_foreign_language">لغة أجنبية ثالثة :</label>
+                    <input type="number" id="third_foreign_language" min="0" max="20" step="0.5" required>
+
+                    <label for="islamic_science">علوم إسلامية :</label>
+                    <input type="number" id="islamic_science" min="0" max="20" step="0.5" required>
+
+                    <label for="history_geography">تاريخ وجغرافيا :</label>
+                    <input type="number" id="history_geography" min="0" max="20" step="0.5" required>
+
+                    <label for="philosophy">فلسفة :</label>
+                    <input type="number" id="philosophy" min="0" max="20" step="0.5" required>
+
+                    <label for="mathematics">رياضيات :</label>
+                    <input type="number" id="mathematics" min="0" max="20" step="0.5" required>
+
+                    <!-- زر تفعيل التربية البدنية -->
+                    <div>
+                        <input type="checkbox" id="physical_education_checkbox" onchange="toggleInputField('physical_education_checkbox', 'physical_education');">
+                        <label for="physical_education_checkbox">أمارس الرياضة </label>
+                    </div>
+                    <label for="physical_education">تربية بدنية :</label>
+                    <input type="number" id="physical_education" min="0" max="20" step="0.5" disabled>
+
+                    <!-- زر تفعيل اللغة الأمازيغية -->
+                    <div>
+                        <input type="checkbox" id="berber_language_checkbox" onchange="toggleInputField('berber_language_checkbox', 'berber_language');">
+                        <label for="berber_language_checkbox">أدرس اللغة الأمازيغية</label>
+                    </div>
+                    <label for="berber_language">لغة أمازيغية :</label>
+                    <input type="number" id="berber_language" min="0" max="20" step="0.5" disabled>
+
+                    <button type="submit">حساب المعدل</button>
+                </form>
+            </div>
+
+            <div id="result" style="margin-top: 20px; font-weight: bold;"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Algeria University™. All rights reserved.</p>
+    </footer>
+</body>
+</html>

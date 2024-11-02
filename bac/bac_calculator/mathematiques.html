@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> <!-- ربط ملف الأنماط -->
+    <link rel="stylesheet" href="../../style.css"> <!-- ربط ملف الأنماط -->
+    <link rel="icon" href="../../logo.png" type="image/png"> <!-- إضافة شعار كمفضل -->
+
+    <title>حساب معدل الرياضيات - Algeria University</title>
+    <script>
+        // دالة لحساب معدل الرياضيات باستخدام المعاملات
+        function calculateAverage() {
+            // الحصول على الدرجات المدخلة لكل مادة ومعاملاتها
+            var mathematics = parseFloat(document.getElementById("mathematics").value) || 0;
+            var physicalScience = parseFloat(document.getElementById("physical_science").value) || 0;
+            var arabicLanguage = parseFloat(document.getElementById("arabic_language").value) || 0;
+            var naturalScience = parseFloat(document.getElementById("natural_science").value) || 0;
+            var islamicScience = parseFloat(document.getElementById("islamic_science").value) || 0;
+            var historyGeography = parseFloat(document.getElementById("history_geography").value) || 0;
+            var philosophy = parseFloat(document.getElementById("philosophy").value) || 0;
+            var frenchLanguage = parseFloat(document.getElementById("french_language").value) || 0;
+            var englishLanguage = parseFloat(document.getElementById("english_language").value) || 0;
+            var physicalEducation = parseFloat(document.getElementById("physical_education").value) || 0; // تم إضافة حقل التربية البدنية
+            var berberLanguage = document.getElementById("berber_language_checkbox").checked ? parseFloat(document.getElementById("berber_language").value) || 0 : 0;
+
+   // تعريف المعاملات لكل مادة
+var totalScore = (mathematics * 7) + 
+                 (physicalScience * 6) + 
+                 (arabicLanguage * 3) + 
+                 (naturalScience * 2) + 
+                 (islamicScience * 2) + 
+                 (historyGeography * 2) + 
+                 (philosophy * 2) + 
+                 (frenchLanguage * 2) + 
+                 (englishLanguage * 2) + 
+                 (physicalEducation * (document.getElementById("physical_education_checkbox").checked ? 1 : 0)) + // معامل التربية البدنية
+                 (berberLanguage * (document.getElementById("berber_language_checkbox").checked ? 2 : 0)); // معامل اللغة الأمازيغية
+
+// تعريف المعاملات الكلية
+var totalCoefficient = 7 + 6 + 3 + 2 + 2 + 2 + 2 + 2 + 
+                      (document.getElementById("physical_education_checkbox").checked ? 1 : 0) + 
+                      (document.getElementById("berber_language_checkbox").checked ? 2 : 0); // حساب المعاملات الكلية بشكل صحيح
+
+            // حساب المعدل العام
+            var average = totalScore / totalCoefficient;
+
+            // عرض النتيجة للمستخدم
+            document.getElementById("result").textContent = "المعدل العام لمادة الرياضيات : " + average.toFixed(2);
+        }
+
+        function togglePhysicalEducation() {
+    var checkbox = document.getElementById("physical_education_checkbox");
+    var physicalInput = document.getElementById("physical_education");
+    physicalInput.disabled = !checkbox.checked; // تفعيل أو تعطيل حقل التربية البدنية
+    if (!checkbox.checked) {
+        physicalInput.value = ""; // إعادة تعيين القيمة إذا تم إلغاء تفعيل الخيار
+    }
+}
+
+        // دالة لتحديث حقل اللغة الأمازيغية بناءً على الزر
+        function toggleBerberLanguage() {
+            var checkbox = document.getElementById("berber_language_checkbox");
+            var berberInput = document.getElementById("berber_language");
+            berberInput.disabled = !checkbox.checked; // تفعيل أو تعطيل حقل اللغة الأمازيغية
+            if (!checkbox.checked) {
+                berberInput.value = ""; // إعادة تعيين القيمة إذا تم إلغاء تفعيل الخيار
+            }
+        }
+    </script>
+    <style>
+        /* نمط لتحديد اتجاه النص للمواد فقط */
+        .rtl-direction {
+            direction: rtl; /* الاتجاه من اليمين إلى اليسار */
+            text-align: right; /* محاذاة النص إلى اليمين */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="site-title"><a href="../../index.html">Algeria University</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="../bac.html">ثالثة ثانوي - بكالوريا 2025</a></li> <!-- رابط إلى صفحة التخصصات -->
+                    <li><a href="https://www.youtube.com/@AbdellahDerradj" target="_blank">YouTube</a></li>
+                    <li><a href="../../about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2 class="centered-title">أدخل معدلات المواد</h2>
+            <div class="rtl-direction"> <!-- حاوية لتحديد الاتجاه -->
+                <form onsubmit="event.preventDefault(); calculateAverage();"> <!-- منع الإرسال الافتراضي للنموذج -->
+
+                    <label for="mathematics">رياضيات :</label>
+                    <input type="number" id="mathematics" min="0" max="20" step="0.5" pattern="^\d{1,2}(\.\d{1,2})?$" required>
+
+                    <label for="physical_science">علوم فيزيائية :</label>
+                    <input type="number" id="physical_science" min="0" max="20" step="0.5" pattern="^\d{1,2}(\.\d{1,2})?$" required>
+
+                    <label for="arabic_language">اللغة العربية وآدابها :</label>
+                    <input type="number" id="arabic_language" min="0" max="20" step="0.5" pattern="^\d{1,2}(\.\d{1,2})?$" required>
+
+                    <label for="natural_science">علوم طبيعية :</label>
+                    <input type="number" id="natural_science" min="0" max="20" step="0.5" pattern="^\d{1,2}(\.\d{1,2})?$" required>
+
+                    <label for="french_language">لغة أجنبية أولى :</label>
+                    <input type="number" id="french_language" min="0" max="20" step="0.5" pattern="^\d{1,2}(\.\d{1,2})?$" required>
+
+                    <label for="english_language">لغة أجنبية ثانية :</label>
+                    <input type="number" id="english_language" min="0" max="20" step="0.5" pattern="^\d{1,2}(\.\d{1,2})?$" required>
+
+                    <label for="philosophy">الفلسفة :</label>
+                    <input type="number" id="philosophy" min="0" max="20" step="0.5" pattern="^\d{1,2}(\.\d{1,2})?$" required>
+
+                    <label for="history_geography">التاريخ والجغرافيا :</label>
+                    <input type="number" id="history_geography" min="0" max="20" step="0.5" pattern="^\d{1,2}(\.\d{1,2})?$" required>
+
+                    <label for="islamic_science">العلوم الإسلامية :</label>
+                    <input type="number" id="islamic_science" min="0" max="20" step="0.5" pattern="^\d{1,2}(\.\d{1,2})?$" required>
+
+
+                    <div>
+                        <input type="checkbox" id="berber_language_checkbox" onchange="toggleBerberLanguage();"> <!-- زر تفعيل اللغة الأمازيغية -->
+                        <label for="berber_language_checkbox">أدرس اللغة الأمازيغية</label>
+                    </div>
+
+                    <label for="berber_language">لغة أمازيغية :</label>
+                    <input type="number" id="berber_language" min="0" max="20" step="0.5" pattern="^\d{1,2}(\.\d{1,2})?$" disabled> <!-- حقل اللغة الأمازيغية مع تفعيل أو تعطيل -->
+
+
+                    <div>
+                        <input type="checkbox" id="physical_education_checkbox" onchange="togglePhysicalEducation();"> <!-- زر تفعيل التربية البدنية -->
+                        <label for="physical_education_checkbox">أمارس الرياضة</label>
+                    </div>
+                    
+                    <label for="physical_education">تربية بدنية :</label>
+                    <input type="number" id="physical_education" min="0" max="20" step="0.5" pattern="^\d{1,2}(\.\d{1,2})?$" disabled> <!-- حقل التربية البدنية مع تفعيل أو تعطيل -->
+
+                    <button type="submit">حساب المعدل</button>
+                </form>
+            </div>
+
+            <div id="result" style="margin-top: 20px; font-weight: bold;"></div> <!-- عرض النتيجة هنا -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Algeria University™. All rights reserved.</p>
+    </footer>
+</body>
+</html>

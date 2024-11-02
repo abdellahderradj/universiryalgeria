@@ -1,0 +1,184 @@
+/* تنسيق جسم الصفحة */
+body {
+    font-family: 'Arial', sans-serif; /* نوع الخط */
+    margin: 0; /* إزالة الهوامش الافتراضية */
+    padding: 0; /* إزالة الحشو الافتراضي */
+    background-color: #f0f0f0; /* لون خلفية الصفحة */
+}
+
+/* تنسيق الروابط في الهيدر */
+header nav ul {
+    list-style: none; /* إزالة النقط من القائمة */
+    padding: 0; /* إزالة الحشو */
+    margin: 0; /* إزالة الهوامش */
+}
+
+header nav ul li {
+    display: inline; /* عرض العناصر في سطر واحد */
+    margin: 0 15px; /* مسافة بين العناصر */
+}
+
+header nav a {
+    color: white; /* لون الروابط */
+    text-decoration: none; /* إزالة خط تحت الروابط */
+}
+
+/* تنسيق الجزء الرئيسي */
+main {
+    display: flex; /* استخدام الفليكس لتنسيق العناصر */
+    justify-content: center; /* محاذاة العناصر في المنتصف */
+    align-items: center; /* محاذاة العناصر عمودياً */
+    padding: 53px; /* حشو الجزء الرئيسي */
+    background-color: #f9f9f9; /* لون خلفية الجزء الرئيسي */
+    min-height: 70vh; /* الحد الأدنى للارتفاع */
+}
+
+/* تنسيق القسم */
+section {
+    background-color: #ffffff; /* لون خلفية القسم */
+    padding: 30px; /* حشو القسم */
+    border-radius: 8px; /* زوايا منحنية */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* ظل */
+    width: 100%; /* عرض القسم */
+    max-width: 600px; /* أقصى عرض للقسم */
+}
+
+/* تنسيق العناوين */
+h10 {
+    color: #333333; /* لون العنوان */
+    text-align: center; /* محاذاة العنوان في المنتصف */
+    font-size: 1.8em; /* حجم خط العنوان */
+    margin-bottom: 20px; /* هامش أسفل العنوان */
+}
+
+/* تنسيق التسمية */
+form label {
+    display: block; /* عرض التسمية ككتلة */
+    font-size: 1.1em; /* حجم خط التسمية */
+    color: #555555; /* لون التسمية */
+    margin-bottom: 8px; /* هامش أسفل التسمية */
+    font-weight: bold; /* خط عريض للتسمية */
+}
+
+/* تنسيق المدخلات */
+form input[type="number"], 
+form select {
+    width: 100%; /* عرض المدخلات بالكامل */
+    padding: 10px; /* حشو المدخلات */
+    font-size: 1em; /* حجم خط المدخلات */
+    border: 1px solid #cccccc; /* لون الحدود */
+    border-radius: 4px; /* زوايا منحنية للمدخلات */
+    margin-bottom: 20px; /* هامش أسفل المدخلات */
+    box-sizing: border-box; /* حساب الحشو في العرض الكلي */
+    transition: border-color 0.3s; /* تأثير عند تغيير لون الحدود */
+}
+
+/* تأثير التركيز على المدخلات */
+form input[type="number"]:focus, 
+form select:focus {
+    border-color: #1e90ff; /* تغيير لون الحدود عند التركيز */
+    outline: none; /* إزالة الإطار الافتراضي */
+}
+
+/* تنسيق زر الإرسال */
+button[type="submit"] {
+    width: 100%; /* عرض الزر بالكامل */
+    padding: 12px; /* حشو الزر */
+    background-color: #1e90ff; /* لون خلفية الزر */
+    color: #ffffff; /* لون النص في الزر */
+    font-size: 1.1em; /* حجم خط الزر */
+    border: none; /* إزالة الحدود الافتراضية */
+    border-radius: 4px; /* زوايا منحنية للزر */
+    cursor: pointer; /* تغيير شكل المؤشر عند المرور فوق الزر */
+    transition: background-color 0.3s; /* تأثير عند تغيير لون الخلفية */
+}
+
+/* تأثير التمرير على زر الإرسال */
+button[type="submit"]:hover {
+    background-color: #1c86ee; /* تغيير لون الخلفية عند التمرير */
+}
+
+/* تنسيق نتيجة الحساب */
+#result {
+    text-align: center; /* محاذاة النص في المنتصف */
+    font-size: 1.4em; /* حجم خط النتيجة */
+    color: #333333; /* لون النص */
+    margin-top: 20px; /* هامش أعلى النتيجة */
+}
+
+/* تنسيق الفوتر */
+footer {
+    background-color: #828282; /* لون خلفية الفوتر */
+    color: white; /* لون النص في الفوتر */
+    text-align: center; /* محاذاة النص في المنتصف */
+    padding: 15px 0; /* حشو الفوتر */
+    position: relative; /* وضع الفوتر */
+    bottom: 0; /* محاذاة الفوتر في الأسفل */
+    width: 100%; /* عرض الفوتر بالكامل */
+}
+
+/* تنسيق الأزرار */
+.cta-btn {
+    display: inline-block; /* عرض الزر ككتلة متداخلة */
+    padding: 12px 20px; /* حشو الزر */
+    background-color: #f25c5c; /* لون خلفية الزر (برتقالي) */
+    color: #ffffff; /* لون النص في الزر */
+    font-size: 1em; /* حجم خط الزر */
+    text-decoration: none; /* إزالة خط تحت النص */
+    border-radius: 4px; /* زوايا منحنية للزر */
+    margin: 10px; /* مسافة بين الأزرار */
+    transition: background-color 0.3s; /* تأثير عند تغيير لون الخلفية */
+}
+
+/* تأثير التمرير على زر العودة */
+.cta-btn:hover {
+    background-color: #ff0101; /* تغيير لون الخلفية عند التمرير */
+}
+
+/* تنسيق العنوان المركزي */
+.centered-title {
+    text-align: center; /* محاذاة النص إلى الوسط */
+    font-size: 1.5em; /* حجم خط العنوان */
+    color: #333; /* لون النص */
+    margin: 20px 0; /* مسافة من الأعلى والأسفل */
+}
+
+/* تحسين التصميم للهواتف */
+@media (max-width: 600px) {
+    main {
+        padding: 20px;
+    }
+
+    section {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    h10 {
+        font-size: 1.5em;
+    }
+
+    form label {
+        font-size: 1em;
+    }
+
+    form input[type="number"], 
+    form select {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+
+    button[type="submit"] {
+        padding: 10px;
+        font-size: 1em;
+    }
+
+    .cta-btn {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+
+    footer {
+        padding: 10px;
+    }
+}

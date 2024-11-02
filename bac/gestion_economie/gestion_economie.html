@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="../../logo.png" type="image/png"> <!-- إضافة شعار كمفضل -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style.css"> <!-- ربط ملف الأنماط -->
+    <title>Select Module - Algeria University</title>
+    <script>
+        // دالة للتعامل مع إعادة التوجيه بناءً على المادة المختارة
+        function handleModuleSelection(event) {
+            event.preventDefault(); // منع الإرسال الافتراضي للنموذج
+
+            // الحصول على المادة المختارة
+            var selectedModule = document.getElementById("module").value;
+
+            // إعادة التوجيه بناءً على المادة المختارة
+            if (selectedModule === "accounting") {
+                window.location.href = 'accounting/accounting.html'; // المحاسبة
+            } else if (selectedModule === "arabic_language") {
+                window.location.href = 'arabic_language/arabic_language.html'; // اللغة العربية وآدابها
+            } else if (selectedModule === "economics") {
+                window.location.href = 'economics/economics.html'; // الاقتصاد
+            } else if (selectedModule === "mathematics") {
+                window.location.href = 'mathematics/mathematics.html'; // الرياضيات
+            } else if (selectedModule === "history_geography") {
+                window.location.href = 'history_geography/history_geography.html'; // التاريخ والجغرافيا
+            } else if (selectedModule === "law") {
+                window.location.href = 'law/law.html'; // القانون
+            } else if (selectedModule === "islamic_sciences") {
+                window.location.href = 'islamic_sciences/islamic_sciences.html'; // العلوم الإسلامية
+            } else if (selectedModule === "french_language") {
+                window.location.href = 'french_language/french_language.html'; // اللغة الفرنسية
+            } else if (selectedModule === "english_language") {
+                window.location.href = 'english_language/english_language.html'; // اللغة الإنجليزية
+            } else if (selectedModule === "philosophy") {
+                window.location.href = 'philosophy/philosophy.html'; // الفلسفة
+            } else if (selectedModule === "berber_language") {
+                window.location.href = 'berber_language/berber_language.html'; // الأمازيغية
+            } else {
+                alert("Please select a module."); // تنبيه المستخدم إذا لم يتم اختيار أي مادة
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="site-title"><a href="../../index.html">Algeria University</a></h1> <!-- رابط إلى الصفحة الرئيسية -->
+            <nav>
+                <ul>
+                    <li><a href="https://www.youtube.com/@AbdellahDerradj" target="_blank">YouTube</a></li>
+                    <li><a href="../bac.html">ثالثة ثانوي - بكالوريا 2025</a></li> <!-- رابط إلى صفحة التخصصات -->
+                    <li><a href="../../about.html">About</a></li> <!-- رابط إلى صفحة التعريف -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="module-selection">
+            <h2>Select a Module</h2> <!-- عنوان القسم -->
+            <form onsubmit="handleModuleSelection(event)"> <!-- نموذج اختيار المادة -->
+                <label for="module">Choose a module:</label>
+                <select id="module" name="module" required>
+                    <option value="">--Select Module--</option>
+                    <option value="arabic_language">اللغة العربية وآدابها</option>
+                    <option value="mathematics">الرياضيات</option>
+                    <option value="accounting">المحاسبة</option>
+                    <option value="economics">الاقتصاد</option>
+                    <option value="history_geography">التاريخ والجغرافيا</option>
+                    <option value="law">القانون</option>
+                    <option value="islamic_sciences">العلوم الإسلامية</option>
+                    <option value="french_language">اللغة الفرنسية</option>
+                    <option value="english_language">اللغة الإنجليزية</option>
+                    <option value="philosophy">الفلسفة</option>
+                    <option value="berber_language">الأمازيغية</option>
+                </select>
+
+                <button type="submit">Proceed</button> <!-- زر الإرسال -->
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Algeria University™. All rights reserved.</p> <!-- إشعار حقوق الطبع والنشر -->
+    </footer>
+</body>
+</html>
