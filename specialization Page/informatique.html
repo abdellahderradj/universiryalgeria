@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="../logo.png" type="image/png"> <!-- إضافة الشعار كـ favicon -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Informatique - Algeria University</title>
+    <script>
+        // وظيفة للتعامل مع إعادة التوجيه بناءً على السنة المحددة
+        function handleFormSubmit(event) {
+            event.preventDefault(); // منع إرسال النموذج الافتراضي
+
+            // الحصول على قيمة السنة
+            var year = document.getElementById("year").value;
+
+            // التحقق من السنة وتوجيه المستخدم إلى الرابط المناسب
+            if (year === "1") {
+                window.open("https://drive.google.com/drive/folders/1JS4FmmiqkhQg-TkrmEE6mI9slRs3TSR_", "_blank");
+            } else if (year === "2") {
+                window.open("https://drive.google.com/drive/folders/1Y3p1XA269YRDI_mStNYWGsI2ambb-PTR", "_blank");
+            } else if (year === "3") {
+                window.open("https://drive.google.com/drive/folders/1s_k7KoJ_sv8K3gW3oc99GbkAHwgJs26v", "_blank");
+            } else if (year === "4") {
+                window.open("https://drive.google.com/drive/folders/1weZ3JCtxQczXQD9RslUAlWl_EUYObxR5", "_blank");
+            } else if (year === "5") {
+                window.open("https://drive.google.com/drive/folders/1RzJkLQq1bdrn4Y0_ZzKO9dvLTAQbwEcg", "_blank");
+            } else {
+                alert("هذه الصفحة غير متاحة للسنة المحددة."); // رسالة الخطأ
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="site-title"><a href="../index.html">Algeria University</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="../specialization Page/specialization.html">Specialization</a></li>
+                    <li><a href="../about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="specialization-details">
+            <h2>Specialization: Informatique</h2>
+            <p>Here you can find all the information related to the Informatique specialization, from first year to fifth year.</p>
+
+            <h3>Select Your Year</h3>
+            <form onsubmit="handleFormSubmit(event)">
+                <label for="year">Year:</label>
+                <select id="year" name="year" required>
+                    <option value="1">First Year</option>
+                    <option value="2">Second Year</option>
+                    <option value="3">Third Year</option>
+                    <option value="4">Fourth Year</option>
+                </select>
+
+                <button type="submit">Continue</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Algeria University™. All rights reserved.</p>
+    </footer>
+</body>
+</html>
