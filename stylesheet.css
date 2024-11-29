@@ -1,0 +1,77 @@
+/* إعادة تنسيق الصفحة */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+    color: #333;
+}
+
+
+
+
+
+
+
+
+
+.purchase-section {
+    margin-top: 12px;
+    padding: 50px 0;
+    background: #fff;
+    text-align: center;
+}
+
+.purchase-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+.order-info p, .order-info a {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.order-info .cta-btn {
+    background: #007bff;
+    color: #fff;
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.order-info .cta-btn:hover {
+    background: #0056b3;
+}
+
+.topics-list ul, .delivery ul, .instructions ol, .special-offers ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+h2 {
+    color: #333;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer .footer-bottom p {
+    margin: 0;
+}

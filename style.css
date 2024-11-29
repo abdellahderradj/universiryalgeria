@@ -1114,3 +1114,73 @@ body {
 }
 
 
+
+
+
+
+/* قسم المنشورات */
+.posts-container {
+    max-width: 800px; /* عرض الحاوية */
+    margin: 0 auto; /* جعل الحاوية في وسط الصفحة */
+    padding: 60px; /* مسافة داخلية */
+    background-color: #f9f9f9; /* خلفية خفيفة */
+    border-radius: 10px; /* زوايا مستديرة */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* ظل */
+}
+
+/* العنوان الرئيسي للقسم */
+.section-title {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* كل منشور */
+.post {
+    background-color: #ffffff; /* خلفية بيضاء */
+    border: 1px solid #ddd; /* حدود خفيفة */
+    border-radius: 8px; /* زوايا مستديرة */
+    margin-bottom: 20px; /* مسافة بين المنشورات */
+    padding: 15px; /* مسافة داخلية */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+    text-align: center; /* محاذاة المحتوى في الوسط */
+}
+
+/* صورة المنشور */
+.post-image {
+    width: 100%; /* عرض كامل الحاوية */
+    height: auto; /* الحفاظ على النسبة */
+    border-radius: 8px; /* زوايا مستديرة للصورة */
+    margin-bottom: 10px; /* مسافة أسفل الصورة */
+}
+
+/* وصف المنشور */
+.post-description {
+    font-size: 16px; /* حجم النص */
+    line-height: 1.6; /* ارتفاع السطر */
+    color: #555; /* لون نص غامق خفيف */
+    margin-bottom: 15px; /* مسافة أسفل الوصف */
+}
+
+/* أزرار التفاعل */
+.interactions {
+    display: flex; /* ترتيب أفقي */
+    justify-content: center; /* جعل الأزرار في الوسط */
+    gap: 10px; /* مسافة بين الأزرار */
+}
+
+.like-btn, .comment-btn {
+    background-color: #1877f2; /* لون أزرق */
+    color: white; /* لون النص */
+    border: none; /* بدون حدود */
+    padding: 10px 20px; /* مسافة داخلية */
+    border-radius: 5px; /* زوايا مستديرة */
+    font-size: 14px; /* حجم النص */
+    cursor: pointer; /* المؤشر على شكل يد */
+    transition: background-color 0.3s ease; /* حركة سلسة عند التمرير */
+}
+
+.like-btn:hover, .comment-btn:hover {
+    background-color: #155db0; /* لون أزرق أغمق عند التمرير */
+}
