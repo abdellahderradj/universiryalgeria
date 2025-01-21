@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="../logo.png" type="image/png"> <!-- Adding the logo as favicon -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Classe Réparatoire Sciences et Technologie (CPST) - Algeria University</title>
+    <script>
+        // Function to handle form submission and redirect based on selected year
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get the selected year value
+            var year = document.getElementById("year").value;
+
+            // Check the selected year and redirect to the appropriate Google Drive folder
+            if (year === "1") {
+                window.open("https://drive.google.com/drive/folders/0B_O-kwO3W5tXNzM3Y203aGZ1Rnc?resourcekey=0-ijY1OjvRrN_deSD9abUUBA", "_blank");
+            } 
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="site-title"><a href="../index.html">Algeria University</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="../specialization Page/specialization.html">Specialization</a></li>
+                    <li><a href="../about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="specialization-details">
+            <h2>Specialization: Classe Réparatoire Sciences et Technologie (CPST)</h2>
+            <p>Here you can find all the information related to the CPST specialization, from first year to third year.</p>
+
+            <h3>Select Your Year</h3>
+            <form onsubmit="handleFormSubmit(event)">
+                <label for="year">Year:</label>
+                <select id="year" name="year" required>
+                    <option value="1">First Year (CPST1)</option>
+                </select>
+
+                <button type="submit">Continue</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Algeria University™. All rights reserved.</p>
+    </footer>
+</body>
+</html>
