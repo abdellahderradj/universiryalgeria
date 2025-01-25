@@ -1184,3 +1184,68 @@ body {
 .like-btn:hover, .comment-btn:hover {
     background-color: #155db0; /* لون أزرق أغمق عند التمرير */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Sell Section */
+.sell-section {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 67px auto;
+    max-width: 800px;
+    border-radius: 10px;
+}
+
+.sell-section h2 {
+    text-align: center;
+}
+
+.sell-section p {
+    text-align: center;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.video-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.video-item {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.video-item h3 {
+    color: #333;
+    margin: 0 0 10px;
+}
+
+.video-item p {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0 0 15px;
+}
+
+
+
+
