@@ -1350,3 +1350,77 @@ nav {
 }
 
 
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* The dropdown button */
+.dropdown .dropbtn {
+    text-decoration: none; /* Remove underline */
+    color: white; /* Match .nav-links a */
+    font-size: 16px; /* Match font size */
+    font-weight: 500; /* Match font weight */
+    padding: 10px 50px; /* Match padding */
+    border-radius: 51px; /* Match rounded corners */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+    background-color: transparent; /* No background */
+}
+
+/* Dropdown button hover effect */
+.dropdown .dropbtn:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    background-color: #ff5722; /* Change background color on hover */
+    color: white; /* Ensure text remains readable */
+}
+
+/* Dropdown content */
+.dropdown-content {
+    display: none; /* Hidden initially */
+    position: absolute;
+    background-color: #333; /* Match the theme for dropdown background */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow */
+    z-index: 1;
+    padding: 10px 0; /* Add padding for spacing */
+    min-width: 200px; /* Set minimum width */
+    text-align: center; /* Center-align items */
+    left: -40px; /* Move it a little to the left */
+    top: 26px; /* Move it down a bit */
+    opacity: 0; /* Make it invisible initially */
+    visibility: hidden; /* Hide the dropdown */
+    transition: opacity 0.3s ease, visibility 0s 3s; /* Fade in and delay hide */
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    text-decoration: none; /* Remove underline */
+    color: white; /* White text color */
+    font-size: 16px; /* Match font size */
+    font-weight: 500; /* Match font weight */
+    padding: 10px 20px; /* Add padding inside links */
+    border-radius: 5px; /* Match rounded corners */
+    display: block; /* Ensure links are block elements */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+}
+
+/* Hover effect for dropdown links */
+.dropdown-content a:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    background-color: #ff5722; /* Slightly lighter background on hover */
+}
+
+/* Show dropdown content on hover of button or content */
+.dropdown:hover .dropdown-content {
+    display: block; /* Make the dropdown visible */
+    opacity: 1; /* Make it visible immediately */
+    visibility: visible; /* Make it visible */
+    transition: opacity 0.3s ease, visibility 0s 0s; /* Fade in without delay */
+}
+
+/* Keep dropdown content visible when hovering over the dropdown menu */
+.dropdown-content:hover {
+    visibility: visible; /* Keep dropdown visible when hovering over the content */
+    opacity: 1; /* Ensure opacity stays 1 */
+}
