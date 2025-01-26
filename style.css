@@ -1247,5 +1247,106 @@ body {
 }
 
 
+        /* General styling for the video thumbnails */
+        .video-thumbnail-container {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            max-width: 560px;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .video-thumbnail-container img {
+            width: 100%;
+            height: auto;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-thumbnail-container .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-thumbnail-container .overlay .play-button {
+            font-size: 40px;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .video-thumbnail-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-thumbnail-container:hover .overlay {
+            opacity: 1;
+        }
+
+        .video-thumbnail-container:hover .overlay .play-button {
+            transform: scale(1.2);
+        }
+
+        .video-thumbnail-container p {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 16px;
+            color: white;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+/* General Navigation Bar Styling */
+nav {
+    padding: 15px; /* Add padding around the navigation bar */
+}
+
+/* Navigation List Styling */
+.nav-links {
+    list-style-type: none; /* Remove bullet points */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Align items in a row */
+    flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+    justify-content: center; /* Center align the navigation items */
+    gap: 15px; /* Add space between items */
+}
+
+/* Individual Navigation Item Styling */
+.nav-links li {
+    margin: 0; /* Reset margin for list items */
+}
+
+/* Link Styling */
+.nav-links a {
+    text-decoration: none; /* Remove underline from links */
+    color: white; /* White text color */
+    font-size: 16px; /* Set font size */
+    font-weight: 500; /* Slightly bold text */
+    padding: 10px 20px; /* Add padding inside links */
+    border-radius: 5px; /* Rounded corners for links */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+}
+
+/* Hover Effect for Links */
+.nav-links a:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+}
 
 
