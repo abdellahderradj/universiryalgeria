@@ -569,10 +569,18 @@
 
     <script>
         function promptForCode(videoId, videoContainer) {
-            const correctCode = '79104';
+            // List of valid codes
+            const validCodes = [
+                '79104', '48219', '76038', '12958', '59301', 
+    '84726', '36419', '52094', '71863', '29475'
+            ];
+    
+            // Prompt the user to enter the code
             let userCode = prompt('Enter the five-digit code to unlock the video:');
-
-            if (userCode === correctCode) {
+    
+            // Check if the entered code is valid
+            if (validCodes.includes(userCode)) {
+                // Create the iframe for the YouTube video
                 let iframe = document.createElement('iframe');
                 iframe.width = '560';
                 iframe.height = '315';
@@ -581,15 +589,17 @@
                 iframe.frameborder = '0';
                 iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
                 iframe.allowfullscreen = true;
-
-                // Get the video container to replace its content with the iframe
+    
+                // Replace the content of the video container with the iframe
                 const videoItem = videoContainer.closest('.video-item');
                 videoItem.innerHTML = ''; // Clear the thumbnail and description
                 videoItem.appendChild(iframe); // Add the iframe to the video item
             } else {
+                // Notify the user if the code is incorrect
                 alert('Incorrect code. The video will not play.');
             }
         }
     </script>
-</body>
+    </body>
+    
 </html>
