@@ -492,6 +492,8 @@
                 let iframe = document.createElement('iframe');
                 iframe.width = '560';
                 iframe.height = '315';
+
+                window.open('https://www.youtube.com/watch?v=' + videoId + '&autoplay=1', '_blank');
                 iframe.src = 'https://www.youtube.com/embed/' + videoId;
                 iframe.title = 'YouTube video player';
                 iframe.frameborder = '0';
