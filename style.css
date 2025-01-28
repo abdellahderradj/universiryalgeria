@@ -341,23 +341,31 @@ footer {
     color: #e4e4e4; /* لون النص المتحرك */
 }
 
+/* Center the button within its parent container */
+.parent-container {
+    text-align: center; /* This will center the button */
+}
+
+/* The button styling remains the same */
 .cta-btn {
     background-color: #ff5722;
     color: white;
-    padding: 9px 21px;
-    border-radius:30px;
+    padding: 9px 23px;
+    border-radius: 30px;
     font-weight: 600;
     text-decoration: none;
-    font-size: 1.3rem; /* تكبير حجم الزر */
-    margin-top: 18px; /* مسافة فوق الزر */
-    display: inline-block;
+    font-size: 1.3rem; /* Button size */
+    margin-top: 2px; /* Spacing above the button */
+    display: inline-block; /* Keep button inline */
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+/* Hover effect for the button */
 .cta-btn:hover {
     background-color: #e64a19;
     transform: scale(1.05);
 }
+
 /* تنسيق الهيدر */
 header {
     background-color: rgba(0, 0, 0, 0.3);
