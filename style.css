@@ -230,47 +230,48 @@ footer {
     margin-top: 20px;
 }
 
-/* Login Container */
 .login-container {
-    max-width: 350px;
-    margin: 140px auto;
-    padding: 10px 20px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: auto;
-}
-
-.login-container h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #0056b3;
+    max-width: 400px;
+    margin: 170px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
 }
 
 .login-container label {
-    margin-bottom: 5px;
-    font-size: 16px;
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
 }
 
 .login-container input {
-    margin-bottom: 15px;
-    padding: 12px;
+    margin-bottom: 20px;
+    padding: 14px;
     font-size: 16px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px;
     width: 100%;
+    transition: border-color 0.3s ease;
+}
+
+.login-container input:focus {
+    border-color: #ff5722;
+    outline: none;
 }
 
 .login-container button {
     background-color: #ff5722;
     color: white;
-    padding: 12px;
+    padding: 14px;
     font-size: 16px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     width: 100%;
+    transition: background-color 0.3s ease;
 }
 
 .login-container button:hover {
@@ -279,20 +280,37 @@ footer {
 
 .login-container p {
     text-align: center;
-    margin: 13px 0;
-    font-size: 14px;
-    color: #0056b3;
+    margin: 20px 0;
+    font-size: 15px;
+    color: #555;
 }
 
 .login-container a {
     text-decoration: none;
     color: #ff5722;
     transition: color 0.3s ease;
+    font-weight: bold;
 }
 
 .login-container a:hover {
     color: #e64a19;
 }
+
+.login-container .forgot-password {
+    font-size: 14px;
+    color: #888;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.login-container .forgot-password a {
+    color: #0056b3;
+}
+
+.login-container .forgot-password a:hover {
+    color: #ff5722;
+}
+
 
 /* Get Started Section */
 .get-started-container {
