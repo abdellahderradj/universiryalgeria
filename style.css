@@ -1473,3 +1473,19 @@ nav {
             margin: 0 auto; /* Center on smaller screens */
         }
     }
+
+
+
+    @media (max-width: 768px) {
+        body {
+          font-size: 14px;
+        }
+        .container {
+          width: 95%;
+        }
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+      
