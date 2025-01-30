@@ -1228,9 +1228,9 @@ body {
 /* Sell Section */
 .sell-section {
     background-color: #fff;
-    padding: 20px;
+    padding: 30px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin: 99px auto;
+    margin: 111px auto;
     max-width: 800px;
     border-radius: 10px;
 }
