@@ -119,3 +119,41 @@ a:hover {
     color: #e74c3c;
     text-align: center;
 }
+#loading {
+    display: none; 
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    padding: 30px 50px; 
+    background-color: rgba(0, 0, 0, 0.8); 
+    color: white; 
+    border-radius: 50%; 
+    font-size: 20px; 
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    animation: spin 2s linear infinite, fadeIn 1s ease-in-out;
+}
+
+/* حركة التدوير */
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* حركة التلاشي */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
