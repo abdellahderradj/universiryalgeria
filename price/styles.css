@@ -1,0 +1,200 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    gap: 110px;
+    flex-wrap: wrap;
+}
+
+.images img {
+    width: 50%;  /* زيادة العرض */
+    max-width: 350px;  /* تكبير الحجم الأقصى */
+    height: 400px;  /* تحديد ارتفاع أكبر */
+    object-fit: cover;  /* الحفاظ على تناسق الصورة */
+    border-radius: 10px;
+    display: none;  /* إخفاء جميع الصور عند التحميل */
+}
+
+.images img:first-child {
+    display: block;  /* إظهار أول صورة فقط */
+}
+
+.images img:last-child {
+    margin-top: 20px;  /* إظهار الصورة الأخيرة أسفل قليلاً */
+}
+
+
+
+
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+}
+
+a {
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+/* تنسيق الصور */
+.images {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.images img {
+    width: 100%;
+    max-width: 350px;  /* الحد الأقصى للعرض */
+    height: 100%;  /* الطول يتناسب مع عرض الصورة */
+    max-height: 500px;  /* تحديد الحد الأقصى للطول */
+    object-fit: cover;  /* يضمن عدم تشويه الصورة مع ملء الحاوية */
+    object-position: top;  /* ضبط الصورة بحيث تبدأ من الأعلى */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.images img:hover {
+    transform: scale(1.05);
+}
+
+/* أيقونات مواقع التواصل */
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    margin: 10px;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+}
+
+
+
+
+
+form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    margin: 20px auto;
+    text-align: right;
+}
+
+form label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+form input[type="file"] {
+    background: white;
+    padding: 5px;
+}
+
+form button {
+    background: #ff5e62;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+form button:hover {
+    background: #ff9966;
+}
+
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-link {
+    margin-right: 10px;
+    font-size: 18px;
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link:hover {
+    color: #0056b3;  /* تغيير اللون عند التحويم */
+    transform: scale(1.1);  /* تكبير الرابط عند التحويم */
+}
+.account-number {
+    color: #6c757d;  /* لون رمادي فاتح */
+    font-weight: normal;  /* تقليل البروز */
+}
+
+
