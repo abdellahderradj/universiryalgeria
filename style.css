@@ -1506,4 +1506,30 @@ nav {
           height: auto;
         }
       }
-      
+      #registration-section {
+        text-align: center; /* محاذاة العنوان والصورة في المنتصف */
+        margin: 20px 0; /* إضافة هوامش من الأعلى والأسفل */
+    }
+    
+    .sheets-container {
+        display: flex;
+        justify-content: center; /* محاذاة الصور في المنتصف */
+        gap: 20px; /* إضافة مسافة بين الصور */
+        flex-wrap: wrap; /* تمكين الصور من التفاف إذا كانت كثيرة */
+    }
+    
+    .sheet img {
+        width: 100%; /* جعل الصورة مرنة وتأخذ عرض الحاوية */
+        max-width: 350px; /* تحديد الحجم الأقصى للصورة */
+        height: auto; /* الحفاظ على نسبة الطول إلى العرض */
+        border-radius: 10px; /* إضافة حواف دائرية للصورة */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف حول الصورة */
+        object-fit: cover; /* الحفاظ على تناسق الصورة داخل الحواف */
+        transition: transform 0.3s ease; /* تأثير عند التمرير */
+    }
+    
+    .sheet img:hover {
+        transform: scale(1.05); /* تكبير الصورة قليلاً عند التمرير عليها */
+        cursor: pointer; /* تغيير شكل المؤشر عند التمرير على الصورة */
+    }
+    
