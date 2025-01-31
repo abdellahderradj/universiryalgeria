@@ -234,7 +234,7 @@ footer {
 /* Modern and Clean Login Form */
 .login-container {
     max-width: 380px;
-    margin: 150px auto;
+    margin: 110px auto;
     padding: 35px;
     background: linear-gradient(135deg, #fff, #f8f8f8);
     border-radius: 20px;
@@ -1242,7 +1242,7 @@ body {
     background-color: #fff;
     padding: 30px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin: 111px auto;
+    margin: 70px auto;
     max-width: 800px;
     border-radius: 10px;
 }
@@ -1268,7 +1268,7 @@ body {
     background: #f9f9f9;
     border: 1px solid #ddd;
     padding: 15px;
-    border-radius: 8px;
+    border-radius:8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
