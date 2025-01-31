@@ -1544,4 +1544,27 @@ nav {
         transform: scale(1.05); /* تكبير الصورة قليلاً عند التمرير عليها */
         cursor: pointer; /* تغيير شكل المؤشر عند التمرير على الصورة */
     }
-    
+    /* Loader style */
+.loader {
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 30px;
+    animation: l1 1s linear infinite alternate;
+    position: fixed; /* Fix the position on the screen */
+    top: 50%;         /* Center vertically */
+    left: 50%;        /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to truly center */
+  }
+  
+  /* Loader text */
+  .loader:before {
+    content: "Loading...";
+  }
+  
+  /* Animation */
+  @keyframes l1 {
+    to {
+      opacity: 0;
+    }
+  }
+  

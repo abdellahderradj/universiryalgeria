@@ -48,14 +48,41 @@
         <p>Don't have an account? <a href="../price/price.html" target="_blank">Register here</a></p>
     </div>
 
-    <!-- إضافة عنصر التحميل هنا -->
-    <div id="loading" style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 20px; background-color: rgba(0, 0, 0, 0.7); color: white; border-radius: 5px; font-size: 20px;">
-        ... جاري التحميل
+    <div id="loading-overlay">
+        <div id="loading" class="loader" style="display:none;"></div>
     </div>
-    
 
     <footer>
         <p>&copy; 2024 Algeria University™. All rights reserved.</p>
     </footer>
+
+    <!-- JavaScript placed just before the closing body tag -->
+    <script>
+ // Function to show the loading screen
+function showLoading() {
+  document.getElementById("loading-overlay").style.display = "flex";  // Show overlay
+  document.body.classList.add("loading");  // Disable background interaction
+}
+
+// Function to hide the loading screen
+function hideLoading() {
+  document.getElementById("loading-overlay").style.display = "none";  // Hide overlay
+  document.body.classList.remove("loading");  // Re-enable background interaction
+}
+
+// Example login function to simulate a process
+function login() {
+  showLoading();
+
+  // Simulate a delay (e.g., form submission or API request)
+  setTimeout(function() {
+    hideLoading();
+    document.getElementById("result").innerText = "Login successful!";
+  }, 3000); // Adjust time as needed
+}
+
+
+    </script>
+
 </body>
 </html>
