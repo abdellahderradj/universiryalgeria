@@ -1567,4 +1567,9 @@ nav {
       opacity: 0;
     }
   }
-  
+  /* Dropdown content */
+.dropdown-content {
+    max-height:550px; /* Limit height */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds max-height */
+    overflow-x: hidden; /* Disable horizontal scrolling */
+}
