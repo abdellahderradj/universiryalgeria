@@ -483,7 +483,7 @@ header nav ul li a:hover {
     background: -webkit-linear-gradient(45deg, #ffdd00, #ff8800); /* خلفية متدرجة للنص */
     -webkit-background-clip: text; /* عرض الخلفية فقط على النص */
     background-clip: text; /* تعريف الخاصية القياسية */
-        -webkit-text-fill-color: transparent; /* جعل لون النص شفافًا لعرض التدرج */
+    -webkit-text-fill-color: transparent; /* جعل لون النص شفافًا لعرض التدرج */
 }
 
 /* تنسيق النصوص */
@@ -529,6 +529,59 @@ header nav ul li a:hover {
     color: #ffffff; /* تغيير لون النص إلى الأزرق عند التحويم */
     transform: scale(1.2); /* تكبير الرابط عند التحويم */
 }
+
+/* استجابة للأجهزة الصغيرة */
+@media (max-width: 768px) {
+    .about-container {
+        padding: 40px 10px; /* تقليل الحشوة الداخلية للأجهزة الصغيرة */
+    }
+
+    .about-container h2 {
+        font-size: 30px; /* تصغير حجم الخط للأجهزة الصغيرة */
+        margin-bottom: 20px; /* تقليل المسافة أسفل العنوان */
+    }
+
+    .about-container p {
+        font-size: 18px; /* تقليل حجم الخط */
+        padding: 0 10px; /* تقليل الحشوة الجانبية */
+    }
+
+    .about-container ul {
+        flex-direction: column; /* تغيير الاتجاه إلى عمودي للأجهزة الصغيرة */
+        justify-content: center; /* محاذاة العناصر في المنتصف */
+    }
+
+    .about-container ul li {
+        margin: 10px 0; /* تقليل المسافة بين العناصر */
+    }
+
+    .about-container ul li a {
+        font-size: 16px; /* تقليل حجم الخط */
+        padding: 8px 12px; /* تقليل الحشوة الداخلية */
+    }
+}
+
+/* استجابة للأجهزة الصغيرة جداً */
+@media (max-width: 480px) {
+    .about-container {
+        margin: 40px auto; /* تقليل المسافة العليا للمحتوى */
+        padding: 30px 10px; /* تقليل الحشوة الداخلية */
+    }
+
+    .about-container h2 {
+        font-size: 24px; /* تصغير الحجم أكثر */
+    }
+
+    .about-container p {
+        font-size: 16px; /* تقليل حجم الخط بشكل أكبر */
+    }
+
+    .about-container ul li a {
+        font-size: 14px; /* تقليل حجم الخط بشكل أكبر */
+        padding: 6px 10px; /* تقليل الحشوة بشكل أكبر */
+    }
+}
+
 
 /* تنسيق تذييل الصفحة */
 footer {
