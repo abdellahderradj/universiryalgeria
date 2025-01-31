@@ -98,42 +98,39 @@
 <body>
     <header>
         <div class="container">
+            <!-- Hamburger Menu Toggle -->
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <nav>
                 <ul class="nav-links">
                     <li><a href="index.html">Ondes Et Vibrations</a></li>
-
-                    <li><a href="informatique1.html">Informatique 1</a></li>
-                    <li><a href="informatique2.html">Informatique 2 (Algorithm) </a></li>
-
-                    <li><a href="electroniquef1.html" >Electronique fondamentale 1</a></li>
+                    <li><a href="/informatique1.html">Informatique 1</a></li>
+                    <li><a href="/informatique2.html">Informatique 2 (Algorithm)</a></li>
+                    <li><a href="/electroniquef1.html">Electronique fondamentale 1</a></li>
                     <li class="dropdown">
-                        <a href="javascript:void(0)" class="dropbtn">More</a>
-
+                        <a href="javascript:void(0)" class="dropbtn" onclick="toggleDropdown(event)">More</a>
                         <ul class="dropdown-content">
-                            
-                            <li><a href="informatique3.html">Informatique 3</a></li>
-                            <li><a href="statistique.html">Probabilité et Statistique S3</a></li>
-                            <li><a href="specialization Page/specialization.html">Cours</a></li>
-
-                            <li><a href="quadripole.html">Les Quadripôles</a></li>
-                            <li><a href="systemesasservis.html">Systèmes Asservis</a></li>
-                             <li><a href="Theorie_du_signal.html">Theorie du signal  </a></li>
-                         <li><a href="Logique_Combinatoire_et_Séquentielle.html">Logique Combinatoire et Séquentielle</a></li>
-                         <li><a href="Electrotechnique_fondamentale1.html">Electrotechnique fondamentale 1</a></li>
-                         <li><a href="reseaux_electriques.html">Réseaux Électriques L3 </a></li>
-                         <li><a href="methodenumerique.html">Méthodes Numériques (L2 + M1)</a></li>
-                         <li><a href="Machine_electrique.html">Machines électriques (L2, L3, M1)</a></li>
-
-                         <!-- Add more items as needed -->
+                            <li><a href="/informatique3.html">Informatique 3</a></li>
+                            <li><a href="/statistique.html">Probabilité et Statistique S3</a></li>
+                            <li><a href="/specialization Page/specialization.html">Cours</a></li>
+                            <li><a href="/quadripole.html">Les Quadripôles</a></li>
+                            <li><a href="/systemesasservis.html">Systèmes Asservis</a></li>
+                            <li><a href="/Theorie_du_signal.html">Theorie du signal</a></li>
+                            <li><a href="/Logique_Combinatoire_et_Séquentielle.html">Logique Combinatoire et Séquentielle</a></li>
+                            <li><a href="/Electrotechnique_fondamentale1.html">Electrotechnique fondamentale 1</a></li>
+                            <li><a href="/reseaux_electriques.html">Réseaux Électriques L3</a></li>
+                            <li><a href="/methodenumerique.html">Méthodes Numériques (L2 + M1)</a></li>
+                            <li><a href="/Machine_electrique.html">Machines électriques (L2, L3, M1)</a></li>
                         </ul>
-                        <li><a href="project-folder/index.html">Login</a></li>
-
                     </li>
+                    <li><a href="project-folder/index.html" >Login</a></li>
                 </ul>
             </nav>
         </div>
-    </header>
-    
+    </header> 
     
     <section class="sell-section">
         <div class="container">
@@ -485,45 +482,65 @@
 
 
     
+  
     <script>
-        function promptForCode(videoId, videoContainer) {
-            // List of valid codes
-            const validCodes = [
-            '70351', '94728', '58294', '16384', '27650',
-            ];
-    
-            // Prompt the user to enter the code
-            let userCode = prompt('يرجى إدخال الكود المكون من خمسة أرقام لفتح الفيديو :'); 
-    
-            // Check if the entered code is valid
-            if (validCodes.includes(userCode)) {
-                // Create the iframe for the YouTube video
-                let iframe = document.createElement('iframe');
-                iframe.width = '560';
-                iframe.height = '315';
+        // Toggle the mobile menu
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
 
-// تحقق من الجهاز: هاتف أو جهاز آخر
-if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-    // افتح الفيديو في تطبيق YouTube على الهاتف
-    window.location.href = 'youtube://www.youtube.com/watch?v=' + videoId;
-} else {
-    // افتح الفيديو في تبويب جديد على المتصفح
-    window.open('https://www.youtube.com/watch?v=' + videoId + '&autoplay=1', '_blank');
-}
-                iframe.src = 'https://www.youtube.com/embed/' + videoId;
-                iframe.title = 'YouTube video player';
-                iframe.frameborder = '0';
-                iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-                iframe.allowfullscreen = true;
-    
-                // Replace the content of the video container with the iframe
-                const videoItem = videoContainer.closest('.video-item');
-                videoItem.innerHTML = ''; // Clear the thumbnail and description
-                videoItem.appendChild(iframe); // Add the iframe to the video item
-            } else {
-                // Notify the user if the code is incorrect
-                alert('Incorrect code. The video will not play.');
-            }
+        // Toggle the dropdown menu (click to show)
+        function toggleDropdown(event) {
+            event.preventDefault(); // Prevent the default link behavior
+            const dropdown = event.currentTarget; // The "More" link container
+            const dropdownContent = dropdown.nextElementSibling; // Get the associated dropdown menu
+            
+            // Toggle the 'active' class
+            dropdownContent.classList.toggle('active');
+            
+            // Close all other dropdowns
+            closeAllDropdowns(dropdown);
+        }
+
+        // Close all dropdowns except the clicked one
+        function closeAllDropdowns(exceptDropdown) {
+            const dropdowns = document.querySelectorAll('.dropdown-content');
+            dropdowns.forEach(dropdown => {
+                if (!dropdown.closest('.dropdown') === exceptDropdown) {
+                    dropdown.classList.remove('active');
+                }
+            });
+        }
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (event) => {
+            const dropdowns = document.querySelectorAll('.dropdown-content');
+            dropdowns.forEach(dropdown => {
+                if (!dropdown.contains(event.target) && !dropdown.closest('.dropdown').contains(event.target)) {
+                    dropdown.classList.remove('active');
+                }
+            });
+        });
+
+        // Loading screen functions
+        function showLoading() {
+            document.getElementById("loading-overlay").style.display = "flex";
+            document.body.classList.add("loading");
+        }
+
+        function hideLoading() {
+            document.getElementById("loading-overlay").style.display = "none";
+            document.body.classList.remove("loading");
+        }
+
+        // Example login function
+        function login() {
+            showLoading();
+            setTimeout(function () {
+                hideLoading();
+                document.getElementById("result").innerText = "Login successful!";
+            }, 3000);
         }
     </script>
     </body>

@@ -1573,3 +1573,78 @@ nav {
     overflow-y: auto; /* Enable vertical scrolling if content exceeds max-height */
     overflow-x: hidden; /* Disable horizontal scrolling */
 }
+/* General Styles for Dropdown */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 200px;
+    z-index: 1;
+}
+
+.dropdown-content.active {
+    display: block;
+}
+
+/* Responsive Styles for Small Screens */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 50px; /* Adjust based on your header height */
+        left: 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Dropdown menu for small screens */
+    .dropdown {
+        position: relative;
+    }
+
+    .dropdown-content {
+        position: static;  /* Display dropdown below the "More" link */
+        width: 100%;       /* Full width on small screens */
+    }
+
+    /* Remove hover effect for dropdown */
+    .dropdown:hover .dropdown-content {
+        display: none;
+    }
+
+    /* Activate dropdown on click */
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+}
+
+/* For large screens (above 768px), keep dropdown as absolute positioning */
+@media (min-width: 769px) {
+    .dropdown-content {
+        position: absolute;
+    }
+}

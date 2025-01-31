@@ -6,47 +6,44 @@
     <link rel="stylesheet" href="/style.css">
     <script defer src="script.js"></script>
     <title>Login - Algeria University</title>
-    <link rel="icon" href="/logo.png" type="image/png"> <!-- إضافة الشعار كـ favicon -->
+    <link rel="icon" href="/logo.png" type="image/png">
 </head>
 <body>
     <header>
         <div class="container">
+            <!-- Hamburger Menu Toggle -->
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <nav>
                 <ul class="nav-links">
                     <li><a href="index.html">Ondes Et Vibrations</a></li>
-
                     <li><a href="/informatique1.html">Informatique 1</a></li>
-                    <li><a href="/informatique2.html">Informatique 2 (Algorithm) </a></li>
-
-                    <li><a href="/electroniquef1.html" >Electronique fondamentale 1</a></li>
+                    <li><a href="/informatique2.html">Informatique 2 (Algorithm)</a></li>
+                    <li><a href="/electroniquef1.html">Electronique fondamentale 1</a></li>
                     <li class="dropdown">
-                        <a href="javascript:void(0)" class="dropbtn">More</a>
-
+                        <a href="javascript:void(0)" class="dropbtn" onclick="toggleDropdown(event)">More</a>
                         <ul class="dropdown-content">
-                            
                             <li><a href="/informatique3.html">Informatique 3</a></li>
                             <li><a href="/statistique.html">Probabilité et Statistique S3</a></li>
                             <li><a href="/specialization Page/specialization.html">Cours</a></li>
-
                             <li><a href="/quadripole.html">Les Quadripôles</a></li>
                             <li><a href="/systemesasservis.html">Systèmes Asservis</a></li>
-                             <li><a href="/Theorie_du_signal.html">Theorie du signal  </a></li>
-                         <li><a href="/Logique_Combinatoire_et_Séquentielle.html">Logique Combinatoire et Séquentielle</a></li>
-                         <li><a href="/Electrotechnique_fondamentale1.html">Electrotechnique fondamentale 1</a></li>
-                         <li><a href="/reseaux_electriques.html">Réseaux Électriques L3 </a></li>
-                         <li><a href="/methodenumerique.html">Méthodes Numériques (L2 + M1)</a></li>
-                         <li><a href="/Machine_electrique.html">Machines électriques (L2, L3, M1)</a></li>
-
-                         <!-- Add more items as needed -->
+                            <li><a href="/Theorie_du_signal.html">Theorie du signal</a></li>
+                            <li><a href="/Logique_Combinatoire_et_Séquentielle.html">Logique Combinatoire et Séquentielle</a></li>
+                            <li><a href="/Electrotechnique_fondamentale1.html">Electrotechnique fondamentale 1</a></li>
+                            <li><a href="/reseaux_electriques.html">Réseaux Électriques L3</a></li>
+                            <li><a href="/methodenumerique.html">Méthodes Numériques (L2 + M1)</a></li>
+                            <li><a href="/Machine_electrique.html">Machines électriques (L2, L3, M1)</a></li>
                         </ul>
-                        <li><a href="../price/price.html" target="_blank">Sign Up</a></li>
-
                     </li>
+                    <li><a href="../price/price.html" target="_blank">Sign Up</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    
 
     <div class="login-container">
         <h2>Login</h2>
@@ -65,33 +62,65 @@
         <p>&copy; 2024 Algeria University™. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript placed just before the closing body tag -->
     <script>
- // Function to show the loading screen
-function showLoading() {
-  document.getElementById("loading-overlay").style.display = "flex";  // Show overlay
-  document.body.classList.add("loading");  // Disable background interaction
-}
+        // Toggle the mobile menu
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
 
-// Function to hide the loading screen
-function hideLoading() {
-  document.getElementById("loading-overlay").style.display = "none";  // Hide overlay
-  document.body.classList.remove("loading");  // Re-enable background interaction
-}
+        // Toggle the dropdown menu (click to show)
+        function toggleDropdown(event) {
+            event.preventDefault(); // Prevent the default link behavior
+            const dropdown = event.currentTarget; // The "More" link container
+            const dropdownContent = dropdown.nextElementSibling; // Get the associated dropdown menu
+            
+            // Toggle the 'active' class
+            dropdownContent.classList.toggle('active');
+            
+            // Close all other dropdowns
+            closeAllDropdowns(dropdown);
+        }
 
-// Example login function to simulate a process
-function login() {
-  showLoading();
+        // Close all dropdowns except the clicked one
+        function closeAllDropdowns(exceptDropdown) {
+            const dropdowns = document.querySelectorAll('.dropdown-content');
+            dropdowns.forEach(dropdown => {
+                if (!dropdown.closest('.dropdown') === exceptDropdown) {
+                    dropdown.classList.remove('active');
+                }
+            });
+        }
 
-  // Simulate a delay (e.g., form submission or API request)
-  setTimeout(function() {
-    hideLoading();
-    document.getElementById("result").innerText = "Login successful!";
-  }, 3000); // Adjust time as needed
-}
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (event) => {
+            const dropdowns = document.querySelectorAll('.dropdown-content');
+            dropdowns.forEach(dropdown => {
+                if (!dropdown.contains(event.target) && !dropdown.closest('.dropdown').contains(event.target)) {
+                    dropdown.classList.remove('active');
+                }
+            });
+        });
 
+        // Loading screen functions
+        function showLoading() {
+            document.getElementById("loading-overlay").style.display = "flex";
+            document.body.classList.add("loading");
+        }
 
+        function hideLoading() {
+            document.getElementById("loading-overlay").style.display = "none";
+            document.body.classList.remove("loading");
+        }
+
+        // Example login function
+        function login() {
+            showLoading();
+            setTimeout(function () {
+                hideLoading();
+                document.getElementById("result").innerText = "Login successful!";
+            }, 3000);
+        }
     </script>
-
 </body>
 </html>
