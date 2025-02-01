@@ -168,6 +168,39 @@
             navLinks.classList.toggle('active');
         }
 
+        // Toggle the dropdown menu (click to show)
+        function toggleDropdown(event) {
+            event.preventDefault(); // Prevent the default link behavior
+            const dropdown = event.currentTarget; // The "More" link container
+            const dropdownContent = dropdown.nextElementSibling; // Get the associated dropdown menu
+            
+            // Toggle the 'active' class
+            dropdownContent.classList.toggle('active');
+            
+            // Close all other dropdowns
+            closeAllDropdowns(dropdown);
+        }
+
+        // Close all dropdowns except the clicked one
+        function closeAllDropdowns(exceptDropdown) {
+            const dropdowns = document.querySelectorAll('.dropdown-content');
+            dropdowns.forEach(dropdown => {
+                if (!dropdown.closest('.dropdown') === exceptDropdown) {
+                    dropdown.classList.remove('active');
+                }
+            });
+        }
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (event) => {
+            const dropdowns = document.querySelectorAll('.dropdown-content');
+            dropdowns.forEach(dropdown => {
+                if (!dropdown.contains(event.target) && !dropdown.closest('.dropdown').contains(event.target)) {
+                    dropdown.classList.remove('active');
+                }
+            });
+        });
+
         // Loading screen functions
         function showLoading() {
             document.getElementById("loading-overlay").style.display = "flex";
