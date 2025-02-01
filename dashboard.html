@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Videos</title>
+    <link rel="stylesheet" href="project-folder/style.css">
+    <script defer>
+        window.onload = function() {
+            const videos = JSON.parse(localStorage.getItem("videos"));
+            if (!videos || videos.length === 0) {
+                document.getElementById("content").innerHTML = "<p>❌ You don't have permission to watch any videos.</p>";
+            } else {
+                let html = "<h2>Available Videos :</h2>";
+                videos.forEach(video => {
+                    html += `<p><a href="project-folder/${video}.html" target="_blank">${video}</a></p>`;
+                });
+                document.getElementById("content").innerHTML = html;
+            }
+        }
+    </script>
+    <link rel="icon" href="logo.png" type="image/png"> <!-- Update the favicon path -->
+</head>
+<body>
+    <div id="content"></div>
+</body>
+</html>
