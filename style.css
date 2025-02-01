@@ -1701,3 +1701,79 @@ nav {
         position: absolute;
     }
 }
+.nav-links li a[href="Ondes_Et_Vibrations.html"] {
+    background-color: #ff4d4d; /* Couleur rouge pour attirer l'attention */
+    color: #fff; /* Texte blanc */
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 8px;
+    position: relative;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet de survol */
+.nav-links li a[href="Ondes_Et_Vibrations.html"]:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 77, 77, 0.8);
+}
+
+/* Animation de pulsation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.nav-links li a[href="Ondes_Et_Vibrations.html"]::after {
+    content: "🔥 Meilleure Vente !"; /* Indicateur de réduction */
+    font-size: 12px;
+    color: rgb(248, 248, 0);
+    position: absolute;
+    top: -14px;
+    right: -20px;
+    background: rgb(255, 0, 0);
+    padding: 3px 7px;
+    border-radius: 5px;
+    font-weight: bold;
+    animation: pulse 1.5s infinite;
+}
+/* Apply the styles to the specific link */
+.highlighted-link {
+    background-color: #ff4d4d; /* Red color to attract attention */
+    color: #fff; /* White text */
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 8px;
+    position: relative;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.highlighted-link:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 77, 77, 0.8);
+}
+
+/* Pulsating animation for the badge */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Add the badge for "Meilleure Vente!" */
+.highlighted-link::after {
+    content: "🔥 Meilleure Vente !"; /* Badge text */
+    font-size: 12px;
+    color: rgb(248, 248, 0);
+    position: absolute;
+    top: -14px;
+    right: -20px;
+    background: rgb(255, 0, 0);
+    padding: 3px 7px;
+    border-radius: 5px;
+    font-weight: bold;
+    animation: pulse 1.5s infinite;
+}
