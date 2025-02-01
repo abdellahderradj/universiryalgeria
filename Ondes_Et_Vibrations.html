@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="script.js" defer></script>
-
     <script>
         document.addEventListener('contextmenu', function (e) {
             e.preventDefault();
@@ -31,7 +29,70 @@
     <title>Algeria University - Buy Videos</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* General styling for the video thumbnails */
+        .video-thumbnail-container {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            max-width: 560px;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
+        .video-thumbnail-container img {
+            width: 100%;
+            height: auto;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-thumbnail-container .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-thumbnail-container .overlay .play-button {
+            font-size: 40px;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .video-thumbnail-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-thumbnail-container:hover .overlay {
+            opacity: 1;
+        }
+
+        .video-thumbnail-container:hover .overlay .play-button {
+            transform: scale(1.2);
+        }
+
+        .video-thumbnail-container p {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 16px;
+            color: white;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -45,7 +106,7 @@
             </div>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="Ondes_Et_Vibrations.html">Ondes Et Vibrations</a></li>
+                    <li><a href="/Ondes_Et_Vibrations.html">Ondes Et Vibrations</a></li>
                     <li><a href="/informatique1.html">Informatique 1</a></li>
                     <li><a href="/informatique2.html">Informatique 2 (Algorithm)</a></li>
                     <li><a href="/electroniquef1.html">Electronique fondamentale 1</a></li>
@@ -70,7 +131,7 @@
             </nav>
         </div>
     </header>
-    
+
     <section class="sell-section">
         <div class="container">
             <h2>: استثمر في مستقبلك الآن ! – احصل على جميع الفيديوهات التعليمية</h2>
@@ -83,28 +144,28 @@
     
             
                 <div class="parent-container">
-                    <a href="price/price.html" class="cta-btn" target="_blank">Buy Now - 1200 دج</a>
+                    <a href="price/price.html" class="cta-btn" target="_blank">Buy Now - 800 دج</a>
                 </div>
             </p>
             <div class="video-list">
-                <!-- Video Items -->
-  <!-- Video Item 1 -->
+             <!-- Video Item 1 -->
 <div class="video-item">
-    <h3>Résumé Réseaux Électriques : GMD, GMR, L, C - Ligne Monophasée et Triphasée Partie 01</h3>
+    <h3>Ondes et Vibrations : Révision Complète des Oscillations Libres Non Amorties en arabe</h3>
     <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
-        <img src="reseau_electrique/01.jpg" alt="Video Thumbnail">
+        <img src="sell/01.jpg" alt="Video Thumbnail">
         <div class="overlay">
             <span class="play-button">&#9654;</span>
         </div>
         <p>Click to start watching</p>
     </div>
+    <div class="video-embed"></div>
 </div>
 
 <!-- Video Item 2 -->
 <div class="video-item">
-    <h3>Résumé Réseaux Électriques : GMD, GMR, L, C - Ligne Monophasée et Triphasée Partie 02</h3>
+    <h3>Ondes et vibrations : Comprendre la période et la fréquence en arabe</h3>
     <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
-        <img src="reseau_electrique/02.jpg" alt="Video Thumbnail">
+        <img src="sell/02.jpg" alt="Video Thumbnail">
         <div class="overlay">
             <span class="play-button">&#9654;</span>
         </div>
@@ -114,9 +175,9 @@
 
 <!-- Video Item 3 -->
 <div class="video-item">
-    <h3>Réseaux Électriques : GMD, GMR, L, C - TD02 Exercice 01</h3>
+    <h3>Résumé Ondes et Vibrations en arabe</h3>
     <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
-        <img src="reseau_electrique/03.jpg" alt="Video Thumbnail">
+        <img src="sell/03.jpg" alt="Video Thumbnail">
         <div class="overlay">
             <span class="play-button">&#9654;</span>
         </div>
@@ -126,9 +187,9 @@
 
 <!-- Video Item 4 -->
 <div class="video-item">
-    <h3>Réseaux Électriques : GMD, GMR, L, C - TD02 Exercice 02</h3>
+    <h3>Exercice 01 Ondes et Vibrations Système libre non amorti en arabe</h3>
     <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
-        <img src="reseau_electrique/04.jpg" alt="Video Thumbnail">
+        <img src="sell/04.jpg" alt="Video Thumbnail">
         <div class="overlay">
             <span class="play-button">&#9654;</span>
         </div>
@@ -138,9 +199,9 @@
 
 <!-- Video Item 5 -->
 <div class="video-item">
-    <h3>Réseaux Électriques : GMD, GMR, L, C - TD02 Exercice 03</h3>
+    <h3>Exercice 02 Ondes et Vibrations Système libre non amorti</h3>
     <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
-        <img src="reseau_electrique/05.webp" alt="Video Thumbnail">
+        <img src="sell/05.jpg" alt="Video Thumbnail">
         <div class="overlay">
             <span class="play-button">&#9654;</span>
         </div>
@@ -150,9 +211,9 @@
 
 <!-- Video Item 6 -->
 <div class="video-item">
-    <h3>Réseaux Électriques : GMD, GMR, L, C - TD02 Exercice 04</h3>
+    <h3>Exercice 03 Ondes et Vibrations Système libre non amorti</h3>
     <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
-        <img src="reseau_electrique/06.jpg" alt="Video Thumbnail">
+        <img src="sell/06.webp" alt="Video Thumbnail">
         <div class="overlay">
             <span class="play-button">&#9654;</span>
         </div>
@@ -162,9 +223,9 @@
 
 <!-- Video Item 7 -->
 <div class="video-item">
-    <h3>Réseaux Électriques : GMD, GMR, L, C - TD02 Exercice 05 - Ligne double circuit triphasé</h3>
+    <h3>Exercice 04 Ondes et Vibrations Système libre non amorti en arabe</h3>
     <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
-        <img src="reseau_electrique/07.jpg" alt="Video Thumbnail">
+        <img src="sell/07.jpg" alt="Video Thumbnail">
         <div class="overlay">
             <span class="play-button">&#9654;</span>
         </div>
@@ -172,23 +233,13 @@
     </div>
 </div>
 
-<!-- Video Item 8 -->
-<div class="video-item">
-    <h3>System per unit (Systèmes en Unités Réduites) شرح</h3>
-    <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
-        <img src="reseau_electrique/08.jpg" alt="Video Thumbnail">
-        <div class="overlay">
-            <span class="play-button">&#9654;</span>
-        </div>
-        <p>Click to start watching</p>
-    </div>
-</div>
+
 
 <!-- Video Item 9 -->
 <div class="video-item">
-    <h3>Per unit system حل تمرين</h3>
+    <h3>Exercice 05 Ondes et Vibrations Système libre amorti en arabe</h3>
     <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
-        <img src="reseau_electrique/09.jpg" alt="Video Thumbnail">
+        <img src="sell/08.jpg" alt="Video Thumbnail">
         <div class="overlay">
             <span class="play-button">&#9654;</span>
         </div>
@@ -198,9 +249,9 @@
 
 <!-- Video Item 10 -->
 <div class="video-item">
-    <h3>Ep01 | Réseaux Électriques : Modélisation d'une Ligne Courte ( short line )</h3>
+    <h3>Exercice 06 Ondes et Vibrations Système libre amorti en arabe</h3>
     <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
-        <img src="reseau_electrique/10.jpg" alt="Video Thumbnail">
+        <img src="sell/09.jpg" alt="Video Thumbnail">
         <div class="overlay">
             <span class="play-button">&#9654;</span>
         </div>
@@ -210,9 +261,9 @@
 
 <!-- Video Item 11 -->
 <div class="video-item">
-    <h3>Ep02 | Réseaux Électriques : Modélisation d'une Ligne Moyenne (Medium Line) Modèle Pi</h3>
+    <h3>Exercice 07 Ondes et Vibrations Système libre amorti en arabe</h3>
     <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
-        <img src="reseau_electrique/11.jpg" alt="Video Thumbnail">
+        <img src="sell/10.jpg" alt="Video Thumbnail">
         <div class="overlay">
             <span class="play-button">&#9654;</span>
         </div>
@@ -222,9 +273,9 @@
 
 <!-- Video Item 12 -->
 <div class="video-item">
-    <h3>Ep03 | Réseaux Électriques : Modélisation d'une Ligne Moyenne (Medium Line) Modèle T</h3>
+    <h3>Exercice 08 Ondes et Vibrations Système Forcée amorti en arabe</h3>
     <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
-        <img src="reseau_electrique/12.jpg" alt="Video Thumbnail">
+        <img src="sell/11.jpg" alt="Video Thumbnail">
         <div class="overlay">
             <span class="play-button">&#9654;</span>
         </div>
@@ -234,9 +285,9 @@
 
 <!-- Video Item 13 -->
 <div class="video-item">
-    <h3>Ep04 | Réseaux Électriques : Modélisation d'une Ligne Longue (Long Transmission Line)</h3>
+    <h3>EP01 Résumé - Oscillations forcée systèmes amorties à un degré de liberté - en arabe</h3>
     <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
-        <img src="reseau_electrique/13.webp" alt="Video Thumbnail">
+        <img src="sell/12.jpg" alt="Video Thumbnail">
         <div class="overlay">
             <span class="play-button">&#9654;</span>
         </div>
@@ -244,29 +295,129 @@
     </div>
 </div>
 
+<!-- Video Item 14 -->
+<div class="video-item">
+    <h3>EP02 Exercice 01 - Oscillations forcée systèmes amorties à un degré de liberté - en arabe</h3>
+    <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
+        <img src="sell/13.jpg" alt="Video Thumbnail">
+        <div class="overlay">
+            <span class="play-button">&#9654;</span>
+        </div>
+        <p>Click to start watching</p>
+    </div>
+</div>
+
+<!-- Video Item 15 -->
+<div class="video-item">
+    <h3>Résumé Ondes et Vibration : Chapitre 01 - Chapitre 02 - Chapitre 03 - en arabe</h3>
+    <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
+        <img src="sell/14.jpg" alt="Video Thumbnail">
+        <div class="overlay">
+            <span class="play-button">&#9654;</span>
+        </div>
+        <p>Click to start watching</p>
+    </div>
+</div>
+
+<!-- Video Item 16 -->
+<div class="video-item">
+    <h3>Exercice 09 : Le système libre non amorti expliqué en arabe en ondes et vibrations</h3>
+    <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
+        <img src="sell/15.jpg" alt="Video Thumbnail">
+        <div class="overlay">
+            <span class="play-button">&#9654;</span>
+        </div>
+        <p>Click to start watching</p>
+    </div>
+</div>
+
+<!-- Video Item 17 -->
+<div class="video-item">
+    <h3>Exercice 10 Ondes et vibrations : Le circuit RLC expliqué en arabe</h3>
+    <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
+        <img src="sell/16.jpg" alt="Video Thumbnail">
+        <div class="overlay">
+            <span class="play-button">&#9654;</span>
+        </div>
+        <p>Click to start watching</p>
+    </div>
+</div>
+
+<!-- Video Item 18 -->
+<div class="video-item">
+    <h3>Exercice 11 Ondes et Vibrations Oscillations aforcée Systèmes Amortis 1DDL</h3>
+    <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
+        <img src="sell/17.jpg" alt="Video Thumbnail">
+        <div class="overlay">
+            <span class="play-button">&#9654;</span>
+        </div>
+        <p>Click to start watching</p>
+    </div>
+</div>
+
+<!-- Video Item 19 -->
+<div class="video-item">
+    <h3>Exercice 12 : Ondes et Vibrations : le circuit électrique LC en arabe</h3>
+    <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
+        <img src="sell/18.jpg" alt="Video Thumbnail">
+        <div class="overlay">
+            <span class="play-button">&#9654;</span>
+        </div>
+        <p>Click to start watching</p>
+    </div>
+</div>
+
+<!-- Video Item 20 -->
+<div class="video-item">
+    <h3>Exercice 13 : Ondes et Vibrations systèmes libres non amortis en arabe</h3>
+    <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
+        <img src="sell/19.jpg" alt="Video Thumbnail">
+        <div class="overlay">
+            <span class="play-button">&#9654;</span>
+        </div>
+        <p>Click to start watching</p>
+    </div>
+</div>
+
+<!-- Video Item 21 -->
+<div class="video-item">
+    <h3>Exercice 14 : Ondes et Vibrations Systèmes libres amortis en arabe</h3>
+    <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
+        <img src="sell/20.jpg" alt="Video Thumbnail">
+        <div class="overlay">
+            <span class="play-button">&#9654;</span>
+        </div>
+        <p>Click to start watching</p>
+    </div>
+</div>
+
+            </div>
+        </div>
     </section>
 
-    
      
     <section id="registration-section" class="registration-process">
         <h2>طريقة التسجيل</h2>
         <div class="sheets-container">
             <!-- Sheet 1 -->
             <div class="sheet">
-                <a href="pdf1200.pdf" target="_blank">
-                    <img src="rec1200.png" alt="Registration Process Step 1" />
+                <a href="pdf800.pdf" target="_blank">
+                    <img src="rec.png" alt="Registration Process Step 1" />
                 </a>
             </div>
         </div>
     </section>
-
-
+    
+    
     <footer>
         <div class="footer-bottom">
             <p>&copy; 2024 Algeria University™. All Rights Reserved.</p>
         </div>
     </footer>
 
+
+
+    
 
     <script>
         // Toggle the mobile menu
