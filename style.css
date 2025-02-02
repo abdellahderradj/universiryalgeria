@@ -1592,29 +1592,45 @@ nav {
         transform: scale(1.05); /* تكبير الصورة قليلاً عند التمرير عليها */
         cursor: pointer; /* تغيير شكل المؤشر عند التمرير على الصورة */
     }
-    /* Loader style */
+/* الخلفية الضبابية */
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5); /* لون شفاف لجعل الخلفية ضبابية */
+    backdrop-filter: blur(5px); /* تطبيق التمويه */
+    z-index: 9998; /* التأكد من أنها فوق كل شيء */
+}
+
+/* Loader style */
 .loader {
     font-weight: bold;
-    font-family: sans-serif;
+    font-family: monospace;
     font-size: 30px;
-    animation: l1 1s linear infinite alternate;
-    position: fixed; /* Fix the position on the screen */
-    top: 50%;         /* Center vertically */
-    left: 50%;        /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust position to truly center */
-  }
-  
-  /* Loader text */
-  .loader:before {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    clip-path: inset(0 3ch 0 0);
+    animation: l4 1s steps(4) infinite;
+    z-index: 9999; /* فوق الخلفية الضبابية */
+}
+
+/* Loader text */
+.loader:before {
     content: "Loading...";
-  }
-  
-  /* Animation */
-  @keyframes l1 {
+}
+
+/* Animation */
+@keyframes l4 {
     to {
-      opacity: 0;
+        clip-path: inset(0 -1ch 0 0);
     }
-  }
+}
+
   /* Dropdown content */
 .dropdown-content {
     max-height:550px; /* Limit height */
