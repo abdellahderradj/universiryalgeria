@@ -217,24 +217,11 @@ header nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: auto;
-}
-
-.footer-bottom {
-    margin-top: 20px;
-}
-
 /* Modern and Clean Login Form */
 /* Modern and Clean Login Form */
 .login-container {
     max-width: 380px;
-    margin: 110px auto;
+    margin: 130px auto;
     padding: 35px;
     background: linear-gradient(135deg, #fff, #f8f8f8);
     border-radius: 20px;
@@ -583,21 +570,7 @@ header nav ul li a:hover {
 }
 
 
-/* تنسيق تذييل الصفحة */
-footer {
-    margin-top: 50px; /* مسافة 50px من الأعلى */
-    padding: 20px 0; /* حشوة داخلية 20px من الأعلى والأسفل */
-    background-color: #333; /* لون خلفية التذييل رمادي داكن */
-    color: #fff; /* لون النص أبيض */
-    text-align: center; /* محاذاة النص إلى المنتصف */
-    font-size: 14px; /* حجم الخط 14px */
-}
 
-/* تنسيق نص التذييل */
-footer p {
-    margin: 0; /* إزالة المسافة حول النص */
-    font-size: 16px; /* حجم الخط 16px */
-}
 
 /* General body styling */
 body {
@@ -657,19 +630,7 @@ body {
     transform: scale(1.05);
 }
 
-/* Footer styling */
-footer {
-    margin-top: 50px;
-    padding: 20px 0;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-}
 
-footer p {
-    margin: 0;
-    font-size: 16px;
-}
 /* style.css */
 .search-container {
     margin-bottom: 20px;
@@ -720,7 +681,6 @@ footer p {
 
 /* ---- تنسيق قائمة الروابط في أسفل الصفحة ---- */
 footer {
-    background-color: #333; /* لون الخلفية */
     color: white; /* لون النص */
     padding: 20px 0; /* الحشو */
     text-align: center; /* محاذاة النص */
@@ -728,9 +688,7 @@ footer {
     margin-top: 50px; /* مسافة أعلى */
 }
 
-footer p {
-    margin: 0; /* إزالة الهامش */
-}
+
 
 /* ---- تصميم مستجيب ---- */
 @media (max-width: 768px) {
@@ -797,9 +755,7 @@ footer p {
 footer {
     background-color: #333; /* لون الخلفية */
     color: white; /* لون النص */
-    padding: 5px 0; /* حشوة */
     text-align: center; /* محاذاة النص في المنتصف */
-    font-size: 0.9rem; /* حجم الخط */
     margin-top: 50px; /* مسافة علوية */
 }
 
@@ -1109,11 +1065,7 @@ main {
     flex: 1; /* اجعل القسم الرئيسي ينمو لملء المساحة المتبقية */
 }
 
-footer {
-    text-align: center; /* توسيط النص */
-    padding: 10px 0; /* إضافة حشوة */
-    position: relative; /* يمكن تغيير هذا إلى fixed إذا كنت تريد أن يبقى الفوتر ثابتاً أثناء التمرير */
-}
+
 
 /* تنسيق الشعار بجانب العنوان */
 .site-title {
