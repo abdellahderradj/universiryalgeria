@@ -110,9 +110,11 @@
                     <li><a href="/informatique1.html">Informatique 1</a></li>
                     <li><a href="/informatique2.html">Informatique 2 (Algorithm)</a></li>
                     <li><a href="/electroniquef1.html">Electronique fondamentale 1</a></li>
-                    <li class="dropdown">
+                    
+                    <!-- More Dropdown for Desktop -->
+                    <li class="dropdown more-dropdown">
                         <a href="javascript:void(0)" class="dropbtn" onclick="toggleDropdown(event)">More</a>
-                        <ul class="dropdown-content">
+                        <ul class="dropdown-content more-dropdown-content">
                             <li><a href="/informatique3.html">Informatique 3</a></li>
                             <li><a href="/statistique.html">Probabilité et Statistique S3</a></li>
                             <li><a href="/specialization Page/specialization.html">Cours</a></li>
@@ -374,6 +376,38 @@
                 document.getElementById("result").innerText = "Login successful!";
             }, 3000);
         }
+        // Ensure all navigation items are formatted correctly on mobile
+        function adjustNavigationForMobile() {
+            const navLinks = document.querySelector('.nav-links');
+            const moreDropdown = document.querySelector('.more-dropdown');
+            const moreDropdownContent = document.querySelector('.more-dropdown-content');
+
+            if (window.innerWidth <= 768) {
+                if (moreDropdownContent && !moreDropdownContent.classList.contains('moved')) {
+                    const dropdownItems = moreDropdownContent.querySelectorAll('li');
+                    dropdownItems.forEach(item => {
+                        item.classList.add('dropdown-item');
+                        item.querySelector('a').classList.add('highlighted-link');
+                        navLinks.insertBefore(item, moreDropdown);
+                    });
+                    moreDropdownContent.classList.add('moved');
+                }
+            } else {
+                if (moreDropdownContent && moreDropdownContent.classList.contains('moved')) {
+                    const dropdownItems = navLinks.querySelectorAll('.dropdown-item');
+                    dropdownItems.forEach(item => {
+                        moreDropdownContent.appendChild(item);
+                        item.classList.remove('dropdown-item');
+                        item.querySelector('a').classList.remove('highlighted-link');
+                    });
+                    moreDropdownContent.classList.remove('moved');
+                }
+            }
+        }
+
+        window.addEventListener('load', adjustNavigationForMobile);
+        window.addEventListener('resize', adjustNavigationForMobile);
+
     </script>
     </body>
     
