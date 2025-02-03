@@ -83,7 +83,7 @@
     </footer>
 
     <script>
-      function registerUser() {
+function registerUser() {
     const contact = document.getElementById("contact").value;
     const series = document.getElementById("series").value;
     const file = document.getElementById("fileUpload").files[0];
@@ -96,33 +96,23 @@
     const formData = new FormData();
     formData.append("contact", contact);
     formData.append("series", series);
-    formData.append("file", file); // Ensure this is a file input
+    formData.append("file", file);
 
-    const scriptURL = "https://script.google.com/macros/s/AKfycbyQbm68xFzLqGFdFZug9HyxiRqbDP_Ke9Y6j057t7zKqhHahsOmfIcnlnHK6PqLkKW6/exec"; // Your updated Google Apps Script URL
-
-    fetch(scriptURL, {
-        method: "POST",
+    fetch('register_success.php', { // تأكد أن الملف موجود
+        method: 'POST',
         body: formData
     })
-    .then(response => response.json())
+    .then(response => response.json())  
     .then(result => {
-        console.log("Result from script:", result);
-        if (result.access) {
-            document.getElementById("result").innerText = "Registration successful!";
-            document.getElementById("contact").value = "";
-            document.getElementById("series").selectedIndex = 0;
-            document.getElementById("fileUpload").value = "";
-        } else {
-            document.getElementById("result").innerText = "Registration failed. Try again.";
-        }
+        console.log("Server response:", result);
+        document.getElementById("result").innerText = result.message;
     })
     .catch(error => {
-        console.error("Error:", error);
-        document.getElementById("result").innerText = "An error occurred. Please try again.";
+        console.error("Fetch error:", error);
+        document.getElementById("result").innerText = "Error: " + error.message;
     });
 }
-
-        
+   
     </script>
 
 </body>
