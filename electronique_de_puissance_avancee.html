@@ -29,13 +29,74 @@
     <title>Algeria University - Buy Videos</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* General styling for the video thumbnails */
+        .video-thumbnail-container {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            max-width: 560px;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
+        .video-thumbnail-container img {
+            width: 100%;
+            height: auto;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-thumbnail-container .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-thumbnail-container .overlay .play-button {
+            font-size: 40px;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .video-thumbnail-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-thumbnail-container:hover .overlay {
+            opacity: 1;
+        }
+
+        .video-thumbnail-container:hover .overlay .play-button {
+            transform: scale(1.2);
+        }
+
+        .video-thumbnail-container p {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 16px;
+            color: white;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
-
-
-      <header>
+    <header>
         <div class="container">
             <!-- Hamburger Menu Toggle -->
             <div class="menu-toggle" onclick="toggleMenu()">
@@ -73,9 +134,7 @@
             </nav>
         </div>
     </header>
-
     
-
     <section class="sell-section">
         <div class="container">
             <h2>: استثمر في مستقبلك الآن ! – احصل على جميع الفيديوهات التعليمية</h2>
@@ -91,16 +150,15 @@
                   </p>            </p>
             
                 <div class="parent-container">
-                    <a href="price/price.html" class="cta-btn" target="_blank">اشترِ الآن – 500 دج فقط</a>
+                    <a href="price/price.html" class="cta-btn" target="_blank">اشترِ الآن – 1200 دج فقط</a>
                 </div>
             </p>
             <div class="video-list">
-                <!-- Video Items -->
 <!-- Video Item 1 -->
 <div class="video-item">
-    <h3>Les Quadripôles : Matrices Impédances شرح باللغة العربية</h3>
+    <h3>ملخص شامل حول Les Diodes</h3>
     <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
-        <img src="quadripole/01.jpg" alt="Video Thumbnail">
+        <img src="Electronique de Puissance/02.webp" alt="Video Thumbnail">
         <div class="overlay">
             <span class="play-button">&#9654;</span>
         </div>
@@ -110,9 +168,9 @@
 
 <!-- Video Item 2 -->
 <div class="video-item">
-    <h3>Le Quadripôle : Matrices Impédances Schéma Équivalent شرح باللغة العربية</h3>
+    <h3>ملخص شامل حول Thyristor</h3>
     <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
-        <img src="quadripole/02.jpg" alt="Video Thumbnail">
+        <img src="Electronique de Puissance/03.webp" alt="Video Thumbnail">
         <div class="overlay">
             <span class="play-button">&#9654;</span>
         </div>
@@ -122,9 +180,9 @@
 
 <!-- Video Item 3 -->
 <div class="video-item">
-    <h3>Les Quadripôles : Matrices Impédances (Exercice) شرح باللغة العربية</h3>
+    <h3>Thyristor GTO ملخص شامل حول (Gate Turn-Off Thyristor)</h3>
     <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
-        <img src="quadripole/03.jpg" alt="Video Thumbnail">
+        <img src="Electronique de Puissance/04.jpg" alt="Video Thumbnail">
         <div class="overlay">
             <span class="play-button">&#9654;</span>
         </div>
@@ -134,9 +192,9 @@
 
 <!-- Video Item 4 -->
 <div class="video-item">
-    <h3>Le Quadripôle : La Matrice Admittance شرح باللغة العربية</h3>
+    <h3>ملخص Electronique de Puissance</h3>
     <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
-        <img src="quadripole/04.jpg" alt="Video Thumbnail">
+        <img src="Electronique de Puissance/01.jpg" alt="Video Thumbnail">
         <div class="overlay">
             <span class="play-button">&#9654;</span>
         </div>
@@ -146,9 +204,9 @@
 
 <!-- Video Item 5 -->
 <div class="video-item">
-    <h3>Le Quadripôle : Exercice sur la Matrice Admittance شرح باللغة العربية</h3>
+    <h3>Redressement non commandés mono alternanace charge R</h3>
     <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
-        <img src="quadripole/05.jpg" alt="Video Thumbnail">
+        <img src="Electronique de Puissance/07.jpg" alt="Video Thumbnail">
         <div class="overlay">
             <span class="play-button">&#9654;</span>
         </div>
@@ -158,9 +216,9 @@
 
 <!-- Video Item 6 -->
 <div class="video-item">
-    <h3>Le Quadripôle : La Matrice Transfert شرح باللغة العربية</h3>
+    <h3>Redressement non commandés mono alternanace charge R-E</h3>
     <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
-        <img src="quadripole/06.jpg" alt="Video Thumbnail">
+        <img src="Electronique de Puissance/08.jpg" alt="Video Thumbnail">
         <div class="overlay">
             <span class="play-button">&#9654;</span>
         </div>
@@ -170,9 +228,9 @@
 
 <!-- Video Item 7 -->
 <div class="video-item">
-    <h3>Le Quadripôle : Exercice sur La Matrice Transfert شرح باللغة العربية</h3>
+    <h3>Redressement non commandés mono alternanace charge R-C</h3>
     <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
-        <img src="quadripole/07.jpg" alt="Video Thumbnail">
+        <img src="Electronique de Puissance/09.jpg" alt="Video Thumbnail">
         <div class="overlay">
             <span class="play-button">&#9654;</span>
         </div>
@@ -182,9 +240,9 @@
 
 <!-- Video Item 8 -->
 <div class="video-item">
-    <h3>Association en Série avec le Quadripôle شرح باللغة العربية</h3>
+    <h3>Redressement non commandés mono alternanace charge R-L</h3>
     <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
-        <img src="quadripole/08.jpg" alt="Video Thumbnail">
+        <img src="Electronique de Puissance/10.jpg" alt="Video Thumbnail">
         <div class="overlay">
             <span class="play-button">&#9654;</span>
         </div>
@@ -194,9 +252,9 @@
 
 <!-- Video Item 9 -->
 <div class="video-item">
-    <h3>L'Association en Parallèle avec le Quadripôle شرح باللغة العربية</h3>
+    <h3>Redressement non commandés charge - R L- مع diode de roue libre</h3>
     <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
-        <img src="quadripole/09.jpg" alt="Video Thumbnail">
+        <img src="Electronique de Puissance/11.jpg" alt="Video Thumbnail">
         <div class="overlay">
             <span class="play-button">&#9654;</span>
         </div>
@@ -206,9 +264,9 @@
 
 <!-- Video Item 10 -->
 <div class="video-item">
-    <h3>L'Association en Cascade avec le Quadripôle شرح باللغة العربية</h3>
+    <h3>Redressement non commandé en Double Alternance avec Charge R</h3>
     <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
-        <img src="quadripole/10.jpg" alt="Video Thumbnail">
+        <img src="Electronique de Puissance/12.jpg" alt="Video Thumbnail">
         <div class="overlay">
             <span class="play-button">&#9654;</span>
         </div>
@@ -216,23 +274,61 @@
     </div>
 </div>
 
+<!-- Video Item 11 -->
+<div class="video-item">
+    <h3>Redressement non commandé en Double Alternance مع Charge R -L</h3>
+    <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
+        <img src="Electronique de Puissance/13.webp" alt="Video Thumbnail">
+        <div class="overlay">
+            <span class="play-button">&#9654;</span>
+        </div>
+        <p>Click to start watching</p>
+    </div>
+</div>
+
+<!-- Video Item 12 -->
+<div class="video-item">
+    <h3>Redresseur Monophasé Commandé avec Charge R</h3>
+    <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
+        <img src="Electronique de Puissance/06.jpg" alt="Video Thumbnail">
+        <div class="overlay">
+            <span class="play-button">&#9654;</span>
+        </div>
+        <p>Click to start watching</p>
+    </div>
+</div>
+
+<!-- Video Item 13 -->
+<div class="video-item">
+    <h3>Hacheur Dévolteur : شرح مبسط باللغة العربية</h3>
+    <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
+        <img src="Electronique de Puissance/05.webp" alt="Video Thumbnail">
+        <div class="overlay">
+            <span class="play-button">&#9654;</span>
+        </div>
+        <p>Click to start watching</p>
+    </div>
+</div>
+
+
     </section>
 
+
     
-     
     <section id="registration-section" class="registration-process">
         <h2>طريقة التسجيل</h2>
         <div class="sheets-container">
             <!-- Sheet 1 -->
             <div class="sheet">
-                <a href="pdf500.pdf" target="_blank">
-                    <img src="rec500.png" alt="Registration Process Step 1" />
+                <a href="pdf1200.pdf" target="_blank">
+                    <img src="rec1200.png" alt="Registration Process Step 1" />
                 </a>
             </div>
         </div>
     </section>
 
 
+    
     <footer>
         <div class="footer-bottom">
             <p>&copy; 2024 Algeria University™. All Rights Reserved.</p>
@@ -240,6 +336,9 @@
     </footer>
 
 
+
+    
+  
     <script>
         // Toggle the mobile menu
         function toggleMenu() {
