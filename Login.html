@@ -1,39 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script>
-        document.addEventListener('contextmenu', function (e) {
-            e.preventDefault();
-            alert('Right-click is disabled on this site.');
-        });
-    </script>
-    
-    <meta name="ezoic-site-verification" content="ztnoa9ESZ1eRyCxGS7RPBw6gMJpOtU" />
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4T1CYHD2C"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'G-S4T1CYHD2C');
-    </script>
-
-    <link rel="icon" href="logo.png" type="image/png"> <!-- إضافة الشعار كـ favicon -->
-
-    <!-- إعدادات اللغة وترميز الصفحة -->
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Algeria University - Buy Videos</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
+    <title>Algeria University - Learn Online</title>
 
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="project-folder/script.js"></script>
+    <link rel="icon" href="/logo.png" type="image/png">
 </head>
 <body>
-   
+  
 
     <header>
         <div class="container">
@@ -80,125 +57,23 @@
 
     
     
-    <section class="sell-section">
-        <div class="container">
-            <h2>: استثمر في مستقبلك الآن ! – احصل على جميع الفيديوهات التعليمية</h2>
-            
-            <p>
-                .فيديوهات مصممة خصيصًا لتبسيط المعلومات، مع شروحات ممتعة وسهلة الفهم، مقدمة باللغة العربية وبأسلوب يناسب الجميع           </p>
-            <p>
-                <p>
-                    <strong>شرح واضح</strong> – ✅ <strong>سعر مناسب</strong> – ✅ <strong>متاح في أي وقت</strong> ✅
-                  </p>
-                  <p>
-                 .   الاشتراك <strong>سنوي</strong>  ويغطي جميع الخدمات حتى نهاية العام الدراسي 
-                  </p>            </p>
-            
-                <div class="parent-container">
-                    <a href="price/price.html" class="cta-btn" target="_blank">اشترِ الآن – 800 دج فقط</a>
-                </div>
-            </p>
-            <div class="video-list">
-            <!-- Video Item 1 -->
-<div class="video-item">
-    <h3>EP01 Informatique 1 : Comprendre les unités de stockage en arabe</h3>
-    <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
-        <img src="informatique 1/01.jpg" alt="Video Thumbnail">
-        <div class="overlay">
-            <span class="play-button">&#9654;</span>
-        </div>
-        <p>Click to start watching</p>
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <input type="text" id="studentId" placeholder="Gmail" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button onclick="login()">Login</button>
+        <p id="result"></p>
+        <p>Don't have an account? <a href="price/price.html" target="_blank">Register here</a></p>
     </div>
-    <div class="video-embed"></div>
-</div>
 
-<!-- Video Item 2 -->
-<div class="video-item">
-    <h3>EP02 Informatique 1 Conversion entre Binaire, Décimal, Octal et Hexadécimal en arabe</h3>
-    <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
-        <img src="informatique 1/02.jpg" alt="Video Thumbnail">
-        <div class="overlay">
-            <span class="play-button">&#9654;</span>
-        </div>
-        <p>Click to start watching</p>
+    <div id="loading-overlay">
+        <div id="loading" class="loader" style="display:none;"></div>
     </div>
-</div>
-
-<!-- Video Item 3 -->
-<div class="video-item">
-    <h3>EP03 informatique 1 Comprendre la Conversion entre Octal, Décimal, Binaire et Hexadécimal en Arabe</h3>
-    <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
-        <img src="informatique 1/03.jpg" alt="Video Thumbnail">
-        <div class="overlay">
-            <span class="play-button">&#9654;</span>
-        </div>
-        <p>Click to start watching</p>
-    </div>
-</div>
-
-<!-- Video Item 4 -->
-<div class="video-item">
-    <h3>EP04 Informatique 1 Maîtriser l'Addition et la Soustraction des Nombres Binaires en Arabe</h3>
-    <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
-        <img src="informatique 1/04.jpg" alt="Video Thumbnail">
-        <div class="overlay">
-            <span class="play-button">&#9654;</span>
-        </div>
-        <p>Click to start watching</p>
-    </div>
-</div>
-
-<!-- Video Item 5 -->
-<div class="video-item">
-    <h3>EP05 Informatique 1 | codage binaire (notation signe grandeur complément à 1 et à 2) (en arabe)</h3>
-    <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
-        <img src="informatique 1/05.jpg" alt="Video Thumbnail">
-        <div class="overlay">
-            <span class="play-button">&#9654;</span>
-        </div>
-        <p>Click to start watching</p>
-    </div>
-</div>
-
-<!-- Video Item 6 -->
-<div class="video-item">
-    <h3>EP06 Informatique 1 | Étape par étape pour apprendre le Pascal en Arabe</h3>
-    <div class="video-thumbnail-container" onclick="window.location.href='project-folder/index.html'">
-        <img src="informatique 1/06.jpg" alt="Video Thumbnail">
-        <div class="overlay">
-            <span class="play-button">&#9654;</span>
-        </div>
-        <p>Click to start watching</p>
-    </div>
-</div>
-
-
-
-                
-                
-            </div>
-        </div>
-    </section>
-
-    
-    <section id="registration-section" class="registration-process">
-        <h2>طريقة التسجيل </h2>
-        <div class="sheets-container">
-            <!-- Sheet 1 -->
-            <div class="sheet">
-                <a href="pdf800.pdf" target="_blank">
-                    <img src="rec.png" alt="Registration Process Step 1" />
-                </a>            </div>
-        </div>
-    </section>
-
 
     <footer>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Algeria University™. All Rights Reserved.</p>
-        </div>
+        <p>&copy; 2024 Algeria University™. All rights reserved.</p>
     </footer>
-
 
     <script>
         // Toggle the mobile menu
@@ -259,6 +134,7 @@
                 document.getElementById("result").innerText = "Login successful!";
             }, 3000);
         }
+
         // Ensure all navigation items are formatted correctly on mobile
         function adjustNavigationForMobile() {
             const navLinks = document.querySelector('.nav-links');
@@ -290,8 +166,6 @@
 
         window.addEventListener('load', adjustNavigationForMobile);
         window.addEventListener('resize', adjustNavigationForMobile);
-
     </script>
-    </body>
-    
+</body>
 </html>

@@ -1,0 +1,259 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    padding-top: 50px; /* أضف المسافة العلوية هنا */
+}
+
+/* تصحيح شريط الهيدر */
+.header {
+    background-color: #ff5722;
+    color: white;
+    padding: 10px 0; /* تقليل الحشو */
+    text-align: center;
+    font-size: 1.2rem; /* تقليل حجم الخط */
+    position: relative; /* تأكد من أن الهيدر ليس ثابتًا في الوضع */
+    z-index: 1; /* جعل العنصر في مقدمة المحتويات الأخرى */
+    width: 100%; /* تأكد من أن الهيدر يحتل كامل العرض */
+}
+
+/* إضافة استجابة للأجهزة الصغيرة */
+@media (max-width: 768px) {
+    .header {
+        font-size: 1.5rem; /* تقليل حجم الخط في الشاشات الصغيرة */
+        padding: 15px 0; /* تقليل الحشو */
+    }
+}
+
+.playlist-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin-top: 50px; /* أضف المسافة العلوية هنا */
+}
+
+.playlist-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 20px;
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.playlist-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #f4f4f4;
+}
+
+.playlist-card h3 {
+    margin: 15px 0;
+    color: #333;
+}
+
+.playlist-card p {
+    color: #777;
+    padding: 0 10px;
+}
+
+.playlist-card button {
+    background-color: #ff5722;
+    color: white;
+    padding: 12px;
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.playlist-card button:hover {
+    background-color: #e64a19;
+}
+
+.playlist-card:hover {
+    transform: scale(1.05);
+}
+
+
+@media (max-width: 768px) {
+    .playlist-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/* Header Styles */
+header {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 15px 0;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.5s ease;
+}
+
+header:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+header .container {
+    display: flex;
+    justify-content: center; /* Center the content */
+    align-items: center;
+    width: 100%; /* Make sure the container stretches full width */
+}
+
+header .site-title {
+    margin-right: 20px; /* Optional, space between title and nav */
+}
+
+header .site-title a {
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+header nav {
+    text-align: center; /* Center the nav items */
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Center the nav links */
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 10px;
+}
+
+header nav ul li a:hover {
+    background-color: #ff5722;
+    color: white;
+    border-radius: 5px;
+}
+.nav-links li a[href="Ondes_Et_Vibrations.html"] {
+    background-color: #ff4d4d; /* Couleur rouge pour attirer l'attention */
+    color: #fff; /* Texte blanc */
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 8px;
+    position: relative;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet de survol */
+.nav-links li a[href="Ondes_Et_Vibrations.html"]:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 77, 77, 0.8);
+}
+
+/* Animation de pulsation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.nav-links li a[href="Ondes_Et_Vibrations.html"]::after {
+    content: "🔥 Meilleure Vente !"; /* Indicateur de réduction */
+    font-size: 12px;
+    color: rgb(248, 248, 0);
+    position: absolute;
+    top: -14px;
+    right: -20px;
+    background: rgb(255, 0, 0);
+    padding: 3px 7px;
+    border-radius: 5px;
+    font-weight: bold;
+    animation: pulse 1.5s infinite;
+}
+
+@media (max-width: 768px) {
+    /* تمكين التمرير الرأسي فقط عند فتح القائمة */
+    .nav-links {
+        max-height: 0; /* إخفاء القائمة افتراضيًا */
+        overflow-y: hidden; /* إخفاء التمرير عند الإغلاق */
+        display: flex;
+        flex-direction: column; /* Display items vertically */
+        transition: max-height 0.5s ease-in-out;
+        opacity: 0; /* إخفاء المحتوى بشكل كامل */
+    }
+
+    /* عند فتح القائمة، تفعيل التمرير العمودي فقط */
+    .nav-links.active {
+        max-height: 800px; /* زيادة الحد الأقصى للارتفاع لتتمكن من التمرير */
+        overflow-y: auto; /* تمكين التمرير الرأسي */
+        opacity: 1; /* جعل المحتوى مرئيًا */
+    }
+
+    /* تحسين شريط التمرير للجوال */
+    .nav-links.active {
+        overflow-y: auto; /* Allow vertical scrolling */
+        max-height: 80vh;  /* Limit the height of the nav links to ensure scrollbar is needed */
+    }
+
+    /* Customize the scrollbar */
+    .nav-links.active::-webkit-scrollbar {
+        width: 8px; /* Increase scrollbar width */
+    }
+
+    .nav-links.active::-webkit-scrollbar-thumb {
+        background-color: #888; /* Thumb color */
+        border-radius: 10px; /* Round corners */
+    }
+
+    .nav-links.active::-webkit-scrollbar-track {
+        background: #f1f1f1; /* Track color */
+    }
+
+    /* Optional: Add a smooth scroll effect */
+    .nav-links.active {
+        scroll-behavior: smooth;
+    }
+}
+
+button {
+    background-color: #ff5a5f; /* لون خلفية الزر */
+    border: none; /* إزالة الحدود */
+    color: white; /* لون النص */
+    padding: 15px 30px; /* تحديد الحشوة (padding) */
+    text-align: center; /* محاذاة النص */
+    text-decoration: none; /* إزالة الخط تحت النص */
+    display: inline-block; /* جعل الزر يعمل كعنصر مدمج */
+    font-size: 18px; /* حجم الخط */
+    border-radius: 8px; /* تحديد الزوايا المدورة */
+    cursor: pointer; /* تغيير شكل المؤشر عند المرور على الزر */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* تأثير الانتقال */
+  }
+  
+  button:hover {
+    background-color: #ff2f34; /* تغيير اللون عند المرور بالماوس */
+    transform: scale(1.05); /* تكبير الزر قليلاً عند المرور عليه */
+  }
+  
+  button a {
+    color: white; /* لون النص داخل الرابط */
+    text-decoration: none; /* إزالة الخط تحت النص */
+  }
+  
