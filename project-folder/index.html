@@ -48,13 +48,15 @@
         </div>
     </header>
 
+
+
     <div class="login-container">
         <h2>Login</h2>
         <input type="text" id="studentId" placeholder="Gmail" required>
         <input type="password" id="password" placeholder="Password" required>
         <button onclick="login()">Login</button>
         <p id="result"></p>
-        <p>Don't have an account? <a href="../price/price.html" target="_blank">Register here</a></p>
+        <p>Don't have an account? <a href="price/price.html" target="_blank">Register here</a></p>
     </div>
 
     <div id="loading-overlay">
@@ -62,29 +64,44 @@
     </div>
 
     <footer>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Algeria University™. All Rights Reserved.</p>
-        </div>
+        <p>&copy; 2025 Algeria University™. All rights reserved.</p>
     </footer>
 
     <script>
         // Toggle the mobile menu
         function toggleMenu() {
-            document.querySelector('.nav-links').classList.toggle('active');
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
         }
 
         // Toggle the dropdown menu (click to show)
         function toggleDropdown(event) {
-            event.preventDefault();
-            const dropdown = event.currentTarget.nextElementSibling;
-            dropdown.classList.toggle('active');
+            event.preventDefault(); // Prevent the default link behavior
+            const dropdown = event.currentTarget; // The "More" link container
+            const dropdownContent = dropdown.nextElementSibling; // Get the associated dropdown menu
+            
+            // Toggle the 'active' class
+            dropdownContent.classList.toggle('active');
+            
+            // Close all other dropdowns
+            closeAllDropdowns(dropdown);
+        }
+
+        // Close all dropdowns except the clicked one
+        function closeAllDropdowns(exceptDropdown) {
+            const dropdowns = document.querySelectorAll('.dropdown-content');
+            dropdowns.forEach(dropdown => {
+                if (!dropdown.closest('.dropdown') === exceptDropdown) {
+                    dropdown.classList.remove('active');
+                }
+            });
         }
 
         // Close dropdowns when clicking outside
         document.addEventListener('click', (event) => {
             const dropdowns = document.querySelectorAll('.dropdown-content');
             dropdowns.forEach(dropdown => {
-                if (!dropdown.contains(event.target) && !dropdown.previousElementSibling.contains(event.target)) {
+                if (!dropdown.contains(event.target) && !dropdown.closest('.dropdown').contains(event.target)) {
                     dropdown.classList.remove('active');
                 }
             });
@@ -141,7 +158,6 @@
 
         window.addEventListener('load', adjustNavigationForMobile);
         window.addEventListener('resize', adjustNavigationForMobile);
-
     </script>
 </body>
 </html>
