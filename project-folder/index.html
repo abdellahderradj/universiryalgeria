@@ -21,7 +21,7 @@
                 <ul class="nav-links">
                     <li><a href="/index.html">Home</a></li>
 
-                    <li><a href="/Ondes_Et_Vibrations.html">Ondes Et Vibrations</a></li>
+                    <li><a href="/Ondes_Et_Vibrations.html" class="best-seller">Ondes Et Vibrations</a></li>
                     <li><a href="/Theorie_du_signal.html">Theorie du signal</a></li>
                     <li><a href="/systemesasservis.html">Systèmes Asservis</a></li>
 
@@ -50,6 +50,28 @@
                 </ul>
             </nav>
         </div>
+        <style>
+            /* Animation de pulsation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.nav-links li a[href="Ondes_Et_Vibrations.html"]::after {
+    content: "🔥 Meilleure Vente !"; /* Indicateur de réduction */
+    font-size: 12px;
+    color: rgb(248, 248, 0);
+    position: absolute;
+    top: -14px;
+    right: -20px;
+    background: rgb(255, 0, 0);
+    padding: 3px 7px;
+    border-radius: 5px;
+    font-weight: bold;
+    animation: pulse 1.5s infinite;
+}
+        </style>
     </header>
 
 

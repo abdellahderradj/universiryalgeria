@@ -31,7 +31,7 @@ body {
     justify-content: space-around;
     flex-wrap: wrap;
     padding: 20px;
-    margin-top: 50px; /* أضف المسافة العلوية هنا */
+    margin-top: 30px; /* أضف المسافة العلوية هنا */
 }
 
 .playlist-card {
@@ -62,7 +62,7 @@ body {
 }
 
 .playlist-card button {
-    background-color: #ff5722;
+    background-color: #41a146; /* أخضر هادئ معتدل */
     color: white;
     padding: 12px;
     border: none;
@@ -74,7 +74,7 @@ body {
 }
 
 .playlist-card button:hover {
-    background-color: #e64a19;
+    background-color: #368e3a; /* أخضر أفتح وأكثر إشراقًا عند المرور بالماوس */
 }
 
 .playlist-card:hover {
@@ -88,79 +88,7 @@ body {
         align-items: center;
     }
 }
-/* Header Styles */
-header {
-    background-color: rgba(0, 0, 0, 0.3);
-    padding: 15px 0;
-    color: white;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    transition: background-color 0.5s ease;
-}
 
-header:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-header .container {
-    display: flex;
-    justify-content: center; /* Center the content */
-    align-items: center;
-    width: 100%; /* Make sure the container stretches full width */
-}
-
-header .site-title {
-    margin-right: 20px; /* Optional, space between title and nav */
-}
-
-header .site-title a {
-    font-size: 28px;
-    font-weight: 700;
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-header nav {
-    text-align: center; /* Center the nav items */
-}
-
-header nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center; /* Center the nav links */
-}
-
-header nav ul li {
-    margin: 0 15px;
-}
-
-header nav ul li a {
-    color: white;
-    font-size: 16px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    padding: 10px;
-}
-
-header nav ul li a:hover {
-    background-color: #ff5722;
-    color: white;
-    border-radius: 5px;
-}
-.nav-links li a[href="Ondes_Et_Vibrations.html"] {
-    background-color: #ff4d4d; /* Couleur rouge pour attirer l'attention */
-    color: #fff; /* Texte blanc */
-    font-weight: bold;
-    padding: 10px 15px;
-    border-radius: 8px;
-    position: relative;
-    text-decoration: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
 /* Effet de survol */
 .nav-links li a[href="Ondes_Et_Vibrations.html"]:hover {
@@ -232,9 +160,8 @@ header nav ul li a:hover {
         scroll-behavior: smooth;
     }
 }
-
 button {
-    background-color: #ff5a5f; /* لون خلفية الزر */
+    background-color: #4CAF50; /* لون خلفية الزر بلون أخضر معتدل */
     border: none; /* إزالة الحدود */
     color: white; /* لون النص */
     padding: 15px 30px; /* تحديد الحشوة (padding) */
@@ -245,15 +172,14 @@ button {
     border-radius: 8px; /* تحديد الزوايا المدورة */
     cursor: pointer; /* تغيير شكل المؤشر عند المرور على الزر */
     transition: background-color 0.3s ease, transform 0.3s ease; /* تأثير الانتقال */
-  }
-  
-  button:hover {
-    background-color: #ff2f34; /* تغيير اللون عند المرور بالماوس */
+}
+
+button:hover {
+    background-color: #45a049; /* تغيير اللون إلى لون أخضر أغمق قليلاً عند المرور بالماوس */
     transform: scale(1.05); /* تكبير الزر قليلاً عند المرور عليه */
-  }
-  
-  button a {
+}
+
+button a {
     color: white; /* لون النص داخل الرابط */
     text-decoration: none; /* إزالة الخط تحت النص */
-  }
-  
+}
