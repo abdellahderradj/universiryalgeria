@@ -4,22 +4,72 @@
     <meta charset="UTF-8">
     <title>My Videos</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        #content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            color: #555;
+        }
+        .discount-banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .image-section {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .image-section img {
+            max-width: 70%;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+    </style>
     <script defer>
         window.onload = function() {
             const videos = JSON.parse(localStorage.getItem("videos"));
+            const contentDiv = document.getElementById("content");
+
             if (!videos || videos.length === 0) {
-                document.getElementById("content").innerHTML = "<p>❌ You don't have permission to watch any videos.</p>";
+                contentDiv.innerHTML = "<p>❌ You don't have permission to watch any videos.</p>";
             } else {
-                let html = "<h2>Available Videos :</h2>";
+                let html = "<div class='discount-banner'>🎉 لديك تخفيض 30% على قائمة التشغيل التي تريدها 🎉</div>";
+                html += "<h2>Available Videos:</h2>";
                 videos.forEach(video => {
                     html += `<p><a href="${video}.html" target="_blank">${video}</a></p>`;
                 });
-                document.getElementById("content").innerHTML = html;
+
+              // إضافة قسم الصورة مع رابط لملف PDF
+html += `<div class="image-section">
+            <a href="disc.pdf" target="_blank">
+                <img src="disc.png" alt="30% Discount Offer">
+            </a>
+        </div>`;
+
+
+                contentDiv.innerHTML = html;
             }
         }
     </script>
-        <link rel="icon" href="/logo.png" type="image/png"> <!-- إضافة الشعار كـ favicon -->
-
+    <link rel="icon" href="/logo.png" type="image/png"> <!-- إضافة الشعار كـ favicon -->
 </head>
 <body>
     <div id="content"></div>
