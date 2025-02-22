@@ -221,7 +221,7 @@ header nav ul li a:hover {
 /* Modern and Clean Login Form */
 .login-container {
     max-width: 380px;
-    margin: 130px auto;
+    margin: 111px auto;
     padding: 40px;
     background: linear-gradient(135deg, #fff, #f8f8f8);
     border-radius: 25px;
@@ -490,127 +490,133 @@ header nav ul li a:hover {
     color: white;
     border-radius: 5px;
 }
-/* حاوية حديثة لقسم الـ about */
+/* تصميم عصري لقسم الـ about */
 .about-container {
-    max-width: 900px; /* الحد الأقصى لعرض الحاوية */
-    margin: 90px auto; /* مسافة 50px من الأعلى والأسفل والحاوية في المنتصف */
-    padding: 60px 20px; /* حشوة داخلية: 60px من الأعلى والأسفل و20px من الجوانب */
-    background: linear-gradient(135deg, #333333, #555555); /* خلفية متدرجة بين الأسود والرمادي */
-    border-radius: 15px; /* تدوير الزوايا بمقدار 15px */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* إضافة ظل للحاوية */
-    text-align: center; /* محاذاة النص إلى المنتصف */
-    color: #fff; /* لون النص أبيض */
-    font-family: 'Arial', sans-serif; /* نوع الخط Arial */
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 30px 30px;
+    background: linear-gradient(135deg, #222, #444);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    transition: transform 0.3s ease;
 }
 
-/* تنسيق العنوان H2 */
+.about-container:hover {
+    transform: scale(1.02);
+}
+
+/* تنسيق العنوان */
 .about-container h2 {
-    font-size: 45px; /* حجم الخط 42px */
-    font-weight: bold; /* الخط عريض */
-    margin-bottom: 25px; /* مسافة أسفل العنوان 20px */
-    letter-spacing: 2px; /* تباعد الحروف 2px */
-    text-transform: uppercase; /* تحويل النص إلى أحرف كبيرة */
-    color: #ffffff; /* لون النص أبيض */
-    background: -webkit-linear-gradient(45deg, #ffdd00, #ff8800); /* خلفية متدرجة للنص */
-    -webkit-background-clip: text; /* عرض الخلفية فقط على النص */
-    background-clip: text; /* تعريف الخاصية القياسية */
-    -webkit-text-fill-color: transparent; /* جعل لون النص شفافًا لعرض التدرج */
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ffcc00;
+    margin-bottom: 20px;
 }
 
 /* تنسيق النصوص */
 .about-container p {
-    font-size: 20px; /* حجم الخط 20px */
-    line-height: 1.7; /* ارتفاع السطر 1.7 لتسهيل القراءة */
-    margin-bottom: 30px; /* مسافة أسفل النص 30px */
-    padding: 0 15px; /* حشوة داخلية 15px على الجوانب */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* إضافة ظل خفيف للنص */
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
 /* تنسيق قائمة الروابط الاجتماعية */
 .about-container ul {
-    list-style: none; /* إزالة العلامات التقليدية للقائمة */
-    padding: 0; /* إزالة المسافات الداخلية */
-    display: flex; /* استخدام Flexbox لعرض العناصر */
-    justify-content: space-evenly; /* توزيع العناصر بالتساوي */
-    align-items: center; /* محاذاة العناصر عموديًا في المنتصف */
-    margin-top: 30px; /* مسافة 30px من الأعلى */
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
 }
 
 /* تنسيق عناصر القائمة */
 .about-container ul li {
-    display: inline-block; /* عرض العناصر بجانب بعضها */
-    margin: 0 15px; /* مسافة 15px على الجوانب لكل عنصر */
+    display: inline-block;
 }
 
-/* تنسيق روابط وسائل التواصل الاجتماعي */
+/* تنسيق الروابط */
 .about-container ul li a {
-    font-size: 18px; /* حجم الخط 18px */
-    color: #ffffff; /* لون النص رمادي داكن */
-    text-decoration: none; /* إزالة التسطير تحت النص */
-    font-weight: bold; /* الخط عريض */
-    padding: 10px 15px; /* حشوة داخلية: 10px من الأعلى والأسفل و15px من الجوانب */
-    border-radius: 8px; /* تدوير الزوايا بمقدار 8px */
-    background-color: rgba(255, 255, 255, 0.1); /* خلفية شفافة قليلاً */
-    transition: background-color 0.4s ease, color 0.4s ease, transform 0.3s ease; /* تأثيرات التدرج عند التحويم */
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.4s ease;
 }
 
-/* تأثير التحويم على الروابط */
 .about-container ul li a:hover {
-    background-color: #fa0000; /* تغيير خلفية الرابط إلى الأصفر عند التحويم */
-    color: #ffffff; /* تغيير لون النص إلى الأزرق عند التحويم */
-    transform: scale(1.2); /* تكبير الرابط عند التحويم */
+    background: #ffcc00;
+    color: #222;
+    transform: scale(1.1);
 }
+
+/* تنسيق معلومات الاتصال */
+.contact-info {
+    font-size: 18px;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.2);
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+
 
 /* استجابة للأجهزة الصغيرة */
 @media (max-width: 768px) {
     .about-container {
-        padding: 40px 10px; /* تقليل الحشوة الداخلية للأجهزة الصغيرة */
+        padding: 40px 15px;
     }
 
     .about-container h2 {
-        font-size: 30px; /* تصغير حجم الخط للأجهزة الصغيرة */
-        margin-bottom: 20px; /* تقليل المسافة أسفل العنوان */
+        font-size: 32px;
     }
 
     .about-container p {
-        font-size: 18px; /* تقليل حجم الخط */
-        padding: 0 10px; /* تقليل الحشوة الجانبية */
+        font-size: 18px;
     }
 
     .about-container ul {
-        flex-direction: column; /* تغيير الاتجاه إلى عمودي للأجهزة الصغيرة */
-        justify-content: center; /* محاذاة العناصر في المنتصف */
+        flex-direction: column;
+        align-items: center;
     }
 
     .about-container ul li {
-        margin: 10px 0; /* تقليل المسافة بين العناصر */
+        margin-bottom: 10px;
     }
 
-    .about-container ul li a {
-        font-size: 16px; /* تقليل حجم الخط */
-        padding: 8px 12px; /* تقليل الحشوة الداخلية */
+    .contact-info {
+        font-size: 16px;
+        padding: 8px 15px;
     }
 }
 
-/* استجابة للأجهزة الصغيرة جداً */
-@media (max-width: 480px) {
-    .about-container {
-        margin: 40px auto; /* تقليل المسافة العليا للمحتوى */
-        padding: 30px 10px; /* تقليل الحشوة الداخلية */
-    }
+.contact-info {
+    margin-top: 40px; /* يضيف مسافة إلى الأعلى لإبعاده قليلاً */
+    font-size: 20px; /* تكبير حجم الخط */
+    font-weight: bold; /* جعل النص أكثر وضوحًا */
+    color: #ffd700; /* لون أصفر ذهبي لإبرازه */
+    text-shadow: 1px 1px 5px rgba(41, 41, 20, 0.5); /* إضافة ظل للنص */
+    background-color: rgba(255, 255, 255, 0.1); /* خلفية خفيفة */
+    display: inline-block; /* يساعد في تحسين التصميم */
+    padding: 10px 20px; /* إضافة حشوة داخلية */
+    border-radius: 8px; /* تدوير الحواف */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
 
-    .about-container h2 {
-        font-size: 24px; /* تصغير الحجم أكثر */
-    }
-
-    .about-container p {
-        font-size: 16px; /* تقليل حجم الخط بشكل أكبر */
-    }
-
-    .about-container ul li a {
-        font-size: 14px; /* تقليل حجم الخط بشكل أكبر */
-        padding: 6px 10px; /* تقليل الحشوة بشكل أكبر */
-    }
+/* تأثير عند التحويم */
+.contact-info:hover {
+    transform: scale(1.1); /* تكبير طفيف عند التحويم */
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 
@@ -1408,7 +1414,9 @@ body {
             padding: 5px 10px;
             border-radius: 5px;
         }
-
+        .video-thumbnail-container img {
+            display: block; /* تجنب الفراغات الناتجة عن inline-block */
+        }
 /* General Navigation Bar Styling */
 nav {
     padding: 15px; /* Add padding around the navigation bar */
@@ -1579,7 +1587,7 @@ nav {
       }
       #registration-section {
         text-align: center; /* محاذاة العنوان والصورة في المنتصف */
-        margin: 20px 0; /* إضافة هوامش من الأعلى والأسفل */
+        margin: 0px 0; /* إضافة هوامش من الأعلى والأسفل */
     }
     
     .sheets-container {
@@ -1972,4 +1980,36 @@ nav {
     animation: pulse 1.5s infinite; /* نفس تأثير النبض */
     transform: scale(1.1);
     box-shadow: 0 0 10px rgba(255, 77, 77, 0.8); /* إشعاع للشارة أيضًا */
+}
+.trust-info {
+    max-width: 85%; /* توسيع العرض إلى 85% */
+    margin: 30px auto; /* توسيط العنصر وتحريكه للأعلى */
+    padding: 15px 30px; /* زيادة المسافة الأفقية داخل العنصر */
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: #090303;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.youtube-link {
+    background-color: #FF0000; /* لون يوتيوب */
+    color: white; /* لون النص */
+    padding: 5px 12px; /* حشوة داخلية */
+    border-radius: 55px; /* تدوير الزوايا */
+    font-weight: bold; /* جعل الخط عريض */
+    text-decoration: none; /* إزالة التسطير */
+    transition: all 0.3s ease-in-out; /* تأثير سلس عند التحويم */
+}
+
+.youtube-link:hover {
+    background-color: #CC0000; /* لون أغمق عند التمرير */
+    transform: scale(1.1); /* تكبير العنصر قليلاً */
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); /* إضافة ظل متوهج */
+}
+.trust-info {
+    margin-top: -10px; /* رفع العنصر للأعلى */
+    margin-bottom: 20px; /* لضبط التوازن */
 }
