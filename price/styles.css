@@ -237,3 +237,23 @@ form button:hover {
     font-size: 22px; /* تكبير رقم الحساب ليكون أكثر وضوحًا */
     color: #020202; /* لون مختلف لتمييز الرقم */
 }
+.sell-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.payment-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.payment-text span {
+    display: inline-block;
+    color: #303030;
+    padding: 5px 10px;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
