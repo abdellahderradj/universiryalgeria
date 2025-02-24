@@ -21,9 +21,14 @@
                                     <div class="images">
                 <!-- الصف الأول -->
                 <div class="image-row">
+                    
                     <a href="../price.pdf">
                         <img src="../Price.png" alt="اختيار طريقة الدفع">
                     </a>
+
+                   
+
+
                     <div class="image-slider">
                         <a href="../price02.pdf">
                             <img src="../Price02.png" alt="صورة 1" class="slider-image">
@@ -31,21 +36,71 @@
                     </div>
                 </div>
             
-                <!-- الصف الثاني -->
                 <div class="image-row">
-                    <a href="../regi.pdf">
-                        <img src="../regi.png" alt="صورة 1" class="slider-image">
-                    </a>
                     <a href="../pdf1000.pdf">
                         <img src="../rec1000.png" alt="صورة 1" class="slider-image">
                     </a>
-                </div>
             </div>
             
         <section class="sell-section">
             <div class="container">
-                <p> أو الدفع عبر بريدي موب : <span><strong>00799999002580233574</strong></span></p>
+                <p class="payment-text">
+                    أو الدفع عبر بريدي موب : 
+                    <span>00799999002580233574</span>
+                </p>
+                
+                <div class="image-container">
+                    <a href="Baridimob01.pdf" target="_blank">
+                        <img src="Baridimob01.png" alt="بريدي موب 1" class="hover-effect">
+                    </a>
+                    
+                    <a href="Baridimob02.pdf" target="_blank">
+                        <img src="Baridimob02.png" alt="بريدي موب 2" class="hover-effect">
+                    </a>
+                    
+                    <a href="Baridimob03.pdf" target="_blank">
+                        <img src="Baridimob03.png" alt="بريدي موب 3" class="hover-effect">
+                    </a>
+                </div>
+                
+                <style>
+.image-container {
+    display: flex;  /* جعل الصور تظهر أفقياً */
+    justify-content: center;  /* توسيط العناصر أفقيًا */
+    gap: 60px;  /* تقليل المسافة بين الصور */
+    margin-top: 10px;
+    flex-wrap: wrap; /* السماح بالانتقال لسطر جديد عند الحاجة */
+}
 
+.image-container img {
+    width: 190px; /* تحديد حجم الصورة */
+    height: auto; /* الحفاظ على نسبة الأبعاد */
+    border-radius: 10px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.image-container img:hover {
+    transform: scale(1.08); /* تأثير التكبير عند التمرير */
+    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+                
+                    .hover-effect {
+                        width: 80px; /* حجم متوسط للصور */
+                        height: auto; /* الحفاظ على الأبعاد الأصلية */
+                        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+                        border-radius: 10px;
+                        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+                    }
+                
+                    .hover-effect:hover {
+                        transform: scale(1.1); /* تكبير عند تمرير الماوس */
+                        box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* زيادة الظل */
+                    }
+                </style>
+                
+                
                    
             </div>
       
@@ -80,6 +135,48 @@
                 <a href="tel:+213555491316" style="color: #050303;">+213 555 49 13 16</a>
                 : رقم الهاتف
             </p>
+<!-- إضافة الصور الخاصة بواجهة تسجيل الدخول -->
+<div class="login-section">
+    <h3>: طريقة تسجيل الدخول</h3> 
+    <div class="login-images-container">
+        <a href="01.pdf" target="_blank"><img src="01.png" alt="إدخال اسم المستخدم" class="login-image"></a>
+        <a href="02.pdf" target="_blank"><img src="02.png" alt="إدخال كلمة السر" class="login-image"></a>
+        <a href="03.pdf" target="_blank"><img src="03.png" alt="الواجهة بعد تسجيل الدخول" class="login-image"></a>
+    </div>
+</div>
+
+<style>
+.login-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-images-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.login-image {
+    max-width: 100%; /* يضمن عدم تجاوز الصورة لحجمها الأصلي */
+    width: 300px; /* تحديد عرض ثابت */
+    height: auto; /* الحفاظ على الأبعاد الأصلية دون تشويه */
+    border-radius: 10px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.login-image:hover {
+    transform: scale(1.1); /* تكبير عند تمرير الماوس */
+}
+
+</style>
+
+
+</div>
+
         </div>
     </div>
         <script src="slider.js"></script>
@@ -87,7 +184,6 @@
         <footer>
             <div class="footer-bottom">
                 <p>&copy; 2024 Algeria University™. All Rights Reserved.</p>
-            </div>
         </footer>
     
 </body>

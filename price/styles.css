@@ -40,15 +40,15 @@ body {
 
 
 
-
 .container {
     max-width: 800px;
-    margin: 50px auto;
+    margin: 20px auto; /* تقليل المسافة العلوية */
     padding: 20px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 
 h1 {
     font-size: 28px;
@@ -198,3 +198,42 @@ form button:hover {
 }
 
 
+.image-row {
+    display: flex;  /* جعل الصور تظهر أفقياً */
+    justify-content: center;  /* توسيط الصور في الصف */
+    gap: 20px;  /* إضافة مسافة بين الصور */
+    margin-bottom: 20px;  /* إضافة مسافة بين الصفوف */
+    flex-wrap: wrap;  /* السماح بالانتقال إلى سطر جديد إذا لم تكن المساحة كافية */
+}
+
+.image-row a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; /* إزالة تأثير الروابط */
+}
+
+.image-row img {
+    width: 100%;
+    max-width: 250px;  /* حجم متوسط للصور */
+    height: auto;  /* الحفاظ على الأبعاد الأصلية */
+    border-radius: 10px;  /* جعل الحواف مستديرة */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  /* إضافة ظل خفيف */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.image-row img:hover {
+    transform: scale(1.07);  /* تكبير عند تمرير الماوس */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);  /* زيادة الظل */
+}
+.payment-text {
+    font-size: 20px; /* تكبير حجم الخط */
+    font-weight: bold; /* جعل النص أكثر وضوحًا */
+    color: #333; /* لون غامق قليلاً لتحسين الوضوح */
+    text-align: center; /* توسيط النص */
+}
+
+.payment-text span {
+    font-size: 22px; /* تكبير رقم الحساب ليكون أكثر وضوحًا */
+    color: #020202; /* لون مختلف لتمييز الرقم */
+}
