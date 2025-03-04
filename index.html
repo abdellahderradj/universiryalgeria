@@ -111,7 +111,76 @@
 
 </head>
 <body>
+     <!-- Ramadan Discount Banner -->
+     <div id="ramadan-banner" class="ramadan-banner">
+        <p>🌙 عرض خاص لشهر رمضان! خصم 30% على جميع الدورات! ⏳ ينتهي العرض في: <span id="countdown"></span></p>
+    </div>
+
+    <header>
+        <div class="container">
+            <!-- Hamburger Menu Toggle -->
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
     
+            <!-- Site Title or Logo -->
+            <div class="site-title">
+                <a href="index.html">Algeria University</a>
+            </div>
+    
+            <!-- Navigation Links -->
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=j_ypDHfZLSw&t=94s" target="_blank">Youtube</a></li>
+                    <li class="dropdown more-dropdown">
+                        <a href="javascript:void(0)" class="dropbtn" onclick="toggleDropdown(event)">Playlist</a>
+                        <ul class="dropdown-content more-dropdown-content">
+                            <li><a href="Ondes_Et_Vibrations.html">Ondes Et Vibrations</a></li>
+                            <li><a href="Theorie_du_signal.html">Theorie du Signal</a></li>
+                            <li><a href="systemes-asservis-echantillonnes-regulation.html">Systèmes Asservis Échantillonnés et Régulation</a></li>
+                            <li><a href="electronique_de_puissance_avancee.html">Électronique de puissance (avancée)</a></li>
+                            <li><a href="electroniquef1.html">Electronique Fondamentale 1</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="Login.html">Login</a></li>
+                    <li><a href="price/price.html" target="_blank">Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+<!-- JavaScript for Countdown Timer -->
+<script>
+   function startCountdown() {
+    var ramadanEnd = new Date("2025-03-30T23:59:59").getTime(); // تأكد من صحة التاريخ
+    var x = setInterval(function() {
+        var now = new Date().getTime();
+        var distance = ramadanEnd - now;
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML = 
+            days + " يوم و " + hours + " ساعة و " + minutes + " دقيقة و " + seconds + " ثانية ";
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("ramadan-banner").style.display = "none";
+        }
+    }, 1000);
+}
+
+window.onload = startCountdown;
+
+</script>
+
+
   
     <header>
         <div class="container">
@@ -174,8 +243,16 @@
   </a>
       <h3>Ondes Et Vibrations</h3>
       <p>جميع الفيديوهات مرتبة ومنظمة في قائمة تشغيل على يوتيوب، يمكنك مشاهدتها بعد الدفع فقط. لا تفوت الفرصة</p>
-             <button><a href="price/price.html" target="_blank" >اشترِ الآن – 1000 دج فقط</a></button>
-  </div>
+      <button>
+        <a href="price/price.html" target="_blank">
+            اشترِ الآن – 
+            <span style="position: relative; display: inline-block; font-weight: bold; font-style: italic; color: #b12704;">
+                1000 دج
+                <span style="position: absolute; top: 50%; left: 0; width: 100%; height: 2px; background: red;"></span>
+            </span> 
+            700 دج فقط
+        </a>
+    </button>  </div>
 
 
   <!-- Playlist 6 -->
@@ -185,8 +262,17 @@
 </a>
     <h3>Electronique fondamentale 1</h3>
     <p>جميع الفيديوهات مرتبة ومنظمة في قائمة تشغيل على يوتيوب، يمكنك مشاهدتها بعد الدفع فقط. لا تفوت الفرصة</p>
-    <button><a href="price/price.html" target="_blank" >اشترِ الآن – 1200 دج فقط</a></button>
-</div>
+    <button>
+        <a href="price/price.html" target="_blank">
+            اشترِ الآن – 
+            <span style="position: relative; display: inline-block; font-weight: bold; font-style: italic; color: #b12704;">
+                1200 دج
+                <span style="position: absolute; top: 50%; left: 0; width: 100%; height: 2px; background: red;"></span>
+            </span> 
+            1000 دج فقط
+        </a>
+    </button>
+    </div>
 
 
   <!-- Playlist 12 -->
@@ -197,8 +283,17 @@
 </a>
     <h3>الهندسة المدنية - ثالثة ثانوي</h3>
     <p>جميع الفيديوهات مرتبة ومنظمة في قائمة تشغيل على يوتيوب، يمكنك مشاهدتها بعد الدفع فقط. لا تفوت الفرصة</p>
-    <button><a href="price/price.html" target="_blank" >اشترِ الآن – 2500 دج فقط</a></button>
-</div>
+    <button>
+        <a href="price/price.html" target="_blank">
+            اشترِ الآن – 
+            <span style="position: relative; display: inline-block; font-weight: bold; font-style: italic; color: #b12704;">
+                2500 دج
+                <span style="position: absolute; top: 50%; left: 0; width: 100%; height: 2px; background: red;"></span>
+            </span> 
+            1750 دج فقط
+        </a>
+    </button>
+    </div>
 
 
   <!-- Playlist 12 -->
@@ -209,8 +304,16 @@
 </a>
     <h3>Systèmes Asservis</h3>
     <p>جميع الفيديوهات مرتبة ومنظمة في قائمة تشغيل على يوتيوب، يمكنك مشاهدتها بعد الدفع فقط. لا تفوت الفرصة</p>
-    <button><a href="price/price.html" target="_blank" >اشترِ الآن – 1000 دج فقط</a></button>
-</div>
+    <button>
+        <a href="price/price.html" target="_blank">
+            اشترِ الآن – 
+            <span style="position: relative; display: inline-block; font-weight: bold; font-style: italic; color: #b12704;">
+                1000 دج
+                <span style="position: absolute; top: 50%; left: 0; width: 100%; height: 2px; background: red;"></span>
+            </span> 
+            700 دج فقط
+        </a>
+    </button></div>
 
 
 
@@ -221,8 +324,16 @@
   </a>
       <h3>Réseaux Électriques(L3+M1)</h3>
       <p>جميع الفيديوهات مرتبة ومنظمة في قائمة تشغيل على يوتيوب، يمكنك مشاهدتها بعد الدفع فقط. لا تفوت الفرصة</p>
-      <button><a href="price/price.html" target="_blank" >اشترِ الآن – 1500 دج فقط</a></button>
-  </div>
+      <button>
+        <a href="price/price.html" target="_blank">
+            اشترِ الآن – 
+            <span style="position: relative; display: inline-block; font-weight: bold; font-style: italic; color: #b12704;">
+                1500 دج
+                <span style="position: absolute; top: 50%; left: 0; width: 100%; height: 2px; background: red;"></span>
+            </span> 
+            1050 دج فقط
+        </a>
+    </button>  </div>
 
   <!-- Playlist 2 -->
   <div class="playlist-card">
@@ -231,7 +342,17 @@
 </a>
     <h3>Théorie du signal</h3>
     <p>جميع الفيديوهات مرتبة ومنظمة في قائمة تشغيل على يوتيوب، يمكنك مشاهدتها بعد الدفع فقط. لا تفوت الفرصة</p>
-    <button><a href="price/price.html" target="_blank" " >اشترِ الآن – 800 دج فقط</a></button>
+<!-- سعر 800 دج → 560 دج -->
+<button>
+    <a href="price/price.html" target="_blank">
+        اشترِ الآن – 
+        <span style="position: relative; display: inline-block; font-weight: bold; font-style: italic; color: #b12704;">
+            800 دج
+            <span style="position: absolute; top: 50%; left: 0; width: 100%; height: 2px; background: red;"></span>
+        </span> 
+        560 دج فقط
+    </a>
+</button>
 </div>
 
 
@@ -242,7 +363,17 @@
   </a>
       <h3>Les Quadripôles</h3>
       <p>جميع الفيديوهات مرتبة ومنظمة في قائمة تشغيل على يوتيوب، يمكنك مشاهدتها بعد الدفع فقط. لا تفوت الفرصة</p>
-      <button><a href="price/price.html" target="_blank" >اشترِ الآن – 800 دج فقط</a></button>
+<!-- سعر 800 دج → 560 دج -->
+<button>
+    <a href="price/price.html" target="_blank">
+        اشترِ الآن – 
+        <span style="position: relative; display: inline-block; font-weight: bold; font-style: italic; color: #b12704;">
+            800 دج
+            <span style="position: absolute; top: 50%; left: 0; width: 100%; height: 2px; background: red;"></span>
+        </span> 
+        560 دج فقط
+    </a>
+</button>
   </div>
 
 
@@ -254,8 +385,16 @@
   </a>
       <h3>Electronique de Puissance</h3>
       <p>جميع الفيديوهات مرتبة ومنظمة في قائمة تشغيل على يوتيوب، يمكنك مشاهدتها بعد الدفع فقط. لا تفوت الفرصة</p>
-      <button><a href="price/price.html" target="_blank" >اشترِ الآن – 1200 دج فقط</a></button>
-  </div>
+      <button>
+        <a href="price/price.html" target="_blank">
+            اشترِ الآن – 
+            <span style="position: relative; display: inline-block; font-weight: bold; font-style: italic; color: #b12704;">
+                1200 دج
+                <span style="position: absolute; top: 50%; left: 0; width: 100%; height: 2px; background: red;"></span>
+            </span> 
+            840 دج فقط
+        </a>
+    </button>  </div>
 
 
 
@@ -267,8 +406,16 @@
       </a>
       <h3>Électrotechnique fondamentale 1</h3>
       <p>جميع الفيديوهات مرتبة ومنظمة في قائمة تشغيل على يوتيوب، يمكنك مشاهدتها بعد الدفع فقط. لا تفوت الفرصة</p>
-      <button><a href="price/price.html" target="_blank" >اشترِ الآن – 1200 دج فقط</a></button>
-  </div>
+      <button>
+        <a href="price/price.html" target="_blank">
+            اشترِ الآن – 
+            <span style="position: relative; display: inline-block; font-weight: bold; font-style: italic; color: #b12704;">
+                1200 دج
+                <span style="position: absolute; top: 50%; left: 0; width: 100%; height: 2px; background: red;"></span>
+            </span> 
+            840 دج فقط
+        </a>
+    </button>  </div>
 
   
   <!-- Playlist 3 -->
@@ -278,8 +425,16 @@
 </a>
     <h3>Électrotechnique Fondamentale 2</h3>
     <p>تحتوي القائمة على فيديوهات مرتبة ومنظمة، مشروحة باللغة العربية، لمساعدتك على فهم المادة بأبسط طريقة ممكنة</p>
-    <button><a href="price/price.html" target="_blank" >اشترِ الآن – 1200 دج فقط</a></button>
-</div>
+    <button>
+        <a href="price/price.html" target="_blank">
+            اشترِ الآن – 
+            <span style="position: relative; display: inline-block; font-weight: bold; font-style: italic; color: #b12704;">
+                1200 دج
+                <span style="position: absolute; top: 50%; left: 0; width: 100%; height: 2px; background: red;"></span>
+            </span> 
+            840 دج فقط
+        </a>
+    </button></div>
 
 
   <!-- Playlist 8 -->
@@ -289,8 +444,16 @@
   </a>
       <h3>Informatique 1</h3>
       <p>جميع الفيديوهات مرتبة ومنظمة في قائمة تشغيل على يوتيوب، يمكنك مشاهدتها بعد الدفع فقط. لا تفوت الفرصة</p>
-      <button><a href="price/price.html" target="_blank" >اشترِ الآن – 1000 دج فقط</a></button>
-  </div>
+      <button>
+        <a href="price/price.html" target="_blank">
+            اشترِ الآن – 
+            <span style="position: relative; display: inline-block; font-weight: bold; font-style: italic; color: #b12704;">
+                1000 دج
+                <span style="position: absolute; top: 50%; left: 0; width: 100%; height: 2px; background: red;"></span>
+            </span> 
+            700 دج فقط
+        </a>
+    </button>  </div>
 
 
   <!-- Playlist 9 -->
@@ -300,8 +463,16 @@
   </a>
       <h3>Informatique 2</h3>
       <p>جميع الفيديوهات مرتبة ومنظمة في قائمة تشغيل على يوتيوب، يمكنك مشاهدتها بعد الدفع فقط. لا تفوت الفرصة</p>
-      <button><a href="price/price.html" target="_blank" >اشترِ الآن – 1000 دج فقط</a></button>
-  </div>
+      <button>
+        <a href="price/price.html" target="_blank">
+            اشترِ الآن – 
+            <span style="position: relative; display: inline-block; font-weight: bold; font-style: italic; color: #b12704;">
+                1000 دج
+                <span style="position: absolute; top: 50%; left: 0; width: 100%; height: 2px; background: red;"></span>
+            </span> 
+            700 دج فقط
+        </a>
+    </button>  </div>
 
   <!-- Playlist 10 -->
   <div class="playlist-card">
@@ -310,7 +481,17 @@
   </a>
       <h3>Informatique 3</h3>
       <p>جميع الفيديوهات مرتبة ومنظمة في قائمة تشغيل على يوتيوب، يمكنك مشاهدتها بعد الدفع فقط. لا تفوت الفرصة</p>
-      <button><a href="price/price.html" target="_blank" >اشترِ الآن – 800 دج فقط</a></button>
+<!-- سعر 800 دج → 560 دج -->
+<button>
+    <a href="price/price.html" target="_blank">
+        اشترِ الآن – 
+        <span style="position: relative; display: inline-block; font-weight: bold; font-style: italic; color: #b12704;">
+            800 دج
+            <span style="position: absolute; top: 50%; left: 0; width: 100%; height: 2px; background: red;"></span>
+        </span> 
+        560 دج فقط
+    </a>
+</button>
   </div>
 
   <!-- Playlist 11 -->
@@ -320,8 +501,16 @@
       </a>
       <h3>Statistique (Probabilité et Statistique S3)</h3>
       <p>جميع الفيديوهات مرتبة ومنظمة في قائمة تشغيل على يوتيوب، يمكنك مشاهدتها بعد الدفع فقط. لا تفوت الفرصة</p>
-      <button><a href="price/price.html" target="_blank" >اشترِ الآن – 1000 دج فقط</a></button>
-  </div>
+      <button>
+        <a href="price/price.html" target="_blank">
+            اشترِ الآن – 
+            <span style="position: relative; display: inline-block; font-weight: bold; font-style: italic; color: #b12704;">
+                1000 دج
+                <span style="position: absolute; top: 50%; left: 0; width: 100%; height: 2px; background: red;"></span>
+            </span> 
+            700 دج فقط
+        </a>
+    </button>  </div>
 
 
 
@@ -332,8 +521,16 @@
   </a>
       <h3>Machines Électriques Approfondies (L2+L3+M1)</h3>
       <p>جميع الفيديوهات مرتبة ومنظمة في قائمة تشغيل على يوتيوب، يمكنك مشاهدتها بعد الدفع فقط. لا تفوت الفرصة</p>
-      <button><a href="price/price.html" target="_blank" >اشترِ الآن – 1000 دج فقط</a></button>
-  </div>
+      <button>
+        <a href="price/price.html" target="_blank">
+            اشترِ الآن – 
+            <span style="position: relative; display: inline-block; font-weight: bold; font-style: italic; color: #b12704;">
+                1000 دج
+                <span style="position: absolute; top: 50%; left: 0; width: 100%; height: 2px; background: red;"></span>
+            </span> 
+            700 دج فقط
+        </a>
+    </button>  </div>
 
 
   <!-- Playlist 14 -->
@@ -343,8 +540,16 @@
   </a>
       <h3>Méthodes Numériques (et optimisation) L2+M1</h3>
       <p>جميع الفيديوهات مرتبة ومنظمة في قائمة تشغيل على يوتيوب، يمكنك مشاهدتها بعد الدفع فقط. لا تفوت الفرصة</p>
-      <button><a href="price/price.html" target="_blank" >اشترِ الآن – 1200 دج فقط</a></button>
-  </div>
+      <button>
+        <a href="price/price.html" target="_blank">
+            اشترِ الآن – 
+            <span style="position: relative; display: inline-block; font-weight: bold; font-style: italic; color: #b12704;">
+                1200 دج
+                <span style="position: absolute; top: 50%; left: 0; width: 100%; height: 2px; background: red;"></span>
+            </span> 
+            840 دج فقط
+        </a>
+    </button>  </div>
   
 
       <!-- Playlist 15 -->
@@ -354,8 +559,16 @@
           </a>
           <h3>Logique Combinatoire et Séquentielle</h3>
           <p>جميع الفيديوهات مرتبة ومنظمة في قائمة تشغيل على يوتيوب، يمكنك مشاهدتها بعد الدفع فقط. لا تفوت الفرصة</p>
-          <button><a href="price/price.html" target="_blank" target="_blank" >اشترِ الآن – 1200 دج فقط</a></button>
-      </div>
+          <button>
+            <a href="price/price.html" target="_blank">
+                اشترِ الآن – 
+                <span style="position: relative; display: inline-block; font-weight: bold; font-style: italic; color: #b12704;">
+                    1200 دج
+                    <span style="position: absolute; top: 50%; left: 0; width: 100%; height: 2px; background: red;"></span>
+                </span> 
+                840 دج فقط
+            </a>
+        </button>      </div>
       
    <!-- Playlist 30 -->
    <div class="playlist-card">
@@ -364,8 +577,16 @@
 </a>
     <h3>Matériaux et introduction à la haute tension</h3>
     <p>تحتوي القائمة على فيديوهات مرتبة ومنظمة، مشروحة باللغة العربية، لمساعدتك على فهم المادة بأبسط طريقة ممكنة</p>
-    <button><a href="price/price.html" target="_blank" >اشترِ الآن – 1000 دج فقط</a></button>
-</div>
+    <button>
+        <a href="price/price.html" target="_blank">
+            اشترِ الآن – 
+            <span style="position: relative; display: inline-block; font-weight: bold; font-style: italic; color: #b12704;">
+                1000 دج
+                <span style="position: absolute; top: 50%; left: 0; width: 100%; height: 2px; background: red;"></span>
+            </span> 
+            700 دج فقط
+        </a>
+    </button></div>
 
 
      <!-- Playlist 30 -->
@@ -375,8 +596,16 @@
 </a>
     <h3>Systèmes Asservis Échantillonnés et Régulation</h3>
     <p>سيتم نشر باقي الفيديوهات عن قريب، حيث نعمل على إعدادها لتكون مفيدة وسهلة الفهم</p>
-    <button><a href="price/price.html" target="_blank" >اشترِ الآن – 1200 دج فقط</a></button>
-</div>
+    <button>
+        <a href="price/price.html" target="_blank">
+            اشترِ الآن – 
+            <span style="position: relative; display: inline-block; font-weight: bold; font-style: italic; color: #b12704;">
+                1200 دج
+                <span style="position: absolute; top: 50%; left: 0; width: 100%; height: 2px; background: red;"></span>
+            </span> 
+            840 دج فقط
+        </a>
+    </button></div>
 
 
   

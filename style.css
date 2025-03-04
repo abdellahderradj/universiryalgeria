@@ -2013,3 +2013,14 @@ nav {
     margin-top: -10px; /* رفع العنصر للأعلى */
     margin-bottom: 20px; /* لضبط التوازن */
 }
+.ramadan-banner {
+    background-color: #ffcc00;
+    color: #000;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    position: fixed;
+    top: 57px; /* قم بتعديل هذه القيمة للتحكم في المسافة */
+    width: 100%;
+    z-index: 1000;
+}
