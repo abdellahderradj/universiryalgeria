@@ -58,7 +58,127 @@
         .video-list li:hover {
             background: #ddd;
         }
+        
+        /* Enhanced Comments Section */
+        .comments-section {
+            margin-top: 30px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+        
+        .comment {
+            background: #f9f9f9;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #007BFF;
+        }
+        
+        .comment-author {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .comment-rating {
+            color: #FFA500;
+            margin-bottom: 5px;
+        }
+        
+        .comment-text {
+            color: #555;
+            line-height: 1.5;
+        }
+        
+        .comment-date {
+            font-size: 12px;
+            color: #999;
+            margin-top: 5px;
+            text-align: right;
+        }
+        
+        /* Enhanced Comment Form */
+        .comment-form {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+        }
+        
+        .comment-form h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        
+        .rating-container {
+            margin: 15px 0;
+        }
+        
+        .rating-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        .rating-stars {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .rating-stars span {
+            color: #ccc;
+            transition: color 0.2s;
+            margin-right: 5px;
+        }
+        
+        .rating-stars span.active,
+        .rating-stars span:hover {
+            color: #FFA500;
+        }
+        
+        .rating-stars span:hover ~ span {
+            color: #ccc !important;
+        }
+        
+        #comment-text {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
+            min-height: 100px;
+            font-family: inherit;
+            margin-bottom: 15px;
+        }
+        
+        .submit-btn {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+        
+        .rating-explanation {
+            font-size: 12px;
+            color: #777;
+            margin-top: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
     </style>
+</head>
+<body>
+    <div id="content"></div>
+    
     <script defer>
         window.onload = function() {
             const videos = JSON.parse(localStorage.getItem("videos")) || [];
@@ -74,12 +194,148 @@
                 });
                 html += `</ul>`;
                 
+                // Enhanced comments section
+                html += `
+                <div class="comments-section">
+                    <h2>User Reviews</h2>
+                    <div id="comments-container"></div>
+                    
+                    <div class="comment-form">
+                        <h3>Add Your Review</h3>
+                        <div class="rating-container">
+                            <label class="rating-label">Your Rating:</label>
+                            <div class="rating-stars">
+                                <span data-rating="1">★</span>
+                                <span data-rating="2">★</span>
+                                <span data-rating="3">★</span>
+                                <span data-rating="4">★</span>
+                                <span data-rating="5">★</span>
+                            </div>
+                            <div class="rating-explanation">
+                                <span>Poor</span>
+                                <span>Excellent</span>
+                            </div>
+                        </div>
+                        <textarea id="comment-text" placeholder="Share your detailed thoughts about this playlist..." rows="4"></textarea>
+                        <button class="submit-btn" id="submit-comment">Submit Review</button>
+                    </div>
+                </div>`;
+                
                 contentDiv.innerHTML = html;
+                
+                // Initialize comments functionality
+                initComments();
             }
+        };
+
+        function initComments() {
+            // Load existing comments from localStorage
+            const comments = JSON.parse(localStorage.getItem('playlist-comments')) || [];
+            displayComments(comments);
+            
+            // Enhanced star rating functionality
+            const stars = document.querySelectorAll('.rating-stars span');
+            let selectedRating = 0;
+            
+            stars.forEach(star => {
+                star.addEventListener('click', () => {
+                    selectedRating = parseInt(star.dataset.rating);
+                    updateStars();
+                });
+                
+                star.addEventListener('mouseover', () => {
+                    const hoverRating = parseInt(star.dataset.rating);
+                    stars.forEach((s, index) => {
+                        s.style.color = index < hoverRating ? '#FFA500' : '#ccc';
+                    });
+                });
+                
+                star.addEventListener('mouseout', () => {
+                    updateStars();
+                });
+            });
+            
+            function updateStars() {
+                stars.forEach((star, index) => {
+                    star.style.color = index < selectedRating ? '#FFA500' : '#ccc';
+                    star.classList.toggle('active', index < selectedRating);
+                });
+            }
+            
+            // Submit comment
+            document.getElementById('submit-comment').addEventListener('click', () => {
+                const commentText = document.getElementById('comment-text').value.trim();
+                
+                if (!selectedRating) {
+                    alert('Please select a rating by clicking the stars');
+                    return;
+                }
+                
+                if (!commentText) {
+                    alert('Please enter your comment');
+                    return;
+                }
+                
+                // Get user's email from where you store it
+                const userEmail = localStorage.getItem('userEmail') || 'user@gmail.com';
+                const username = userEmail.split('@')[0];
+                
+                const newComment = {
+                    id: Date.now(),
+                    author: username,
+                    text: commentText,
+                    rating: selectedRating,
+                    date: new Date().toLocaleDateString('en-US', { 
+                        year: 'numeric', 
+                        month: 'short', 
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    })
+                };
+                
+                // Save to localStorage
+                const comments = JSON.parse(localStorage.getItem('playlist-comments')) || [];
+                comments.push(newComment);
+                localStorage.setItem('playlist-comments', JSON.stringify(comments));
+                
+                // Display the new comment
+                displayComments(comments);
+                
+                // Reset form
+                document.getElementById('comment-text').value = '';
+                selectedRating = 0;
+                updateStars();
+            });
+        }
+        
+        function displayComments(comments) {
+            const container = document.getElementById('comments-container');
+            
+            if (comments.length === 0) {
+                container.innerHTML = '<p>No reviews yet. Be the first to review!</p>';
+                return;
+            }
+            
+            // Sort by date (newest first)
+            comments.sort((a, b) => new Date(b.date) - new Date(a.date));
+            
+            let html = '';
+            comments.forEach(comment => {
+                html += `
+                <div class="comment">
+                    <div class="comment-author">${comment.author}</div>
+                    <div class="comment-rating" title="${comment.rating} out of 5">
+                        ${'★'.repeat(comment.rating)}${'☆'.repeat(5 - comment.rating)}
+                        <span style="font-size: 14px; color: #777;">(${comment.rating}.0)</span>
+                    </div>
+                    <div class="comment-text">${comment.text}</div>
+                    <div class="comment-date">${comment.date}</div>
+                </div>`;
+            });
+            
+            container.innerHTML = html;
         }
     </script>
-</head>
-<body>
-    <div id="content"></div>
 </body>
 </html>
