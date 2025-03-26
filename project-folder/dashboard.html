@@ -58,40 +58,180 @@
         .video-list li:hover {
             background: #ddd;
         }
-        .image-section {
-            margin-top: 20px;
-        }
-        .image-section img {
-            max-width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            transition: 0.3s;
-        }
-        .image-section img:hover {
-            transform: scale(1.05);
-        }
-    </style>
- <script defer>
-    window.onload = function() {
-        const videos = JSON.parse(localStorage.getItem("videos")) || [];
-        const contentDiv = document.getElementById("content");
         
-        if (videos.length === 0) {
-            contentDiv.innerHTML = `<p style="color: red; font-weight: bold; text-align: center;">❌ You don't have permission to watch any videos.</p>`;
-        } else {
-            let html = `<div class='discount-banner'>🎉 لديك تخفيض 30% على قائمة التشغيل التي تريدها 🎉</div>`;
-            html += `<h2>Available Videos:</h2><ul class='video-list'>`;
-            videos.forEach(video => {
-                html += `<li><a href="${video}.html" target="_blank">▶ ${video}</a></li>`;
-            });
-            html += `</ul>`;
-            
-            contentDiv.innerHTML = html;
-        }
+      /* Comments Display Section - Matching Your Style */
+    .comments-display {
+        margin-top: 30px;
+        border-top: 1px solid #eee;
+        padding-top: 20px;
     }
-</script>
+    
+    .comment {
+        background: #f9f9f9;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        border-left: 4px solid #007BFF;
+    }
+    
+    .comment-author {
+        font-weight: bold;
+        color: #333;
+    }
+    
+    .comment-rating {
+        color: #FFA500;
+        margin-bottom: 5px;
+    }
+    
+    .comment-text {
+        color: #555;
+        line-height: 1.5;
+    }
+    
+    .comment-date {
+        font-size: 12px;
+        color: #999;
+        margin-top: 5px;
+        text-align: right;
+    }
+    </style>
 </head>
 <body>
     <div id="content"></div>
+    
+    <script>
+        window.onload = function() {
+            const videos = JSON.parse(localStorage.getItem("videos")) || [];
+            const contentDiv = document.getElementById("content");
+            
+            if (videos.length === 0) {
+                contentDiv.innerHTML = `<p style="color: red; font-weight: bold; text-align: center;">❌ You don't have permission to watch any videos.</p>`;
+            } else {
+                let html = `<div class='discount-banner'>🎉 لديك تخفيض 30% على قائمة التشغيل التي تريدها 🎉</div>`;
+                html += `<h2>Available Videos:</h2><ul class='video-list'>`;
+                videos.forEach(video => {
+                    html += `<li><a href="${video}.html" target="_blank">▶ ${video}</a></li>`;
+                });
+                html += `</ul>`;
+                
+                // Add comments section
+                html += `
+                <div class="comments-section">
+                    <h2>User Reviews</h2>
+                    <div id="comments-container"></div>
+                    
+                    <div class="comment-form">
+                        <h3>Add Your Review</h3>
+                        <div class="rating-stars">
+                            <span data-rating="1">★</span>
+                            <span data-rating="2">★</span>
+                            <span data-rating="3">★</span>
+                            <span data-rating="4">★</span>
+                            <span data-rating="5">★</span>
+                        </div>
+                        <textarea id="comment-text" placeholder="Share your thoughts about this playlist..." rows="4"></textarea>
+                        <button class="submit-btn" id="submit-comment">Submit Review</button>
+                    </div>
+                </div>`;
+                
+                contentDiv.innerHTML = html;
+                
+                // Initialize comments functionality
+                initComments();
+            }
+        };
+
+        function initComments() {
+    // Load existing comments from localStorage
+    const comments = JSON.parse(localStorage.getItem('playlist-comments')) || [];
+    displayComments(comments);
+    
+    // Star rating functionality
+    const stars = document.querySelectorAll('.rating-stars span');
+    let selectedRating = 0;
+    
+    stars.forEach(star => {
+        star.addEventListener('click', () => {
+            const rating = parseInt(star.dataset.rating);
+            selectedRating = rating;
+            
+            stars.forEach((s, index) => {
+                if (index < rating) {
+                    s.classList.add('active');
+                } else {
+                    s.classList.remove('active');
+                }
+            });
+        });
+    });
+    
+    // Submit comment
+    document.getElementById('submit-comment').addEventListener('click', () => {
+        const commentText = document.getElementById('comment-text').value.trim();
+        
+        if (!selectedRating) {
+            alert('Please select a rating');
+            return;
+        }
+        
+        if (!commentText) {
+            alert('Please enter your comment');
+            return;
+        }
+        
+        // Get user's email from where you store it (localStorage, auth system, etc.)
+        const userEmail = localStorage.getItem('userEmail') || 'user@gmail.com'; // Fallback for demo
+        
+        // Extract username without @gmail.com
+        const username = userEmail.split('@')[0];
+        
+        const newComment = {
+            id: Date.now(),
+            author: username, // Now shows just the username part
+            text: commentText,
+            rating: selectedRating,
+            date: new Date().toLocaleDateString()
+        };
+        
+        // Save to localStorage
+        const comments = JSON.parse(localStorage.getItem('playlist-comments')) || [];
+        comments.push(newComment);
+        localStorage.setItem('playlist-comments', JSON.stringify(comments));
+        
+        // Display the new comment
+        displayComments(comments);
+        
+        // Reset form
+        document.getElementById('comment-text').value = '';
+        stars.forEach(star => star.classList.remove('active'));
+        selectedRating = 0;
+    });
+}
+        
+        function displayComments(comments) {
+            const container = document.getElementById('comments-container');
+            
+            if (comments.length === 0) {
+                container.innerHTML = '<p>No reviews yet. Be the first to review!</p>';
+                return;
+            }
+            
+            let html = '';
+            comments.forEach(comment => {
+                html += `
+                <div class="comment">
+                    <div class="comment-author">${comment.author}</div>
+                    <div class="comment-rating">${'★'.repeat(comment.rating)}${'☆'.repeat(5 - comment.rating)}</div>
+                    <div class="comment-text">${comment.text}</div>
+                    <div class="comment-date" style="font-size: 12px; color: #999; margin-top: 5px;">
+                        ${comment.date}
+                    </div>
+                </div>`;
+            });
+            
+            container.innerHTML = html;
+        }
+    </script>
 </body>
 </html>
