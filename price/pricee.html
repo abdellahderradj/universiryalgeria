@@ -182,10 +182,502 @@
     </div>
         <script src="slider.js"></script>
 
+        
+        <!-- User Comments Section -->
+        <div class="user-comments-section">
+            <h2>آراء طلابنا</h2>
+            <div id="user-comments-container">
+                <!-- Comments will be loaded here -->
+            </div>
+        </div>
+        
         <footer>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Algeria University™. All Rights Reserved.</p>
+            <p>&copy; 2025 Algeria University™. All rights reserved.</p>
         </footer>
-    
-</body>
-</html>
+        
+        <style>
+            /* 🚀 Ultra-Stylish User Comments Section */
+        .user-comments-section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 
+                0 6px 12px rgba(0, 0, 0, 0.08),
+                0 3px 6px rgba(0, 0, 0, 0.12);
+            text-align: center;
+        }
+        
+        /* 🔥 Stylish Section Title */
+        .user-comments-section h2 {
+            text-align: center;
+            color: #1e3a5f;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+        }
+        
+        .user-comments-section h2:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, #007BFF, #00a8ff);
+            border-radius: 3px;
+        }
+        
+        /* 💎 Individual Comment Box */
+        .user-comment {
+            background: #f5f7fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 6px solid #007BFF;
+            transition: all 0.3s ease-in-out;
+            max-width: 90%;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+        
+        .user-comment:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* ✨ Author Name */
+        .comment-author {
+            font-weight: bold;
+            color: #1e3a5f;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        /* ⭐ Star Rating */
+        .comment-rating {
+            color: #FFA500;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+        }
+        
+        /* 📝 Comment Text */
+        .comment-text {
+            color: #444;
+            line-height: 1.6;
+            font-size: 1.1rem;
+            padding: 0 10px;
+        }
+        
+        /* 🕒 Comment Date */
+        .comment-date {
+            font-size: 0.9rem;
+            color: #777;
+        }
+        
+        /* 📌 تحسين تخطيط التعليقات باستخدام Grid */
+        @media (min-width: 992px) {
+            #user-comments-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .user-comment {
+                max-width: 100%;
+                margin-bottom: 0;
+            }
+        }
+        
+        /* 📱 Responsive Tweaks */
+        @media (max-width: 768px) {
+            .user-comments-section {
+                padding: 30px;
+            }
+            
+            .user-comment {
+                width: 95%;
+            }
+        }
+        </style>
+        
+        <script>
+            // Sample comments data with Algerian names and authentic dialect
+            const algerianComments = [
+                {
+                    id: 1,
+                    author: "Karim Bensalem",
+                    rating: 5,
+                    text: "ربي يخليك لينا يا أستاذ. الدروس ديالك خلونا نعديو الامتحانات بسهولة. الله يجازيك بالخير",
+                    date: "25 مارس 2025"
+                },
+                {
+                    id: 2,
+                    author: "Nadia Hammadi",
+                    rating: 5,
+                    text: "كنت عايشة في حيرة من هاد المادة حتى جيت ليك. الحمد لله بدات نفهم شوية شوية. نتمنى تزيد في الفيديوهات",
+                    date: "18 فبراير 2025"
+                },
+                {
+                    id: 3,
+                    author: "Farid Boukherouf",
+                    rating: 5,
+                    text: "ما شاء الله عليك يا أستاذ. الشرح عندك مريح وما يخلينا نضيعوش وقت في الفهم. ربي يزيدك من علمه",
+                    date: "5 يناير 2025"
+                },
+                {
+                    id: 4,
+                    author: "Samira Belhadj",
+                    rating: 4,
+                    text: "والله كنت خايفة من المادة ديال لكن مع دروسك صارلي وضحة. نتمنى تشرح لينا المزيد من المواضيع الصعبة",
+                    date: "20 ديسمبر 2024"
+                },
+                {
+                    id: 5,
+                    author: "Mohamed Amine Ziani",
+                    rating: 5,
+                    text: "جزاك الله خير يا أستاذ. الدروس ديالك مختصرة وفيها كل المعلومات اللي كنا نحتاجوها. الله يبارك في وقتك",
+                    date: "1 ديسمبر 2024"
+                },
+                {
+                    id: 6,
+                    author: "Yasmine Boukadoum",
+                    rating: 5,
+                    text: "ما كنتش ناقصة غير هاد الدروس باش تفك عليّ الحيرة. الحمد لله لقيتك يا أستاذ. ربي يسهل عليك",
+                    date: "15 نوفمبر 2024"
+                },
+        
+                {
+            id: 7,
+            author: "Amine Khelifi",
+            rating: 5,
+            text: "والله يا أستاذ دروسك نورت لينا الطريق. كنت ضايع في المادة ديالا وانتا فكيت عليا الحيرة. الله يبارك فيك",
+            date: "10 نوفمبر 2024"
+        },
+        {
+            id: 8,
+            author: "Leila Benbrahim",
+            rating: 4,
+            text: "ماشاء الله عليك في الشرح. عندك طريقة خاصة تخلي حتى المواضيع الصعبة تصير سهلة. نتمنى تزيد في الدروس",
+            date: "5 نوفمبر 2024"
+        },
+        {
+            id: 9,
+            author: "Bilal Saadi",
+            rating: 5,
+            text: "ربي يخليك لينا يا أستاذ. من يوم بدات نشوف دروسك صار الفهم عندي أسهل بزاف. الله يجازيك بالخير",
+            date: "28 أكتوبر 2024"
+        },
+        {
+            id: 10,
+            author: "Houda Merabet",
+            rating: 5,
+            text: "كنت نعاني من هاد المادة والله. دروسك كانت المنقذ لي. شكرا بزاف يا أستاذ",
+            date: "20 أكتوبر 2024"
+        },
+        {
+            id: 11,
+            author: "Rafik Chaoui",
+            rating: 4,
+            text: "ما قصرت والله يا أستاذ. الدروس ديالك مختصرة وفيها كل المعلومات. نتمنى تزيد في التمارين العملية",
+            date: "15 أكتوبر 2024"
+        },
+        {
+            id: 12,
+            author: "Samia Zerrouki",
+            rating: 5,
+            text: "والله العظيم دروسك كنز حقيقي. كنت ننسى كلشي في الامتحان ودروسك خلاني نتفوق. الله يبارك فيك",
+            date: "10 أكتوبر 2024"
+        },
+        {
+            id: 13,
+            author: "Adel Toumi",
+            rating: 5,
+            text: "ربي يزيدك من علمه يا أستاذ. الشرح عندك منظم وواضح. ما تخلينا نضيعوش وقت في الفهم",
+            date: "5 أكتوبر 2024"
+        },
+        {
+            id: 14,
+            author: "Soraya Benali",
+            rating: 4,
+            text: "الحمد لله لقيت دروسك يا أستاذ. كنت في حيرة كبيرة وانتا فكيت عليا كلشي. نتمنى تزيد في الأمثلة",
+            date: "28 سبتمبر 2024"
+        },
+        {
+            id: 15,
+            author: "Nasser Boukhatem",
+            rating: 5,
+            text: "ما شاء الله تبارك الله. دروسك ماشي مثل أي دروس. عندك طريقة خاصة في توصيل المعلومة. الله يحفظك",
+            date: "20 سبتمبر 2024"
+        },
+        {
+            id: 16,
+            author: "Dalia Meziane",
+            rating: 5,
+            text: "والله يا أستاذ كنت محتاجة هاد الدروس من زمان. ربي يسهل عليك ويخليك لينا. شكرا بزاف",
+            date: "15 سبتمبر 2024"
+        },
+        {
+            id: 17,
+            author: "Walid Hamoud",
+            rating: 4,
+            text: "دروسك مفيدة بزاف يا أستاذ. خاصة الطريقة اللي كتحل بيها المسائل. نتمنى شرح المزيد من الدروس",
+            date: "10 سبتمبر 2024"
+        },
+        {
+            id: 18,
+            author: "Salima Boudraa",
+            rating: 5,
+            text: "الله يبارك في علمك يا أستاذ. من يوم بدات نشوف دروسك صار عندي ثقة في نفسي. شكرا من القلب",
+            date: "5 سبتمبر 2024"
+        },
+        {
+            id: 19,
+            author: "Kamel Ferhat",
+            rating: 5,
+            text: "ربي يخليك لينا يا أستاذ. الدروس ديالك كانت سبب في نجاحي. الله يجازيك كل خير",
+            date: "28 أغسطس 2024"
+        },
+        {
+            id: 20,
+            author: "Naima Zitouni",
+            rating: 4,
+            text: "كنت نعاني بزاف في الفهم حتى جيت ليك. الحمد لله بدات أفهم شوية شوية. نتمنى تزيد في الشروحات",
+            date: "20 أغسطس 2024"
+        },
+        {
+            id: 21,
+            author: "Reda Benslimane",
+            rating: 5,
+            text: "ما شاء الله عليك يا أستاذ. عندك موهبة حقيقية في الشرح. ربي يزيدك من فضله",
+            date: "15 أغسطس 2024"
+        },
+        {
+            id: 22,
+            author: "Fella Abdesslam",
+            rating: 5,
+            text: "والله دروسك غيرت حياتي الدراسية. كنت نكره هاد المادة وانتا جعلتني أحبها. شكرا بزاف",
+            date: "10 أغسطس 2024"
+        },
+        {
+            id: 23,
+            author: "Karim Tahri",
+            rating: 4,
+            text: "ماشاء الله تبارك الله. الشرح عندك مريح للدماغ. نتمنى تزيد في الدروس العملية",
+            date: "5 أغسطس 2024"
+        },
+        {
+            id: 24,
+            author: "Yasmin Benyahia",
+            rating: 5,
+            text: "ربي يخليك لينا يا أستاذ. كنت ضايع بزاف وانتا نظمت لي كلشي. الله يبارك في وقتك",
+            date: "28 يوليو 2024"
+        },
+        {
+            id: 25,
+            author: "Nadir Boukadoum",
+            rating: 5,
+            text: "والله يا أستاذ دروسك كنز. ما كنتش نعرف والو على المادة وانتا علمتني كلشي. شكرا من الأعماق",
+            date: "20 يوليو 2024"
+        },
+        {
+            id: 26,
+            author: "Hania Meziani",
+            rating: 4,
+            text: "الحمد لله لقيتك يا أستاذ. كنت في حيرة كبيرة وانتا فكيت عليا. نتمنى تزيد في الفيديوهات",
+            date: "15 يوليو 2024"
+        },
+        {
+            id: 27,
+            author: "Bachir Saoud",
+            rating: 5,
+            text: "ما شاء الله عليك في الشرح. عندك قدرة خيالية على تبسيط المواضيع الصعبة. الله يحفظك",
+            date: "10 يوليو 2024"
+        },
+        {
+            id: 28,
+            author: "Djamila Khettab",
+            rating: 5,
+            text: "ربي يبارك فيك يا أستاذ. دروسك كانت سبب في تفوقي. الله يجازيك بالخير",
+            date: "5 يوليو 2024"
+        },
+        {
+            id: 29,
+            author: "Mourad Hamani",
+            rating: 4,
+            text: "والله يا أستاذ كنت محتاج هاد الشرح من زمان. ربي يسهل عليك ويخليك لينا. نتمنى المزيد",
+            date: "28 يونيو 2024"
+        },
+        {
+            id: 30,
+            author: "Sabrina Bouchenak",
+            rating: 5,
+            text: "الله يبارك في علمك يا أستاذ. دروسك غيرت مفهومي على المادة ديالا. شكرا بزاف",
+            date: "20 يونيو 2024"
+        },
+        {
+            id: 31,
+            author: "Tarek Ghomri",
+            rating: 5,
+            text: "ما قصرت والله يا أستاذ. الشرح عندك منظم وواضح. ربي يزيدك من علمه",
+            date: "15 يونيو 2024"
+        },
+        {
+            id: 32,
+            author: "Noria Benamara",
+            rating: 4,
+            text: "كنت ننسى كلشي في الامتحان ودروسك خلاني أفهم بجد. نتمنى تزيد في التمارين",
+            date: "10 يونيو 2024"
+        },
+        {
+            id: 33,
+            author: "Fares Boudjema",
+            rating: 5,
+            text: "والله العظيم دروسك نورت لي الطريق. كنت ضايع بزاف وانتا نظمت لي كلشي. الله يبارك فيك",
+            date: "5 يونيو 2024"
+        },
+        {
+            id: 34,
+            author: "Zahra Mokhtari",
+            rating: 5,
+            text: "ربي يخليك لينا يا أستاذ. من يوم بدات نشوف دروسك صار الفهم عندي أسهل بزاف. شكرا من القلب",
+            date: "28 مايو 2024"
+        }
+        
+            ];
+        
+            // Save to localStorage
+            localStorage.setItem('playlist-comments', JSON.stringify(algerianComments));
+        
+            // Load and display comments when page loads
+            document.addEventListener('DOMContentLoaded', function() {
+                const comments = JSON.parse(localStorage.getItem('playlist-comments')) || algerianComments;
+                displayComments(comments);
+            });
+        
+            function displayComments(comments) {
+                const container = document.getElementById('user-comments-container');
+                
+                if (!comments || comments.length === 0) {
+                    container.innerHTML = '<p style="text-align: center;">لا توجد تعليقات متاحة بعد.</p>';
+                    return;
+                }
+                
+                // Sort by newest first
+                comments.sort((a, b) => b.id - a.id);
+                
+                let html = '';
+                comments.forEach(comment => {
+                    html += `
+                    <div class="user-comment">
+                        <div class="comment-author">${comment.author}</div>
+                        <div class="comment-rating">${'★'.repeat(comment.rating)}${'☆'.repeat(5 - comment.rating)}</div>
+                        <div class="comment-text">${comment.text}</div>
+                        <div class="comment-date">${comment.date}</div>
+                    </div>`;
+                });
+                
+                container.innerHTML = html;
+            }
+        </script>
+        
+            <script>
+                // Toggle the mobile menu
+                function toggleMenu() {
+                    const navLinks = document.querySelector('.nav-links');
+                    navLinks.classList.toggle('active');
+                }
+        
+                // Toggle the dropdown menu (click to show)
+                function toggleDropdown(event) {
+                    event.preventDefault(); // Prevent the default link behavior
+                    const dropdown = event.currentTarget; // The "More" link container
+                    const dropdownContent = dropdown.nextElementSibling; // Get the associated dropdown menu
+                    
+                    // Toggle the 'active' class
+                    dropdownContent.classList.toggle('active');
+                    
+                    // Close all other dropdowns
+                    closeAllDropdowns(dropdown);
+                }
+        
+                // Close all dropdowns except the clicked one
+                function closeAllDropdowns(exceptDropdown) {
+                    const dropdowns = document.querySelectorAll('.dropdown-content');
+                    dropdowns.forEach(dropdown => {
+                        if (!dropdown.closest('.dropdown') === exceptDropdown) {
+                            dropdown.classList.remove('active');
+                        }
+                    });
+                }
+        
+                // Close dropdowns when clicking outside
+                document.addEventListener('click', (event) => {
+                    const dropdowns = document.querySelectorAll('.dropdown-content');
+                    dropdowns.forEach(dropdown => {
+                        if (!dropdown.contains(event.target) && !dropdown.closest('.dropdown').contains(event.target)) {
+                            dropdown.classList.remove('active');
+                        }
+                    });
+                });
+        
+                // Loading screen functions
+                function showLoading() {
+                    document.getElementById("loading-overlay").style.display = "flex";
+                    document.body.classList.add("loading");
+                }
+        
+                function hideLoading() {
+                    document.getElementById("loading-overlay").style.display = "none";
+                    document.body.classList.remove("loading");
+                }
+        
+                // Example login function
+                function login() {
+                    showLoading();
+                    setTimeout(function () {
+                        hideLoading();
+                        document.getElementById("result").innerText = "Login successful!";
+                    }, 3000);
+                }
+                // Ensure all navigation items are formatted correctly on mobile
+                function adjustNavigationForMobile() {
+                    const navLinks = document.querySelector('.nav-links');
+                    const moreDropdown = document.querySelector('.more-dropdown');
+                    const moreDropdownContent = document.querySelector('.more-dropdown-content');
+        
+                    if (window.innerWidth <= 768) {
+                        if (moreDropdownContent && !moreDropdownContent.classList.contains('moved')) {
+                            const dropdownItems = moreDropdownContent.querySelectorAll('li');
+                            dropdownItems.forEach(item => {
+                                item.classList.add('dropdown-item');
+                                item.querySelector('a').classList.add('highlighted-link');
+                                navLinks.insertBefore(item, moreDropdown);
+                            });
+                            moreDropdownContent.classList.add('moved');
+                        }
+                    } else {
+                        if (moreDropdownContent && moreDropdownContent.classList.contains('moved')) {
+                            const dropdownItems = navLinks.querySelectorAll('.dropdown-item');
+                            dropdownItems.forEach(item => {
+                                moreDropdownContent.appendChild(item);
+                                item.classList.remove('dropdown-item');
+                                item.querySelector('a').classList.remove('highlighted-link');
+                            });
+                            moreDropdownContent.classList.remove('moved');
+                        }
+                    }
+                }
+        
+                window.addEventListener('load', adjustNavigationForMobile);
+                window.addEventListener('resize', adjustNavigationForMobile);
+        
+            </script>
+        </body>
+        </html>
+        
