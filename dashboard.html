@@ -196,28 +196,27 @@
                 
                 // Enhanced comments section
                 html += `
-                <div class="comments-section">
-                    <h2>User Reviews</h2>
+                                <div class="comments-section" style="direction: rtl; text-align: right;">
+                    <h2 style="font-family: 'Arial', sans-serif; color: #333; margin-bottom: 20px;">رأيك يهمنا</h2>
                     <div id="comments-container"></div>
                     
-                    <div class="comment-form">
-                        <h3>Add Your Review</h3>
-                        <div class="rating-container">
-                            <label class="rating-label">Your Rating:</label>
-                            <div class="rating-stars">
-                                <span data-rating="1">★</span>
-                                <span data-rating="2">★</span>
-                                <span data-rating="3">★</span>
-                                <span data-rating="4">★</span>
-                                <span data-rating="5">★</span>
+                    <div class="comment-form" style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin-top: 20px; border: 1px solid #ddd;">
+                        <h3 style="font-family: 'Arial', sans-serif; color: #333; margin-top: 0;">أضف تقييمك</h3>
+                        <div class="rating-container" style="margin: 15px 0;">
+                            <label class="rating-label" style="display: block; margin-bottom: 8px; font-weight: bold; color: #555;">تقييمك:</label>
+                            <div class="rating-stars" style="font-size: 24px; cursor: pointer;">
+                                <span data-rating="1" style="color: #ccc; transition: color 0.2s; margin-left: 5px;">★</span>
+                                <span data-rating="2" style="color: #ccc; transition: color 0.2s; margin-left: 5px;">★</span>
+                                <span data-rating="3" style="color: #ccc; transition: color 0.2s; margin-left: 5px;">★</span>
+                                <span data-rating="4" style="color: #ccc; transition: color 0.2s; margin-left: 5px;">★</span>
+                                <span data-rating="5" style="color: #ccc; transition: color 0.2s; margin-left: 5px;">★</span>
                             </div>
-                            <div class="rating-explanation">
-                                <span>Poor</span>
-                                <span>Excellent</span>
-                            </div>
+                     
+                            
                         </div>
-                        <textarea id="comment-text" placeholder="Share your detailed thoughts about this playlist..." rows="4"></textarea>
-                        <button class="submit-btn" id="submit-comment">Submit Review</button>
+                        <textarea id="comment-text" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; resize: vertical; min-height: 100px; font-family: inherit; margin-bottom: 15px; direction: rtl;" placeholder="شاركنا رأيك التفصيلي عن قائمة التشغيل هذه..." rows="4"></textarea>
+                        <button class="submit-btn" id="submit-comment" style="background-color: #007BFF; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-size: 16px; transition: background-color 0.3s; float: left;">إرسال التقييم</button>
+                        <div style="clear: both;"></div>
                     </div>
                 </div>`;
                 
@@ -267,12 +266,12 @@
                 const commentText = document.getElementById('comment-text').value.trim();
                 
                 if (!selectedRating) {
-                    alert('Please select a rating by clicking the stars');
+                    alert('الرجاء اختيار التقييم بالنقر على النجوم');
                     return;
                 }
                 
                 if (!commentText) {
-                    alert('Please enter your comment');
+                    alert('الرجاء إدخال تعليقك');
                     return;
                 }
                 
@@ -313,7 +312,7 @@
             const container = document.getElementById('comments-container');
             
             if (comments.length === 0) {
-                container.innerHTML = '<p>No reviews yet. Be the first to review!</p>';
+                container.innerHTML = '<p>لا توجد تقييمات حتى الآن. كن أول من يقيّم!</p>';
                 return;
             }
             
