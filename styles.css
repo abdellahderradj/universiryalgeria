@@ -30,7 +30,6 @@ body {
     justify-content: space-around;
     flex-wrap: wrap;
     padding: 20px;
-    margin-top: 20px; /* أضف المسافة العلوية هنا */
 }
 
 .playlist-card {
