@@ -2200,4 +2200,162 @@ nav {
         }
     }
 
+    .signup-container {
+        max-width: 380px;
+        margin: 60px auto 30px auto; /* تقليل المسافة العلوية */
+        padding: 30px 25px; /* تقليل البادنج من جميع الجوانب */
+        background: linear-gradient(135deg, #fff, #f8f8f8);
+        border-radius: 25px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* تخفيف الظل */
+        font-family: 'Poppins', sans-serif;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(0,0,0,0.05); /* إضافة حدود ناعمة */
+    }
     
+    .signup-container::before {
+        content: '';
+        position: absolute;
+        top: -40%; /* تعديل المسافة العلوية للتأثير */
+        left: -40%;
+        width: 180%;
+        height: 180%; /* تصغير حجم التأثير */
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.8; /* تخفيف التأثير */
+    }
+    
+    .signup-container h2 {
+        font-size: 24px; /* تصغير حجم الخط قليلاً */
+        color: #333;
+        margin-bottom: 5px;
+        font-weight: 700;
+        position: relative;
+        z-index: 2;
+        padding-top: 10px; /* إضافة مسافة علوية */
+    }
+    
+    .signup-container label {
+        display: block;
+        text-align: left;
+        font-size: 13px; /* تصغير حجم الخط */
+        font-weight: 500;
+        color: #555;
+        margin-bottom: 6px; /* تقليل المسافة */
+        position: relative;
+        z-index: 2;
+    }
+    
+    .signup-container input {
+        padding: 12px; /* تصغير البادنج */
+        font-size: 15px;
+        border: 1px solid #ddd;
+        border-radius: 10px; /* تقليل نصف القطر */
+        width: 100%;
+        transition: all 0.3s ease;
+        outline: none;
+        background: #f9f9f9;
+        margin-bottom: 20px; /* تقليل المسافة */
+        position: relative;
+        z-index: 2;
+    }
+    
+    .signup-container input:focus {
+        border-color: #ff5722;
+        background: #fff;
+        box-shadow: 0 0 8px rgba(255, 87, 34, 0.3); /* تخفيف الظل */
+    }
+    
+    .signup-container button {
+        background: #ff5722;
+        color: #fff;
+        padding: 14px; /* تصغير البادنج */
+        font-size: 15px;
+        border: none;
+        border-radius: 25px; /* تعديل نصف القطر */
+        cursor: pointer;
+        width: 100%;
+        transition: all 0.3s ease;
+        font-weight: 600;
+        margin-top: 10px; /* تقليل المسافة العلوية */
+        position: relative;
+        z-index: 2;
+    }
+    
+    .signup-container button:hover {
+        background: #e64a19;
+        box-shadow: 0 6px 15px rgba(230, 74, 25, 0.3); /* تخفيف الظل */
+        transform: translateY(-2px);
+    }
+    
+    .signup-container p {
+        font-size: 13px; /* تصغير حجم الخط */
+        color: #666;
+        margin: 15px 0; /* تقليل المسافة */
+        position: relative;
+        z-index: 2;
+    }
+    
+    .signup-container a {
+        text-decoration: none;
+        color: #ff5722;
+        font-weight: 500;
+        transition: color 0.3s;
+        position: relative;
+        z-index: 2;
+        font-size: 13px; /* توحيد حجم الخط */
+    }
+    
+    .signup-container a:hover {
+        color: #e64a19;
+        text-decoration: underline;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .signup-container {
+        animation: fadeIn 0.6s ease-out;
+    }
+    
+    .forgot-password {
+        font-size: 14px;
+        color: #888;
+        margin-top: 15px;
+    }
+    
+    .forgot-password a:hover {
+        color: #ff5722;
+    }
+          /* تنسيق الاختيارات المتعددة */
+          select#subjects {
+            width: 100%;
+            max-width: 100%;
+            height: 200px;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            padding: 10px;
+            font-size: 16px;
+            direction: rtl;
+            background-color: #fff;
+            overflow-y: auto;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        select#subjects option {
+            padding: 8px;
+            margin: 4px 0;
+            font-size: 15px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+        }

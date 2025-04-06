@@ -269,5 +269,43 @@ a {
 
 a:hover {
     text-decoration: underline;
-    color: #bb4b4b;
+    color: #2d312d;
+}
+
+   /* أنماط الزر الجديد */
+   .form-alternative {
+    margin-top: 30px;
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    border: 1px dashed #4CAF50;
+}
+
+.redirect-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.redirect-button:hover {
+    background-color: #3e8e41;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.arrow {
+    margin-right: 8px;
+    transition: transform 0.3s;
+}
+
+.redirect-button:hover .arrow {
+    transform: translateX(5px);
 }
