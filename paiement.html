@@ -1,244 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تسجيل - جامعة الجزائر</title>
-    <link rel="icon" href="logo.png" type="image/png">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* أنماط رفع الملف */
-        .file-upload-container {
-            margin: 7px 0;
-        }
-        
-        #fileUpload {
-            display: none;
-        }
-        
-        .file-label {
-            display: block;
-            padding: 12px;
-            border: 2px dashed #ddd;
-            border-radius: 8px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-            background-color: #f9f9f9;
-        }
-        
-        .file-label:hover {
-            border-color: #4CAF50;
-            background-color: #f1f8f1;
-        }
-        
-        .file-icon {
-            font-size: 24px;
-            display: block;
-            margin-bottom: 8px;
-        }
-        
-        .file-text {
-            font-weight: bold;
-        }
-        
-        .file-name-display {
-            margin-top: 8px;
-            padding: 8px;
-            background-color: #f5f5f5;
-            border-radius: 4px;
-            text-align: center;
-            font-size: 14px;
-        }
+  <meta charset="utf-8" />
+  <title>تم نقل الموقع — Derradj Academy</title>
 
-        /* أنماط رسالة التأكيد */
-        #confirmation {
-            display: none;
-            margin-top: 30px;
-            padding: 25px;
-            background: #f8f9fa;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        
-        .confirmation-icon {
-            font-size: 50px;
-            color: #4CAF50;
-            margin-bottom: 15px;
-        }
-        
-        .confirmation-title {
-            color: #2E7D32;
-            font-size: 22px;
-            margin-bottom: 15px;
-        }
-        
-        .confirmation-content {
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-        
-        .confirmation-detail {
-            color: #666;
-            font-style: italic;
-            margin: 10px 0;
-        }
-        
-        .reference-container {
-            background: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 20px 0;
-            display: inline-block;
-            border: 1px dashed #4CAF50;
-        }
-    </style>
+  <!-- إعادة توجيه خلال ثانيتين -->
+  <meta http-equiv="refresh" content="2; url=https://derradjacademy.com/" />
+
+  <!-- تحسينات SEO -->
+  <link rel="canonical" href="https://derradjacademy.com/">
+  <meta name="robots" content="noindex, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="تم نقل موقع Derradj Academy إلى https://derradjacademy.com/">
+
+  <!-- توجيه فوري بالجاڤاسكربت (fallback/تعزيز) -->
+  <script>
+    (function() {
+      var target = "https://derradjacademy.com/";
+      // حاول التوجيه فورًا
+      window.location.replace(target);
+      // احتياط إضافي بعد 1.5 ثانية
+      setTimeout(function(){ window.location.href = target; }, 1500);
+    })();
+  </script>
+
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans", Tahoma, Arial, sans-serif;
+      margin: 0; min-height: 100vh; display: grid; place-items: center;
+      background: #f8fafc; 
+    }
+    .card {
+      background: white; padding: 2rem; border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+      max-width: 720px; width: 92%;
+      text-align: center;
+    }
+    h1 { margin: 0 0 .5rem; font-size: 1.5rem; }
+    p  { margin: .25rem 0; line-height: 1.8; }
+    a.button {
+      display: inline-block; margin-top: 1rem; padding: .75rem 1.25rem;
+      border-radius: 999px; text-decoration: none; border: 1px solid #1f2937;
+    }
+    @media (prefers-color-scheme: dark) {
+      body { background: #0b1020; }
+      .card { background: #0f172a; color: #e5e7eb; border: 1px solid #1f2937; }
+      a.button { border-color: #334155; color: #e5e7eb; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="menu-toggle" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+  <main class="card" role="main" aria-live="polite">
+    <h1>تم نقل الموقع</h1>
+    <p>تم نقل Derradj Academy إلى العنوان الجديد:</p>
+    <p><strong><a href="https://derradjacademy.com/">https://derradjacademy.com/</a></strong></p>
+    <p>سيتم تحويلك تلقائيًا خلال لحظات. إذا لم يتم التحويل، اضغط الزر التالي:</p>
+    <p><a class="button" href="https://derradjacademy.com/">الانتقال الآن</a></p>
 
-            <div class="site-title">
-                <a href="index.html">Algeria University</a>
-            </div>
-
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=j_ypDHfZLSw&t=94s" target="_blank">Youtube</a></li>
-                    <li class="dropdown more-dropdown">
-                        <a href="javascript:void(0)" class="dropbtn" onclick="toggleDropdown(event)">Playlist</a>
-                        <ul class="dropdown-content more-dropdown-content">
-                            <li><a href="ondes-vibrations.html">Ondes Et Vibrations</a></li>
-                            <li><a href="Theorie_du_signal.html">Theorie du Signal</a></li>
-                            <li><a href="systemes-asservis-echantillonnes-regulation.html">Systèmes Asservis Échantillonnés et Régulation</a></li>
-                            <li><a href="electronique_de_puissance_avancee.html">Électronique de puissance (avancée)</a></li>
-                            <li><a href="electroniquef1.html">Electronique Fondamentale 1</a></li>
-                            <li><a href="Electrotechnique_fondamentale1.html">Électrotechnique Fondamentale 1</a></li>
-                            <li><a href="Electrotechnique_fondamentale2.html">Électrotechnique Fondamentale 2</a></li>
-                            <li><a href="materiaux_haute_tension.html">Matériaux et Introduction à la Haute Tension</a></li>
-                            <li><a href="systemesasservis.html">Systèmes Asservis</a></li>
-                            <li><a href="informatique1.html">Informatique 1</a></li>
-                            <li><a href="informatique2.html">Informatique 2 (Algorithm)</a></li>
-                            <li><a href="statistique.html">Probabilité et Statistique S3</a></li>
-                            <li><a href="methodenumerique.html">Méthodes Numériques (L2 + M1)</a></li>
-                            <li><a href="Machine_electrique.html">Machines Électriques (L2, L3, M1)</a></li>
-                            <li><a href="informatique3.html">Informatique 3</a></li>
-                            <li><a href="Logique_Combinatoire_et_Séquentielle.html">Logique Combinatoire et Séquentielle</a></li>
-                            <li><a href="quadripole.html">Les Quadripôles</a></li>
-                            <li><a href="reseaux_electriques.html">Réseaux Électriques L3</a></li>
-                            <li><a href="specialization Page/specialization.html">Cours</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="Login.html">Login</a></li>
-                    <li><a href="price/price.html" target="_blank" rel="noopener noreferrer">Sign Up</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <div class="signup-container">
-        <h2>نموذج التقديم</h2>
-        <form id="submissionForm" action="https://formsubmit.co/abdellahderradj918@gmail.com" method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="box">
-            <input type="hidden" name="_next" value="#confirmation">
-            
-            <div class="form-group">
-                <label for="email"></label>
-                                <input type="text" id="email" name="الهاتف أو البريد" placeholder="أدخل البريد الإلكتروني أو رقم الهاتف" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="subjectInput"></label>
-                <input type="text" id="subjectInput" name="المواد" placeholder="اكتب اسم المادة (المواد)..." required>
-            </div>
-            
-            <div class="form-group file-upload-container">
-                <label>رفع الملف (صورة أو ملف PDF للوصل)</label>
-                <div class="custom-file-upload">
-                    <input type="file" id="fileUpload" name="الملف" accept=".pdf,.jpg,.jpeg,.png" required>
-                    <label for="fileUpload" class="file-label">
-                        <span class="file-icon">📁</span>
-                        <span class="file-text">اختر ملف (PDF أو صورة)</span>
-                    </label>
-                    <div id="fileNameDisplay" class="file-name-display">لم يتم اختيار أي ملف بعد</div>
-                </div>
-                <small>الملفات المسموح بها: PDF, JPG, PNG (الحجم الأقصى: 5MB)</small>
-            </div>
-            
-            <button type="submit">إرسال الطلب</button>
-        </form>
-        
-        <div id="confirmation">
-            <div class="confirmation-icon">✓</div>
-            <h3 class="confirmation-title">تم تأكيد طلبك بنجاح!</h3>
-            <div class="confirmation-content">
-                <p>سنرسل لك اسم المستخدم (الإيميل أو رقم الهاتف) وكلمة السر في أقرب وقت</p>
-                <p class="confirmation-detail">عادةً في أقل من 8 ساعات</p>
-                <div class="reference-container">
-                    <p>الرقم المرجعي:</p>
-                    <p class="reference" style="font-weight: bold; font-size: 18px;"></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; <span id="currentYear"></span> Algeria University™. جميع الحقوق محفوظة.</p>
-    </footer>
-
-    <script>
-        // عرض اسم الملف المختار
-        document.getElementById('fileUpload').addEventListener('change', function(e) {
-            const fileNameDisplay = document.getElementById('fileNameDisplay');
-            if (this.files.length > 0) {
-                fileNameDisplay.textContent = this.files[0].name;
-                fileNameDisplay.style.color = '#4CAF50';
-            } else {
-                fileNameDisplay.textContent = 'لم يتم اختيار أي ملف بعد';
-                fileNameDisplay.style.color = '';
-            }
-        });
-
-        // إرسال النموذج
-        document.getElementById("submissionForm").addEventListener("submit", function(e) {
-            e.preventDefault();
-            const form = e.target;
-            const fileInput = document.getElementById('fileUpload');
-
-            // التحقق من حجم الملف
-            if (fileInput.files[0] && fileInput.files[0].size > 5 * 1024 * 1024) {
-                alert("حجم الملف يجب أن يكون أقل من 5MB");
-                return;
-            }
-
-            fetch(form.action, {
-                method: "POST",
-                body: new FormData(form)
-            })
-            .then(response => {
-                if (response.ok) {
-                    form.style.display = "none";
-                    document.getElementById("confirmation").style.display = "block";
-                    document.querySelector(".reference").textContent = Math.floor(Math.random() * 1000000);
-                    
-                    // تحديث سنة حقوق النشر
-                    document.getElementById('currentYear').textContent = new Date().getFullYear();
-                }
-            })
-            .catch(error => {
-                alert("عذرًا، حدث خطأ أثناء إرسال الطلب. يرجى المحاولة مرة أخرى لاحقًا.");
-                console.error("Error:", error);
-            });
-        });
-    </script>
+    <noscript>
+      <p style="margin-top:1rem; opacity:.8">التوجيه التلقائي يحتاج تشغيل الجاڤاسكربت. يمكنك الضغط على الرابط أعلاه للدخول مباشرة.</p>
+    </noscript>
+  </main>
 </body>
 </html>
